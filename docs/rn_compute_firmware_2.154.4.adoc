@@ -1,0 +1,127 @@
+---
+sidebar: sidebar 
+permalink: docs/rn_compute_firmware_2.154.4.html 
+summary: Obtenez des liens vers les notes de version pour les packages de firmware que vous pouvez télécharger et appliquer aux nœuds NetApp HCI. 
+keywords: netapp, hci, compute firmware 
+---
+= Notes de version de Compute Firmware Bundle 2.154.4
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+:keywords: hci, release notes, vcp, element, management services, firmware
+
+
+[role="lead"]
+Le progiciel de micrologiciel de nœud de calcul téléchargeable contient les dernières améliorations de fonctionnalités du BIOS et du BMC, les corrections de bogues et le support matériel pour tous les nœuds de calcul NetApp HCI pris en charge.
+
+
+NOTE: La solution NetApp de contrôle du cloud hybride exige le dernier pack de services de gestion. Vous devez effectuer la mise à niveau vers le dernier bundle de services de gestion avant de mettre à niveau le firmware de vos nœuds de calcul vers la version 2.154.4. Si vous mettez à niveau le firmware de vos nœuds de calcul vers la version 2.154.4, vous avez besoin de services de gestion 2.20 pour continuer.
+
+
+
+== Nouveautés
+
+La version 2.154.4 contient des corrections de bugs générales.
+
+
+
+=== Composants de firmware mis à jour
+
+Ce pack contient les versions de firmware suivantes pour les composants matériels, avec des versions mises à jour en gras :
+
+|===
+| Composant | H300E, H500E, H700E | H410C | H610C | H615C 
+
+
+| BIOS | NAT3.4 | NATP3.10 | 3B07 | B12.CO 
+
+
+| BMC | 6.98.00 | 6.71.20 | 4.04.07 | 4.72.07 
+
+
+| NIC/Mellanox | *14.29.1016* | *14.29.1016* | *14.29.1016* | *14.29.1016* 
+|===
+
+
+=== Compatibilité du pilote du firmware du NIC Mellanox
+
+La version 14.29.1016 du firmware Mellanox mise à jour requiert une version minimale du pilote VMware ESXi comme suit :
+
+*Versions du pilote VMware ESXi*
+
+|===
+
+
+| VMware ESXi | Conducteur 
+
+
+| 7.0 | 4.19.71.101 4.19.71.1 
+
+
+| 7.0 mise à jour 1 | 4.19.71.101 4.19.71.1 
+
+
+| 7.0 mise à jour 2 | 4.21.71.101 4.21.71.1 
+
+
+| 7.0 mise à jour 3 | 4.21.71.101 4.21.71.1 
+
+
+| 6.7 | 4.17.71.1 
+
+
+| 6.5 | 4.16.71.1 
+|===
+
+NOTE: Les pilotes pour 7.0, 7.0 U1, 7.0 U2 et 7.0 U3 sont disponibles sur le link:https://customerconnect.vmware.com/downloads/info/slug/datacenter_cloud_infrastructure/vmware_vsphere/7_0["Téléchargement de VMware vSphere"^] page.
+
+
+NOTE: Avant de mettre à niveau vers la version 2.154.4, vérifiez la version actuelle du pilote VMware ESXi. Si le pilote est obsolète, mettez-le d'abord à niveau. Mettez ensuite à niveau le firmware du calcul vers la version 2.154.4 pour vos nœuds de calcul. Visitez link:task_hcc_upgrade_compute_node_drivers.html["Mettez à jour les pilotes des nœuds de calcul"] Pour obtenir des instructions sur la mise à jour de vos pilotes de nœud de calcul, qui incluent le pilote ESXi.
+
+Lorsque vous installez ou mettez à niveau manuellement les systèmes d'exploitation hôtes, NetApp ne peut pas contrôler les pilotes et les micrologiciels pour ces systèmes d'exploitation.
+
+
+
+== Téléchargez le pack Compute Firmware 2.154.4
+
+Pour télécharger le pack Compute Firmware :
+
+. Accédez à https://mysupport.netapp.com/site/products/all/details/netapp-hci/downloads-tab["La page de téléchargements NetApp HCI"^].
+. Choisissez *Compute_Firmware_Bundle* dans la liste déroulante.
+. Cliquez sur *Go*.
+
+
+Visitez link:task_hcc_upgrade_compute_node_firmware.html#use-the-baseboard-management-controller-bmc-user-interface-ui["Met à jour le firmware du nœud de calcul"] pour obtenir des instructions sur la mise à jour du firmware de votre nœud de calcul.
+
+
+
+== Problèmes résolus et connus
+
+Voir la https://mysupport.netapp.com/site/bugs-online/product["Outil en ligne sur les bogues"^] pour obtenir des détails sur les problèmes qui ont été résolus et pour tout nouveau problème.
+
+
+
+=== Accès à l'outil bol
+
+. Accédez au  https://mysupport.netapp.com/site/bugs-online/product["Outil BOL"^] Et sélectionnez *Element Software* dans la liste déroulante :
++
+image::bol_dashboard.png[Notes de version du pack du firmware de stockage]
+
+. Dans le champ de recherche par mot-clé, tapez "Compute Firmware Bundle" et cliquez sur *New Search*:
++
+image::compute_firmware_bundle_choice.png[Notes de version du pack du firmware de stockage]
+
+. La liste des bugs résolus ou ouverts s'affiche. Vous pouvez affiner davantage les résultats comme indiqué :
++
+image::bol_list_bugs_found.png[Notes de version du pack du firmware de stockage]
+
+
+
+[discrete]
+== Trouvez plus d'informations
+
+* https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/NetApp_HCI/Firmware_and_driver_versions_in_NetApp_HCI_and_NetApp_Element_software["Versions du micrologiciel et du pilote dans les logiciels NetApp HCI et NetApp Element"^]
+

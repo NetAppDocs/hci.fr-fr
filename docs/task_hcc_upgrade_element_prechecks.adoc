@@ -1,0 +1,250 @@
+---
+sidebar: sidebar 
+permalink: docs/task_hcc_upgrade_element_prechecks.html 
+summary: 'Lors de la mise à niveau des systèmes NetApp HCI, des vérifications de l"état du logiciel NetApp Element doivent être effectuées.' 
+keywords: netapp, storage prechecks, element upgrade, sfupgradecheck 
+---
+= Exécutez des vérifications de l'état du stockage Element avant la mise à niveau du stockage
+:allow-uri-read: 
+
+
+[role="lead"]
+Vous devez exécuter des vérifications de l'état avant de mettre à niveau le stockage Element pour garantir que tous les nœuds de stockage du cluster sont prêts pour la prochaine mise à niveau du stockage Element.
+
+.Ce dont vous avez besoin, 8217;ll
+* *Services de gestion*: Vous avez mis à jour le dernier bundle de services de gestion (2.10.27 ou version ultérieure).
++
+
+IMPORTANT: Vous devez effectuer la mise à niveau vers le dernier pack de services de gestion avant de mettre à niveau votre logiciel Element.
+
+* *Noeud de gestion* : vous exécutez le noeud de gestion 11.3 ou ultérieur.
+* *Logiciel Element* : votre version de cluster exécute le logiciel NetApp Element version 11.3 ou ultérieure.
+* *Contrat de licence utilisateur final (CLUF)* : à partir des services de gestion 2.20.69, vous devez accepter et enregistrer le CLUF avant d'utiliser l'interface utilisateur ou l'API de NetApp Hybrid Cloud Control pour exécuter les contrôles d'état du stockage d'Element :
++
+.. Ouvrez l'adresse IP du nœud de gestion dans un navigateur Web :
++
+[listing]
+----
+https://<ManagementNodeIP>
+----
+.. Connectez-vous au contrôle de cloud hybride NetApp en fournissant les identifiants de l'administrateur du cluster de stockage.
+.. Sélectionnez *Upgrade* en haut à droite de l'interface.
+.. Le CLUF s'affiche. Faites défiler vers le bas, sélectionnez *J'accepte les mises à jour actuelles et futures*, puis sélectionnez *Enregistrer*.
++
+
+NOTE: Lorsque vous acceptez le CLUF, il est enregistré pour toutes les mises à jour futures et la fonction de téléchargement automatique est activée. Vous recevrez des mises à jour sur les mises à jour et les mises à niveau logicielles NetApp que vous pouvez installer à votre discrétion et à votre convenance. Vous pouvez désactiver la fonctionnalité de téléchargement automatique en désactivant la connectivité réseau au référentiel logiciel en ligne de NetApp.
+
+
+
+
+
+Vous pouvez exécuter des vérifications de l'état avec l'interface NetApp de contrôle du cloud hybride ou l'API NetApp de contrôle du cloud hybride :
+
+*  NetApp Hybrid Cloud Control to run Element storage health checks prior to upgrading storage (Méthode préférée)
+*  API to run Element storage health checks prior to upgrading storage
+
+
+Vous pouvez également en savoir plus sur les vérifications de l'état du stockage exécutées par ce service :
+
+*  health checks made by the service
+
+
+
+
+== Avec NetApp Hybrid Cloud Control, exécutez des vérifications de l'état du stockage Element avant la mise à niveau du stockage
+
+Avec NetApp Hybrid Cloud Control (HCC), vous pouvez vérifier qu'un cluster de stockage est prêt à être mis à niveau.
+
+.Étapes
+. Ouvrez l'adresse IP du nœud de gestion dans un navigateur Web :
++
+[listing]
+----
+https://<ManagementNodeIP>
+----
+. Connectez-vous au contrôle de cloud hybride NetApp en fournissant les identifiants de l'administrateur du cluster de stockage.
+. Sélectionnez *Upgrade* en haut à droite de l'interface.
+. Sur la page *mises à niveau*, sélectionnez l'onglet *stockage*.
+. Sélectionnez le bilan de santé image:hcc_healthcheck_icon.png["icône"] pour le cluster, vérifiez que la mise à niveau est prête.
+. Sur la page *Storage Health Check*, sélectionnez *Run Health Check*.
+. En cas de problème, procédez comme suit :
++
+.. Consultez l'article de la base de connaissances spécifique répertorié pour chaque problème ou effectuez la solution spécifiée.
+.. Si vous spécifiez une base de connaissances, suivez la procédure décrite dans l'article correspondant de la base de connaissances.
+.. Après avoir résolu les problèmes de cluster, sélectionnez *Re-Run Health Check*.
+
+
+
+
+Une fois la vérification de l'état de santé terminée sans erreur, le cluster de stockage est prêt à être mis à niveau. Voir mise à niveau du nœud de stockage link:task_hcc_upgrade_element_software.html["instructions"] pour continuer.
+
+
+
+== Exécutez des vérifications de l'état du stockage Element avant la mise à niveau du stockage
+
+Vous pouvez utiliser l'API REST pour vérifier qu'un cluster de stockage est prêt à être mis à niveau. Le contrôle de l'état vérifie qu'il n'existe aucun obstacle à la mise à niveau, par exemple les nœuds en attente, les problèmes d'espace disque et les défaillances de cluster.
+
+.Étapes
+. Recherchez l'ID de cluster de stockage :
++
+.. Ouvrez l'interface de l'API REST du nœud de gestion sur le nœud de gestion :
++
+[listing]
+----
+https://<ManagementNodeIP>/mnode
+----
+.. Sélectionnez *Authorise* et procédez comme suit :
++
+... Saisissez le nom d'utilisateur et le mot de passe du cluster.
+... Saisissez l'ID client en tant que `mnode-client` si la valeur n'est pas déjà renseignée.
+... Sélectionnez *Autoriser* pour démarrer une session.
+... Fermez la fenêtre d'autorisation.
+
+
+.. Dans l'interface utilisateur de l'API REST, sélectionnez `GET /assets`.
+.. Sélectionnez *essayez-le*.
+.. Sélectionnez *Exécuter*.
+.. Dans la réponse, copiez le `"id"` à partir du `"storage"` de la section du cluster que vous prévoyez de vérifier que la mise à niveau est prête.
++
+
+NOTE: N'utilisez pas le `"parent"` Valeur dans cette section car il s'agit de l'ID du nœud de gestion, et non de l'ID du cluster de stockage.
+
++
+[listing, subs="+quotes"]
+----
+"config": {},
+"credentialid": "12bbb2b2-f1be-123b-1234-12c3d4bc123e",
+"host_name": "SF_DEMO",
+*"id": "12cc3a45-e6e7-8d91-a2bb-0bdb3456b789",*
+"ip": "10.123.12.12",
+"parent": "d123ec42-456e-8912-ad3e-4bd56f4a789a",
+"sshcredentialid": null,
+"ssl_certificate": null
+----
+
+
+. Exécutez des vérifications d'état sur le cluster de stockage :
++
+.. Ouvrez l'interface de l'API REST de stockage sur le nœud de gestion :
++
+[listing]
+----
+https://<ManagementNodeIP>/storage/1/
+----
+.. Sélectionnez *Authorise* et procédez comme suit :
++
+... Saisissez le nom d'utilisateur et le mot de passe du cluster.
+... Saisissez l'ID client en tant que `mnode-client` si la valeur n'est pas déjà renseignée.
+... Sélectionnez *Autoriser* pour démarrer une session.
+... Fermez la fenêtre d'autorisation.
+
+
+.. Sélectionnez *POST /Health-chèques*.
+.. Sélectionnez *essayez-le*.
+.. Dans le champ paramètre, entrez l'ID de cluster de stockage obtenu à l'étape 1.
++
+[listing]
+----
+{
+  "config": {},
+  "storageId": "123a45b6-1a2b-12a3-1234-1a2b34c567d8"
+}
+----
+.. Sélectionnez *Exécuter* pour exécuter un contrôle d'intégrité sur le cluster de stockage spécifié.
++
+La réponse doit indiquer l'état comme `initializing`:
+
++
+[listing]
+----
+{
+  "_links": {
+    "collection": "https://10.117.149.231/storage/1/health-checks",
+    "log": "https://10.117.149.231/storage/1/health-checks/358f073f-896e-4751-ab7b-ccbb5f61f9fc/log",
+    "self": "https://10.117.149.231/storage/1/health-checks/358f073f-896e-4751-ab7b-ccbb5f61f9fc"
+  },
+  "config": {},
+  "dateCompleted": null,
+  "dateCreated": "2020-02-21T22:11:15.476937+00:00",
+  "healthCheckId": "358f073f-896e-4751-ab7b-ccbb5f61f9fc",
+  "state": "initializing",
+  "status": null,
+  "storageId": "c6d124b2-396a-4417-8a47-df10d647f4ab",
+  "taskId": "73f4df64-bda5-42c1-9074-b4e7843dbb77"
+}
+----
+.. Copiez le `healthCheckID` cela fait partie de la réponse.
+
+
+. Vérifier les résultats des vérifications d'intégrité :
++
+.. Sélectionnez *GET ​/Health-checks​/{healHealthCheckId}*.
+.. Sélectionnez *essayez-le*.
+.. Entrez l'ID du contrôle de l'état dans le champ paramètre.
+.. Sélectionnez *Exécuter*.
+.. Faites défiler jusqu'au bas du corps de réponse.
++
+Si toutes les vérifications de l'état réussissent, le retour est similaire à l'exemple suivant :
+
++
+[listing]
+----
+"message": "All checks completed successfully.",
+"percent": 100,
+"timestamp": "2020-03-06T00:03:16.321621Z"
+----
+
+
+. Si le `message` « return » indique qu'un problème se produit au niveau de la santé du cluster, procédez comme suit :
++
+.. Sélectionnez *GET ​/Health-checks​/{healHealthCheckId}/log*
+.. Sélectionnez *essayez-le*.
+.. Entrez l'ID du contrôle de l'état dans le champ paramètre.
+.. Sélectionnez *Exécuter*.
+.. Examinez toutes les erreurs spécifiques et obtenez les liens associés à l'article de la base de connaissances.
+.. Consultez l'article de la base de connaissances spécifique répertorié pour chaque problème ou effectuez la solution spécifiée.
+.. Si vous spécifiez une base de connaissances, suivez la procédure décrite dans l'article correspondant de la base de connaissances.
+.. Après avoir résolu les problèmes de cluster, exécutez à nouveau *GET ​/Health-checks​/{healCheckId}/log*.
+
+
+
+
+
+
+== Vérifications de l'état du stockage effectuées par le service
+
+Les vérifications de l'état du stockage font les vérifications suivantes par cluster.
+
+|===
+| Vérifiez le nom | Nœud/Cluster | Description 
+
+
+| vérifier_les_résultats_async | Cluster | Vérifie que le nombre de résultats asynchrones dans la base de données est inférieur à un nombre de seuils. 
+
+
+| vérifier_les_défauts_cluster | Cluster | Vérifie qu'il n'y a pas d'erreur de blocage de mise à niveau (comme défini dans la source d'élément). 
+
+
+| vérifier_la_vitesse_de_chargement | Nœud | Mesure la vitesse de chargement entre le nœud de stockage et le nœud de gestion. 
+
+
+| contrôle_vitesse_connexion | Nœud | Vérifie que les nœuds sont connectés au nœud de gestion pour le service des packages de mise à niveau et estime la vitesse de connexion. 
+
+
+| vérifier les noyaux | Nœud | Vérifie si le vidage de panne du noyau et les fichiers « core » du nœud. Le contrôle échoue pour les pannes d'une période récente (seuil de 7 jours). 
+
+
+| check_root_disk_space | Nœud | Vérifie que le système de fichiers racine dispose de suffisamment d'espace libre pour effectuer une mise à niveau. 
+
+
+| check_var_log_disk_space | Nœud | Vérifie cela `/var/log` l'espace libre atteint un certain seuil de pourcentage libre. Si ce n'est pas le cas, le contrôle tourne et purge les anciens journaux afin de tomber sous le seuil. La vérification échoue si la création d'un espace libre suffisant a échoué. 
+
+
+| check_pending_nodes | Cluster | Vérifie qu'il n'y a aucun nœud en attente sur le cluster. 
+|===
+[discrete]
+== Trouvez plus d'informations
+
+* https://docs.netapp.com/us-en/vcp/index.html["Plug-in NetApp Element pour vCenter Server"^]
+* https://www.netapp.com/hybrid-cloud/hci-documentation/["Page Ressources NetApp HCI"^]
+

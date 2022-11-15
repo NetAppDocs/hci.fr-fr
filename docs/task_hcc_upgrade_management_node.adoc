@@ -1,0 +1,164 @@
+---
+sidebar: sidebar 
+permalink: docs/task_hcc_upgrade_management_node.html 
+summary: La mise à niveau du système NetApp HCI permet de mettre à niveau le nœud de gestion. 
+keywords: netapp, hci, on premise, cluster, management node, mNode, upgrade, 10, 11.0, 11.1, 11.3, 11.5, 11.7, 12.0, 12.2, 12.3, 12.3.1, 12.3.2, 12.3.x, 12.5, 12.7 
+---
+= Mettre à niveau un nœud de gestion
+:allow-uri-read: 
+
+
+[role="lead"]
+Vous pouvez mettre à niveau votre nœud de gestion vers le nœud de gestion 12.5 ou version ultérieure à partir de la version 12.3.x ou ultérieure.
+
+La mise à niveau du système d'exploitation du nœud de gestion n'est plus nécessaire pour mettre à niveau le logiciel Element sur le cluster de stockage. Il vous suffit de mettre à niveau les services de gestion vers la dernière version pour effectuer les mises à niveau d'Element avec NetApp Hybrid Cloud Control. Suivez la procédure de mise à niveau du nœud de gestion pour votre scénario si vous souhaitez mettre à niveau le système d'exploitation du nœud de gestion pour d'autres raisons, telles que la résolution des problèmes de sécurité.
+
+
+NOTE: Pour plus d'informations sur la mise à niveau de nœuds de gestion 12.2 ou version antérieure, consultez le https://docs.netapp.com/us-en/hci19/docs/task_hcc_upgrade_management_node.html["Documentation sur la mise à niveau des nœuds de gestion NetApp HCI 1.9"^].
+
+Choisissez l'une des options suivantes :
+
+*  a management node to version 12.5 or later from version 12.3.x or later
+*  authentication using the management node REST API
++
+Choisissez cette option si vous avez mis à jour *séquentiellement* (1) votre version de services de gestion et (2) votre version de stockage Element et que vous souhaitez *conserver* votre noeud de gestion existant :
+
+
+
+
+NOTE: Si vous ne mettez pas à jour les services de gestion suivis par le stockage Element, vous ne pouvez pas reconfigurer la reauthentification à l'aide de cette procédure. Suivez plutôt la procédure de mise à niveau appropriée.
+
+
+
+== Mettez à niveau un nœud de gestion vers la version 12.5 ou ultérieure à partir de la version 12.3.x ou ultérieure
+
+Vous pouvez effectuer une mise à niveau sans déplacement du nœud de gestion depuis la version 12.3.x ou ultérieure vers la version 12.5 ou ultérieure, sans avoir à provisionner une nouvelle machine virtuelle de nœud de gestion.
+
+
+NOTE: Le nœud de gestion Element 12.5 ou version ultérieure est une mise à niveau facultative. Elle n'est pas requise pour les déploiements existants.
+
+.Ce dont vous avez besoin, 8217;ll
+* La mémoire RAM de la machine virtuelle du nœud de gestion est de 24 Go.
+* Le nœud de gestion que vous souhaitez mettre à niveau est la version 12.0 et utilise la mise en réseau IPv4. La version 12.5 ou ultérieure du nœud de gestion ne prend pas en charge IPv6.
++
+
+TIP: Pour vérifier la version de votre nœud de gestion, connectez-vous à votre nœud de gestion et consultez le numéro de version d'élément dans la bannière de connexion.
+
+* Vous avez mis à jour votre bundle de services de gestion vers la dernière version à l'aide de NetApp Hybrid Cloud Control. Vous pouvez accéder au contrôle du cloud hybride NetApp à partir de l'adresse IP suivante : `\https://<ManagementNodeIP>`
+* Si vous mettez à jour votre noeud de gestion vers la version 12.5 ou ultérieure, vous avez besoin des services de gestion 2.21.61 ou version ultérieure pour continuer.
+* Vous avez configuré une carte réseau supplémentaire (si nécessaire) en suivant les instructions de la section link:task_mnode_install_add_storage_NIC.html["Configuration d'une carte réseau de stockage supplémentaire"].
++
+
+NOTE: Les volumes persistants peuvent nécessiter une carte réseau supplémentaire si eth0 n'est pas en mesure d'être acheminés vers SVIP. Configurez une nouvelle carte réseau sur le réseau de stockage iSCSI pour permettre la configuration de volumes persistants.
+
+* Les nœuds de stockage exécutent Element 12.3.x ou une version ultérieure.
+
+
+.Étapes
+. Connectez-vous à la machine virtuelle du nœud de gestion via SSH ou l'accès à la console.
+. Téléchargez le https://mysupport.netapp.com/site/products/all/details/element-software/downloads-tab["ISO du nœud de gestion"^] Pour le logiciel Element du site de support NetApp vers la machine virtuelle du nœud de gestion.
++
+
+NOTE: Le nom de l'ISO est similaire à `solidfire-fdva-<Element release>-patchX-XX.X.X.XXXX.iso`
+
+. Vérifiez l'intégrité du téléchargement en exécutant md5sum sur le fichier téléchargé et comparez les résultats à ceux disponibles sur le site de support NetApp pour le logiciel Element, comme dans l'exemple suivant :
++
+`sudo md5sum -b <path to iso>/solidfire-fdva-<Element release>-patchX-XX.X.X.XXXX.iso`
+
+. Montez l'image ISO du nœud de gestion et copiez le contenu dans le système de fichiers à l'aide des commandes suivantes :
++
+[listing]
+----
+sudo mkdir -p /upgrade
+----
++
+[listing]
+----
+sudo mount <solidfire-fdva-<Element release>-patchX-XX.X.X.XXXX.iso> /mnt
+----
++
+[listing]
+----
+sudo cp -r /mnt/* /upgrade
+----
+. Accédez au répertoire de base et démontez le fichier ISO de `/mnt`:
++
+[listing]
+----
+sudo umount /mnt
+----
+. Supprimez l'ISO pour économiser de l'espace sur le nœud de gestion :
++
+[listing]
+----
+sudo rm <path to iso>/solidfire-fdva-<Element release>-patchX-XX.X.X.XXXX.iso
+----
+. Sur le nœud de gestion que vous mettez à niveau, exécutez la commande suivante pour mettre à niveau la version du système d'exploitation du nœud de gestion. Le script conserve tous les fichiers de configuration nécessaires après la mise à niveau, tels que les paramètres Active IQ Collector et proxy.
++
+[listing]
+----
+sudo /sf/rtfi/bin/sfrtfi_inplace file:///upgrade/casper/filesystem.squashfs sf_upgrade=1
+----
++
+Le nœud de gestion redémarre avec un nouveau système d'exploitation une fois le processus de mise à niveau terminé.
+
++
+
+NOTE: Après avoir exécuté la commande sudo décrite dans cette étape, la session SSH est arrêtée. Un accès à la console est nécessaire pour assurer une surveillance continue. Si aucun accès à la console n'est disponible lors de la mise à niveau, réessayez la connexion SSH et vérifiez la connectivité au bout de 15 à 30 minutes. Une fois connecté, vous pouvez confirmer la nouvelle version du système d'exploitation dans la bannière SSH qui indique que la mise à niveau a abouti.
+
+. Sur le nœud de gestion, exécutez la `redeploy-mnode` script pour conserver les paramètres de configuration précédents des services de gestion :
++
+
+NOTE: Le script conserve la configuration précédente des services de gestion, y compris la configuration du service Active IQ Collector, des contrôleurs (vCenters) ou du proxy, en fonction de vos paramètres.
+
++
+[listing]
+----
+sudo /sf/packages/mnode/redeploy-mnode -mu <mnode user>
+----
+
+
+
+IMPORTANT: Si vous aviez précédemment désactivé la fonctionnalité SSH sur le nœud de gestion, vous devez link:task_mnode_ssh_management.html["Désactivez de nouveau SSH"] sur le nœud de gestion restauré. Fonctionnalité SSH disponible link:task_mnode_enable_remote_support_connections.html["Accès à la session de tunnel de support à distance (RST) de NetApp"] est activé par défaut sur le nœud de gestion.
+
+
+
+== Reconfigurez l'authentification à l'aide de l'API REST de nœud de gestion
+
+Vous pouvez conserver votre nœud de gestion existant si vous disposez de services de gestion mis à niveau séquentiellement (1) votre système de stockage Element. Si vous avez suivi un ordre de mise à niveau différent, reportez-vous aux procédures de mise à niveau des nœuds de gestion sur place.
+
+.Avant de commencer
+* Vous avez mis à jour vos services de gestion sur 2.20.69 ou une version ultérieure.
+* Votre cluster de stockage exécute Element 12.3 ou une version ultérieure.
+* Vous avez mis à jour vos services de gestion de façon séquentielle, puis mis à niveau votre stockage Element. Vous ne pouvez pas reconfigurer l'authentification à l'aide de cette procédure à moins que vous ayez terminé les mises à niveau dans l'ordre décrit.
+
+
+.Étapes
+. Ouvrez l'interface de l'API REST du nœud de gestion sur le nœud de gestion :
++
+[listing]
+----
+https://<ManagementNodeIP>/mnode
+----
+. Sélectionnez *Authorise* et procédez comme suit :
++
+.. Saisissez le nom d'utilisateur et le mot de passe du cluster.
+.. Saisissez l'ID client en tant que `mnode-client` si la valeur n'est pas déjà renseignée.
+.. Sélectionnez *Autoriser* pour démarrer une session.
+
+
+. Dans l'interface utilisateur de l'API REST, sélectionnez *POST /services/reconfigure-auth*.
+. Sélectionnez *essayez-le*.
+. Pour le paramètre *load_images*, sélectionnez `true`.
+. Sélectionnez *Exécuter*.
++
+Le corps de réponse indique que la reconfiguration a réussi.
+
+
+
+[discrete]
+== Trouvez plus d'informations
+
+* https://docs.netapp.com/us-en/vcp/index.html["Plug-in NetApp Element pour vCenter Server"^]
+* https://www.netapp.com/hybrid-cloud/hci-documentation/["Page Ressources NetApp HCI"^]
+

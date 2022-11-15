@@ -1,0 +1,27 @@
+---
+sidebar: sidebar 
+permalink: docs/hci_prereqs_deployment_configuration_restriction.html 
+summary: En savoir plus sur les restrictions de configuration de déploiement. 
+keywords: netapp, hci, deployment, restriction, configuration, nde, compute, node, storage 
+---
+= Restrictions de configuration de déploiement
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+:keywords: netapp, hci, element, Witness Node
+
+
+[role="lead"]
+Certaines configurations sont restreintes dans le moteur de déploiement NetApp, en fonction de la version VMware vSphere, du type de nœud de calcul et du nombre de nœuds de stockage. Les configurations restreintes s'appliquent à VMware vSphere 7.0 avec des nœuds de calcul H610C ou H615C et deux ou trois nœuds de stockage. Si vous souhaitez procéder à une configuration limitée, vous devez sélectionner une autre version de vSphere, telle que vSphere 6.7, ou empêcher le déploiement de Witness Nodes en utilisant au moins quatre nœuds de stockage dans la configuration.
+
+Si vous link:task_nde_select_inventory.html["Sélectionnez une configuration restreinte à partir de la page *Inventory*"] pendant le déploiement, un message d'erreur apparaît avec d'autres options de configuration valides.
+
+[discrete]
+== Trouvez plus d'informations
+
+* https://www.netapp.com/hybrid-cloud/hci-documentation/["Page Ressources NetApp HCI"^]
+* https://docs.netapp.com/us-en/vcp/index.html["Plug-in NetApp Element pour vCenter Server"^]
+

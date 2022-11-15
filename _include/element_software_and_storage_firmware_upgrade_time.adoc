@@ -1,0 +1,26 @@
+= 
+:allow-uri-read: 
+
+
+* *Temps de mise à niveau* : vous avez prévu suffisamment de temps pour effectuer votre mise à niveau. Lorsque vous effectuez une mise à niveau vers Element 12.5 ou une version ultérieure, le processus de mise à niveau varie en fonction de la version actuelle du logiciel Element et des mises à jour du firmware.
++
+[cols="20,20,20,20,20"]
+|===
+| Nœud de stockage | Version actuelle du logiciel Element | Temps d'installation approximatif du logiciel et du micrologiciel par nœud^1^ | Temps approximatif de synchronisation des données par nœud^2^ | Durée totale approximative des mises à niveau par nœud 
+
+
+| Tous les nœuds SolidFire et NetApp H-Series avec les micrologiciels à jour | 12.x | 15 minutes | 10 à 15 minutes | 20 à 30 minutes 
+
+
+| H610S et H410S | 12.x et 11.8 | 60 minutes | 30 à 60 minutes | 90 à 120 minutes 
+
+
+| H610S | 11.7 et versions antérieures | 90 minutes | 40 à 70 minutes | 130 à 160 minutes vous devez aussi https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/H_Series/NetApp_H610S_storage_node_power_off_and_on_procedure["procéder à un arrêt complet du nœud et à la déconnexion de l'alimentation"^] Pour chaque nœud H610S 
+|===
++
+^1^pour une matrice complète de firmware et de pilotes pour votre matériel, reportez-vous à la section link:firmware_driver_versions.html["Versions de firmware et de pilote ESXi prises en charge pour les versions de NetApp HCI et de firmware pour les nœuds de stockage NetApp HCI"].
+
++
+^2^si vous combinez un cluster avec une charge d'opérations d'E/S par seconde en écriture élevée et une durée de mise à jour du micrologiciel plus longue, le temps de synchronisation des données augmente.
+
+

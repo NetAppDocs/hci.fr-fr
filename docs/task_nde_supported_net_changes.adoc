@@ -1,0 +1,155 @@
+---
+sidebar: sidebar 
+permalink: docs/task_nde_supported_net_changes.html 
+summary: Découvrez les tâches post-déploiement que vous devez effectuer après le déploiement de NetApp HCI. 
+keywords: netapp, hci, deployment, review, deploy 
+---
+= Modifications de mise en réseau prises en charge
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Une fois que vous avez déployé NetApp HCI, vous pouvez modifier la configuration réseau par défaut de manière limitée. Cependant, vous devez répondre à certaines exigences pour un fonctionnement optimal et une détection correcte du réseau. Si vous ne remplissez pas ces conditions, vous risquez d'entraîner un comportement inattendu et d'empêcher l'extension des ressources de calcul et de stockage.
+
+Après le déploiement de votre système, vous pouvez apporter les modifications suivantes à la configuration réseau par défaut dans VMware vSphere selon vos besoins réseau :
+
+* Modifier les noms de vSwitch
+* Modifier les noms des groupes de ports
+* Ajouter et supprimer des groupes de ports supplémentaires
+* Modifiez l'ordre de basculement de l'interface vmnic pour tout groupe de ports supplémentaire que vous avez ajouté
+
+
+Pour l'évolutivité de H300E, H500E, H700E, H410C, H410C, Et les nœuds de calcul H615C, NetApp HCI attend que le cluster de calcul existant soit présent sur le nœud afin de répondre aux exigences suivantes :
+
+* Au moins quatre interfaces vmk
+* Une interface vmware vmk de gestion
+* Une interface vmk vmotion
+* Deux vmks sur le même sous-réseau avec des liaisons iSCSI sur l'initiateur iSCSI logiciel
+
+
+[NOTE]
+====
+Depuis la version NetApp HCI 1.10, lorsque vous faites évoluer le cluster, NetApp HCI ne devrait pas respecter les configurations de nœud par défaut.
+
+Après avoir modifié les paramètres par défaut dans VMware vSphere pour un ou plusieurs nœuds du cluster de calcul existant, les paramètres du nouveau nœud s'alignent sur les paramètres de la majorité des nœuds du cluster.
+
+====
+
+
+== Configurations par défaut du moteur de déploiement NetApp
+
+Le moteur de déploiement NetApp configure les configurations par défaut des hôtes de calcul en fonction de la configuration du système et des câbles.
+
+
+
+=== Nœuds de calcul H300E, H500E, H700E et H410C
+
+Voici une configuration à six interfaces pour les nœuds H300E, H500E, H700E et H410C avec VMware vSphere Distributed Switching (VDS). Cette configuration n'est prise en charge que lorsqu'elle est utilisée avec des commutateurs distribués VMware vSphere et nécessite une licence VMware vSphere Enterprise plus.
+
+|===
+| Fonction réseau | vmkernel | vmnic (interface physique) 
+
+
+| Gestion | vmk0 | Vmnic2 (Port A), vmnic3 (Port B) 
+
+
+| ISCSI-A | vmk1 | Vmnic5 (port E) 
+
+
+| ISCSI-B | vmk2 | Vmnic1 (port D) 
+
+
+| VMotion | vmk3 | Vmnic4 (port C), vmnic0 (port F) 
+|===
+Voici une configuration à six interfaces avec VMware vSphere Standard Switching (VSS). Cette configuration utilise les switchs standard VMware vSphere (VSS).
+
+|===
+| Fonction réseau | vmkernel | vmnic (interface physique) 
+
+
+| Gestion | vmk0 | Vmnic2 (Port A), vmnic3 (Port B) 
+
+
+| ISCSI-A | vmk2 | Vmnic1 (port E) 
+
+
+| ISCSI-B | vmk3 | Vmnic5 (port D) 
+
+
+| VMotion | vmk1 | Vmnic4 (port C), vmnic0 (port F) 
+|===
+Vous trouverez ci-dessous une configuration à deux interfaces. Cette configuration n'est prise en charge que lorsqu'elle est utilisée avec VMware vSphere Distributed switches (VDS) et nécessite une licence VMware vSphere Enterprise plus.
+
+|===
+| Fonction réseau | vmkernel | vmnic (interface physique) 
+
+
+| Gestion | vmk0 | Vmnic1 (port D), vmnic5 (port E) 
+
+
+| ISCSI-A | vmk1 | Vmnic1 (port E) 
+
+
+| ISCSI-B | vmk2 | Vmnic5 (port D) 
+
+
+| VMotion | vmk3 | Vmnic1 (port C), vmnic5 (port F) 
+|===
+
+
+=== Nœuds de calcul H610C
+
+Cette configuration pour les nœuds H610C n'est prise en charge qu'en cas d'utilisation avec des switchs distribués VMware vSphere (VDS) et nécessite une licence VMware vSphere Enterprise plus.
+
+
+NOTE: Les ports A et B ne sont pas utilisés sur ce dernier.
+
+|===
+| Fonction réseau | vmkernel | vmnic (interface physique) 
+
+
+| Gestion | vmk0 | Vmnic2 (port C), vmnic3 (port D) 
+
+
+| ISCSI-A | vmk1 | Vmnic3 (port D) 
+
+
+| ISCSI-B | vmk2 | Vmnic2 (port C) 
+
+
+| VMotion | vmk3 | Vmnic2 (port C), vmnic3 (port D) 
+|===
+
+
+=== Nœuds de calcul H615C
+
+Cette configuration pour les nœuds H615C est uniquement prise en charge lorsqu'elle est utilisée avec des switchs distribués VMware vSphere (VDS) et nécessite une licence VMware vSphere Enterprise plus.
+
+|===
+| Fonction réseau | vmkernel | vmnic (interface physique) 
+
+
+| Gestion | vmk0 | Vmnic0 (Port A), vmnic1 (Port B) 
+
+
+| ISCSI-A | vmk1 | Vmnic0 (port B) 
+
+
+| ISCSI-B | vmk2 | Vmnic1 (port A) 
+
+
+| VMotion | vmk3 | Vmnic0 (Port A), vmnic1 (Port B) 
+|===
+
+
+== Trouvez plus d'informations
+
+* https://docs.netapp.com/us-en/vcp/index.html["Plug-in NetApp Element pour vCenter Server"^]
+* https://www.netapp.com/us/documentation/hci.aspx["Page Ressources NetApp HCI"^]
+* https://docs.netapp.com/us-en/element-software/index.html["Documentation SolidFire et Element"^]
+
