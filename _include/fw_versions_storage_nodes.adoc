@@ -1,20 +1,7 @@
----
-sidebar: sidebar 
-permalink: docs/fw_storage_nodes.html 
-keywords: documentation, earlier, previous, versions 
-summary: Versions de firmware et de pilotes prises en charge pour les nœuds de stockage. 
----
-= Nœuds de stockage
-:hardbreaks:
+= H610S
 :allow-uri-read: 
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ../media/
-:keywords: hci, earlier, documentation, versions
 
 
-[role="lead"]
 Les versions de firmware prises en charge pour les nœuds de stockage H-Series et SolidFire.
 
 * 

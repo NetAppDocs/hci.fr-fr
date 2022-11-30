@@ -1066,9 +1066,7 @@
   <block id="10a16317486e698f70640e8342028ef1" category="list-text"><block ref="d02062eff89a2ae583064c32a7f5ba19" category="inline-xref-macro-rx"></block></block>
   <block id="bc9f2c24569f285e17356558cd135316" category="inline-xref">SF38410, SF19210, SF9605 ET SF4805</block>
   <block id="dd351a18764128aac11df1a1c727372c" category="list-text"><block ref="7bcb78e4fc7d97f5deaab3647840e2ea" category="inline-xref-macro-rx"></block></block>
-  <block id="ee921cd8571be167745ca46fd5662653" category="paragraph">*Numéro de modèle (partie de la famille):* H610S *numéros de modèle complets:* H610S-1, H610S-1-ne, H610S-2, H610S-2-ne, H610S-4, H610S H610S-4-NE ET H610S-2F</block>
   <block id="42f95ea300f7aca212452f34f3029cfc" category="section-title">Microprogramme de composant géré par un ensemble de micrologiciels de stockage</block>
-  <block id="c60bedadea2f465d7a7aede1952c5824" category="paragraph">Pendant les délais de la version 11.x, le logiciel NetApp Element était le seul moyen de libérer du firmware. À partir d'Element 12.0, le concept de *Storage Firmware Bundle* a été introduit et les mises à jour du micrologiciel ont été désormais possibles par un ensemble de microprogramme de stockage ou de microprogramme de stockage fourni indépendamment dans une version d'élément 12.x.</block>
   <block id="7f725124635cae9d920f527b52c91e1f" category="admonition">Un tiret (*-*) dans le tableau suivant indique que le composant matériel particulier n'a PAS été pris en charge dans ce véhicule de libération.</block>
   <block id="811756c7591f205ccf18828f4341af4a" category="cell">Relâchez le véhicule</block>
   <block id="6a330702a04f4b3a688f8fbfc0c9006b" category="cell">Date de publication</block>
@@ -1230,7 +1228,6 @@
   <block id="47ce9fae54593a6a3da1acdf1277ec87" category="cell">N2010121</block>
   <block id="b4b6eed26c1b7fb010effa45dbd8e250" category="cell">Dispositif d'amorçage MTFDDAV240TCB1AR</block>
   <block id="3d5f5610a92e78d21998fe95e35ae2ef" category="cell">DOMU037</block>
-  <block id="8c3879f362310e6f570e2d7df90ed4c3" category="paragraph">*Numéros de modèle complets :* H410S-0, H410S-1, H410S-1-ne et H410S-2</block>
   <block id="220071ab44b426f80ef21f1c552c363c" category="cell">NIC</block>
   <block id="b7a94f3bf805dd30bc00a3663f3f2464" category="cell">MÉMOIRE CACHE NVDIMM RMS200 (RMS200)</block>
   <block id="5299c51e79a24211e817dccc91a4e700" category="cell">MÉMOIRE CACHE NVDIMM RMS200 (RMS300)</block>
@@ -6438,4 +6435,9 @@
   <block id="b8b146fd1e1ecdf074536a02bfe40871" category="list-text">(Pour les serveurs internes/sites distants) selon la version du plug-in Element pour vCenter, une URL personnalisée pour le fichier JSON ou le plug-in ZIP :</block>
   <block id="1993643c12bb4ee547f04d8d85f8c4bf" category="list-text">Depuis le plug-in Element pour vCenter Server 5.0, le point d'extension du plug-in distant NetApp Element apparaît :</block>
   <block id="1c63b3cd9a6d3bdf8b9b31aca68672d7" category="list-text">Pour le plug-in Element pour vCenter Server 4.10 ou version antérieure, les points d'extension NetApp Element Configuration and Management apparaissent :</block>
+  <block id="ed49450e49f19333986b5262b5e1a4d4" category="paragraph">Versions de firmware et de pilotes ESXi prises en charge pour les nœuds de calcul NetApp HCI.</block>
+  <block id="0b50a6dd18dd8aee8ba17d59674440d3" category="paragraph">Les versions de firmware prises en charge pour les nœuds de stockage H-Series et SolidFire.</block>
+  <block id="64e18ac9b2149d7132eaef6563caaaf6" category="paragraph">*Numéro de modèle (partie familiale):* H610S *numéros de modèle complets:* H610S-1, H610S-1-ne, H610S-2, H610S-2-ne, H610S-4, H610S-2-ne, H610S-2-ne, H610S H610S-4-NE ET H610S-2F</block>
+  <block id="cbbfc38164561754239654f9b4436dfb" category="paragraph">Pendant les délais de la version 11.x, le logiciel NetApp Element était le seul moyen de libérer du firmware. À partir d'Element 12.0, le concept de *Storage Firmware Bundle* a été introduit et les mises à jour du micrologiciel ont été désormais possibles par un ensemble de microprogramme de stockage ou de microprogramme de stockage fourni indépendamment dans une version d'Element 12.x.</block>
+  <block id="fc7b9c0546e7d4972b0e2c8495d3ed48" category="paragraph">*Numéros de modèle complets :* SF38410, SF19210, SF9605 et SF4805</block>
 </blocks>
