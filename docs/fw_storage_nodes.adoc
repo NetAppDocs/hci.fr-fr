@@ -17,9 +17,9 @@ summary: Versions de firmware et de pilotes prises en charge pour les nœuds de 
 [role="lead"]
 Les versions de firmware prises en charge pour les nœuds de stockage H-Series et SolidFire.
 
-* 
-* 
-* ,SF38410, SF19210, SF9605 ET SF4805
+* <<H610S>>
+* <<H410S>>
+* <<sf_nodes,SF38410, SF19210, SF9605 ET SF4805>>
 
 
 
@@ -238,7 +238,7 @@ Les micrologiciels suivants ne sont pas gérés par un pack de microprogramme de
 |===
 
 
-== SF38410, SF19210, SF9605 ET SF4805
+== [[sf_nodes]]SF38410, SF19210, SF9605 et SF4805
 
 *Numéros de modèle complets :* SF38410, SF19210, SF9605 et SF4805
 

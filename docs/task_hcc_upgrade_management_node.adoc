@@ -16,10 +16,11 @@ La mise à niveau du système d'exploitation du nœud de gestion n'est plus néc
 
 NOTE: Pour plus d'informations sur la mise à niveau de nœuds de gestion 12.2 ou version antérieure, consultez le https://docs.netapp.com/us-en/hci19/docs/task_hcc_upgrade_management_node.html["Documentation sur la mise à niveau des nœuds de gestion NetApp HCI 1.9"^].
 
+.Options de mise à niveau
 Choisissez l'une des options suivantes :
 
-*  a management node to version 12.5 or later from version 12.3.x or later
-*  authentication using the management node REST API
+* <<Mettez à niveau un nœud de gestion vers la version 12.5 ou ultérieure à partir de la version 12.3.x ou ultérieure>>
+* <<Reconfigurez l'authentification à l'aide de l'API REST de nœud de gestion>>
 +
 Choisissez cette option si vous avez mis à jour *séquentiellement* (1) votre version de services de gestion et (2) votre version de stockage Element et que vous souhaitez *conserver* votre noeud de gestion existant :
 
@@ -37,7 +38,7 @@ Vous pouvez effectuer une mise à niveau sans déplacement du nœud de gestion d
 
 NOTE: Le nœud de gestion Element 12.5 ou version ultérieure est une mise à niveau facultative. Elle n'est pas requise pour les déploiements existants.
 
-.Ce dont vous avez besoin, 8217;ll
+.Ce dont vous avez besoin
 * La mémoire RAM de la machine virtuelle du nœud de gestion est de 24 Go.
 * Le nœud de gestion que vous souhaitez mettre à niveau est la version 12.0 et utilise la mise en réseau IPv4. La version 12.5 ou ultérieure du nœud de gestion ne prend pas en charge IPv6.
 +

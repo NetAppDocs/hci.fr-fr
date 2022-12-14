@@ -21,8 +21,8 @@ NetApp met régulièrement à jour NetApp HCI afin de vous proposer de nouvelles
 
 NOTE: La dernière version du logiciel Element 12.7 comprend des mises à jour des composants de sécurité et de système, des améliorations opérationnelles et des problèmes résolus. https://docs.netapp.com/us-en/element-software/concepts/concept_rn_whats_new_element.html["Découvrez les nouveautés d'Element 12.7"^].
 
-* Le  HCI 1.10 Cette section décrit les nouvelles fonctionnalités et mises à jour de NetApp HCI version 1.10.
-* Le  software 12.5 Cette section décrit les nouvelles fonctionnalités et les mises à jour d'Element 12.5.
+* Le <<NetApp HCI 1.10>> Cette section décrit les nouvelles fonctionnalités et mises à jour de NetApp HCI version 1.10.
+* Le <<Logiciel Element 12.5>> Cette section décrit les nouvelles fonctionnalités et les mises à jour d'Element 12.5.
 
 
 

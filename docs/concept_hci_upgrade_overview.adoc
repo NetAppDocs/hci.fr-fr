@@ -16,11 +16,11 @@ Ces composants incluent les services de gestion, NetApp Hybrid Cloud Control, lo
 
 NOTE: Depuis Element 12.5, NetApp HealthTools n'est plus pris en charge pour les mises à niveau du logiciel Element. Si vous exécutez Element 11.0 ou 11.1, vous devez d'abord link:https://docs.netapp.com/us-en/hci19/docs/task_hcc_upgrade_element_software.html#upgrade-element-software-at-connected-sites-using-healthtools["Effectuez la mise à niveau vers Element 12.3 à l'aide de HealthTools"^] Puis mettez à niveau vers Element 12.5 ou version ultérieure avec NetApp Hybrid Cloud Control.
 
-Le ,séquence de mise à niveau du système Le contenu décrit les tâches nécessaires à la mise à niveau d'un système NetApp HCI. Idéalement, vous devez effectuer ces procédures dans le cadre d'une séquence de mise à niveau plus importante et non isolément. Si une mise à niveau ou une mise à jour basée sur les composants est nécessaire, reportez-vous aux conditions préalables requises pour vous assurer que des complexités supplémentaires sont traitées.
+Le <<sys_upgrade_seq,séquence de mise à niveau du système>> Le contenu décrit les tâches nécessaires à la mise à niveau d'un système NetApp HCI. Idéalement, vous devez effectuer ces procédures dans le cadre d'une séquence de mise à niveau plus importante et non isolément. Si une mise à niveau ou une mise à jour basée sur les composants est nécessaire, reportez-vous aux conditions préalables requises pour vous assurer que des complexités supplémentaires sont traitées.
 
 Le xref:task_hci_upgrade_all_vsphere.adoc[Séquence de mise à niveau de vSphere] L'ajout du contenu du plug-in Element pour vCenter Server décrit les étapes supplémentaires requises pour la préinstallation et la post-mise à niveau pour vCenter Server.
 
-.Ce dont vous avez besoin, 8217;ll
+.Ce dont vous avez besoin
 * Vous exécutez le nœud de gestion 11.3 ou version ultérieure. Les dernières versions du nœud de gestion disposent d'une architecture modulaire qui fournit des services individuels.
 +
 
@@ -36,7 +36,7 @@ Les mises à niveau utilisant NetApp Hybrid Cloud Control ne sont pas disponible
 
 
 
-== Séquence de mise à niveau du système
+== [[sys_upgrade_seq]]séquence de mise à niveau du système
 
 Vous pouvez utiliser la séquence suivante pour mettre à niveau votre système NetApp HCI.
 

@@ -17,10 +17,10 @@ summary: Versions de micrologiciel et de pilote prises en charge pour les nœuds
 [role="lead"]
 Versions de firmware et de pilotes ESXi prises en charge pour les nœuds de calcul NetApp HCI.
 
-* 
-* 
-* 
-* /H500E/H700E
+* <<H615C>>
+* <<H610C>>
+* <<H410C>>
+* <<H300E/H500E/H700E>>
 
 
 

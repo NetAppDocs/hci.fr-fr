@@ -11,7 +11,7 @@ keywords: netapp, storage prechecks, element upgrade, sfupgradecheck
 [role="lead"]
 Vous devez exécuter des vérifications de l'état avant de mettre à niveau le stockage Element pour garantir que tous les nœuds de stockage du cluster sont prêts pour la prochaine mise à niveau du stockage Element.
 
-.Ce dont vous avez besoin, 8217;ll
+.Ce dont vous avez besoin
 * *Services de gestion*: Vous avez mis à jour le dernier bundle de services de gestion (2.10.27 ou version ultérieure).
 +
 
@@ -38,15 +38,16 @@ NOTE: Lorsque vous acceptez le CLUF, il est enregistré pour toutes les mises à
 
 
 
+.Options de vérification de l'état
 Vous pouvez exécuter des vérifications de l'état avec l'interface NetApp de contrôle du cloud hybride ou l'API NetApp de contrôle du cloud hybride :
 
-*  NetApp Hybrid Cloud Control to run Element storage health checks prior to upgrading storage (Méthode préférée)
-*  API to run Element storage health checks prior to upgrading storage
+* <<Avec NetApp Hybrid Cloud Control, exécutez des vérifications de l'état du stockage Element avant la mise à niveau du stockage>> (Méthode préférée)
+* <<Exécutez des vérifications de l'état du stockage Element avant la mise à niveau du stockage>>
 
 
 Vous pouvez également en savoir plus sur les vérifications de l'état du stockage exécutées par ce service :
 
-*  health checks made by the service
+* <<Vérifications de l'état du stockage effectuées par le service>>
 
 
 
