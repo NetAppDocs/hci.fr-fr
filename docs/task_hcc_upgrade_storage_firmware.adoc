@@ -33,7 +33,7 @@ IMPORTANT: Pour mettre à jour le micrologiciel iDRAC/BIOS, contactez le support
 
 
 
-NOTE: Pour obtenir une matrice complète de micrologiciel et de micrologiciel de pilote pour votre matériel, reportez-vous à la section link:firmware_driver_versions.html["Versions de firmware et de pilote ESXi prises en charge pour les versions de NetApp HCI et de firmware pour les nœuds de stockage NetApp HCI"].
+NOTE: Pour obtenir une matrice complète de micrologiciel et de micrologiciel de pilote pour votre matériel, reportez-vous à la section link:firmware_driver_versions.html["Versions de firmware prises en charge pour les nœuds de stockage NetApp HCI"].
 
 [[storage-firmware-upgrade]]
 * *Temps de mise à niveau* : vous avez prévu suffisamment de temps pour effectuer votre mise à niveau. Lorsque vous effectuez une mise à niveau vers Element 12.5 ou une version ultérieure, le processus de mise à niveau varie en fonction de la version actuelle du logiciel Element et des mises à jour du firmware.

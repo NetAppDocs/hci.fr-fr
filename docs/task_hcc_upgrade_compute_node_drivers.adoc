@@ -12,7 +12,7 @@ keywords: netapp, hci, on premise, cluster, element, compute node
 Pour tout nœud de calcul H-Series, vous pouvez mettre à jour les pilotes utilisés sur les nœuds à l'aide de VMware Update Manager.
 
 .Ce dont vous avez besoin
-Reportez-vous à la matrice du micrologiciel et du pilote de votre matériel à l'adresse https://docs.netapp.com/us-en/hci/docs/firmware_driver_versions.html["Versions de micrologiciel et de pilote ESXi prises en charge"^].
+Reportez-vous à la matrice du micrologiciel et du pilote de votre matériel à l'adresse link:firmware_driver_versions.html["Versions de micrologiciel et de pilote ESXi prises en charge"].
 
 .Description de la tâche
 Effectuez une seule opération de mise à jour à la fois.

@@ -119,82 +119,23 @@
   <block id="24d234fce5b4e0608a37069ac65a0027" category="list-text"><block ref="24d234fce5b4e0608a37069ac65a0027" category="inline-link-rx"></block></block>
   <block id="6d0eb695a99109617b806676e9610075" category="inline-link">Documentation cloud NetApp</block>
   <block id="3b4b536e5eddf372cafd89d843b3e90f" category="list-text"><block ref="3b4b536e5eddf372cafd89d843b3e90f" category="inline-link-rx"></block></block>
-  <block id="9e5edd6ddd42c15545ab7c5457536fc9" category="summary">Vous pouvez utiliser le contrôle de cloud hybride NetApp pour mettre à niveau les composants de votre déploiement Rancher sur des systèmes NetApp HCI que vous avez installés précédemment avec HCC.</block>
-  <block id="83aa521c83b4751d53e539f91cc56b3f" category="doc">Rancher mise à niveau sur NetApp HCI</block>
-  <block id="c2935e354cbf0893e983038cfbaf6e9f" category="paragraph">Pour mettre à niveau le logiciel Rancher, vous pouvez utiliser l'interface utilisateur et l'API REST de NetApp Hybrid Cloud Control (HCC). HCC offre un processus simple de mise à niveau des composants de votre déploiement Rancher, y compris le serveur Rancher, le moteur Kubernetes Rancher (RKE) et l'OS de nœuds du cluster de gestion (pour les mises à jour de sécurité). Vous pouvez également utiliser l'API pour automatiser les mises à niveau.</block>
-  <block id="0b2d8b6ff87d29566fb56d20870a7943" category="paragraph">Les mises à niveau sont disponibles par composant au lieu d'un package cumulatif. En tant que telles, certaines mises à niveau de composants telles que le système d'exploitation Ubuntu sont disponibles dans une cadence plus rapide. Les mises à niveau n'affectent que votre instance de serveur Rancher et le cluster de gestion sur lequel Rancher Server est déployé. Les mises à niveau vers le système d'exploitation Ubuntu du nœud de cluster de gestion ne concernent que les correctifs de sécurité critiques et ne mettent pas à niveau le système d'exploitation. Les clusters d'utilisateurs ne peuvent pas être mis à niveau à partir de NetApp Hybrid Cloud Control.</block>
   <block id="af97413bfe0fcaebbe8c8bbf7a552c1e" category="list-text">*Privilèges d'administrateur* : vous disposez des autorisations d'administrateur du cluster de stockage pour effectuer la mise à niveau.</block>
   <block id="7272db62c1a436743292f47d71c5e96e" category="list-text">*Services de gestion*: Vous avez mis à jour votre bundle de services de gestion à la dernière version.</block>
-  <block id="fa6526605ff956fa699802ea347526ff" category="admonition">Vous devez effectuer une mise à niveau vers les derniers packs de services de gestion 2.17 ou version ultérieure pour bénéficier des fonctionnalités Rancher.</block>
   <block id="7288066bab95a3c45011203ce6806721" category="inline-link-macro">Ports réseau</block>
-  <block id="ab0a7321d296fe5e16313845b6e86f0d" category="list-text">*Ports système* : si vous utilisez le contrôle du cloud hybride NetApp pour les mises à niveau, vous avez vérifié que les ports nécessaires sont ouverts. Voir <block ref="2b8d9142e89de477f0f719fb06286d84" category="inline-link-macro-rx"></block> pour en savoir plus.</block>
-  <block id="edb046160eb6ed03c39de5860e72e509" category="list-text">*Contrat de licence utilisateur final (CLUF)* : à partir des services de gestion 2.20.69, vous devez accepter et enregistrer le CLUF avant d'utiliser l'interface utilisateur ou l'API de contrôle de cloud hybride NetApp pour mettre à niveau un déploiement Rancher :</block>
   <block id="c3dfd82361c52d5d3d1551c20c83f1a6" category="list-text">Ouvrez l'adresse IP du nœud de gestion dans un navigateur Web :</block>
   <block id="d64a6336a39c9f27c33956f187d79c87" category="list-text">Connectez-vous au contrôle de cloud hybride NetApp en fournissant les identifiants de l'administrateur du cluster de stockage.</block>
   <block id="1f760966967601f6feb32cc62bb11ca3" category="list-text">Sélectionnez *Upgrade* en haut à droite de l'interface.</block>
   <block id="be441559765f3e52d513b155b4b59981" category="list-text">Le CLUF s'affiche. Faites défiler vers le bas, sélectionnez *J'accepte les mises à jour actuelles et futures*, puis sélectionnez *Enregistrer*.</block>
   <block id="06194f109ff7ed4270c1e5f89cbe9e74" category="admonition">Lorsque vous acceptez le CLUF, il est enregistré pour toutes les mises à jour futures et la fonction de téléchargement automatique est activée. Vous recevrez des mises à jour sur les mises à jour et les mises à niveau logicielles NetApp que vous pouvez installer à votre discrétion et à votre convenance. Vous pouvez désactiver la fonctionnalité de téléchargement automatique en désactivant la connectivité réseau au référentiel logiciel en ligne de NetApp.</block>
-  <block id="69639530f6f543c75958d80c8a23f7bc" category="paragraph">Choisissez l'un des processus de mise à niveau suivants :</block>
-  <block id="9e618518a7acfbe695c481345087d7ab" category="list-text"><block ref="8d85d0eab3300aa3b4c83383333d291f" category="inline-xref-macro-rx"></block></block>
-  <block id="a2e344ad0778d1af4ecc859cc11bf478" category="list-text"><block ref="4bf4c6160c669fd3806156a3dcc1e18c" category="inline-xref-macro-rx"></block></block>
-  <block id="68d763246564d97deb6d9e6834b6a304" category="section-title">Utilisez l'interface utilisateur de contrôle de cloud hybride NetApp pour mettre à niveau un déploiement Rancher</block>
-  <block id="d7dc890bb3442962800013399f5a7e71" category="paragraph">Grâce à l'interface utilisateur de contrôle des clouds hybrides NetApp, vous pouvez mettre à niveau tous ces composants dans votre déploiement Rancher :</block>
-  <block id="cf8e086cb5fc107cc4ad3c42620f20ff" category="list-text">Serveur de rancher</block>
-  <block id="8c95b632875261344eb6365459feffd0" category="list-text">Rancher Kubernetes Engine (RKE)</block>
-  <block id="1d030a18a75d44dea0e4a64258039610" category="list-text">Mises à jour de sécurité du système d'exploitation des nœuds</block>
-  <block id="23e8c7a5cfc59ec2486fd909623ef4a0" category="list-text">Une bonne connexion Internet. Les mises à niveau des sites sombres (mises à niveau sur un site sans connectivité externe) ne sont pas disponibles.</block>
-  <block id="db33fd96528dfb58a15d36d7a038a68d" category="list-text">Sur la page *mises à niveau*, sélectionnez *Rancher*.</block>
-  <block id="24060e857a140319f18d7a6b87a29195" category="list-text">Sélectionnez le menu *actions* pour le logiciel que vous souhaitez mettre à niveau.</block>
-  <block id="18db31c43ff6716da2b8b71c5cb9b083" category="list-text">Sélectionnez *Upgrade* pour les mises à niveau Rancher Server ou RKE ou *Apply Upgrade* pour les mises à jour de sécurité des systèmes d'exploitation de nœud.</block>
-  <block id="8bf44033b60032e8b862cff17cc0b055" category="admonition">Pour le système d'exploitation de nœud, les mises à niveau sans surveillance des correctifs de sécurité sont exécutées quotidiennement, mais le nœud n'est pas redémarré automatiquement. En appliquant des mises à niveau, vous redémarrez chaque nœud pour que les mises à jour de sécurité prennent effet.</block>
-  <block id="24dcb59f57bd4201260a61cb680b1fbc" category="paragraph">Une bannière s'affiche pour indiquer que la mise à niveau du composant a réussi. Un délai de 2 minutes peut s'avérer nécessaire avant que l'interface utilisateur de NetApp Hybrid Cloud Control affiche le numéro de version mis à jour.</block>
-  <block id="cbf8837cacaa8ae9e294164aa0d8f353" category="section-title">Utilisez l'API de contrôle de cloud hybride NetApp pour mettre à niveau un déploiement Rancher</block>
-  <block id="e123baaae5959ab30d46fe11a749ccf9" category="paragraph">Vous pouvez utiliser des API pour mettre à niveau tous ces composants dans votre déploiement Rancher :</block>
-  <block id="1de93b4f08eee1c85ff21a3246d1ecc9" category="list-text">Nœud OS (pour les mises à jour de sécurité)</block>
-  <block id="59d9ac3a8be60692bfd2d83e71185800" category="paragraph">Vous pouvez utiliser un outil d'automatisation de votre choix pour exécuter les API ou l'interface utilisateur de l'API REST disponible sur le nœud de gestion.</block>
   <block id="dae8ace18bdcbcc6ae5aece263e14fe8" category="list-title">Options</block>
-  <block id="b2d342781e5eb6c0d132f4049a269bfc" category="list-text"><block ref="9801627f33638888d6691289d4f41f3f" category="inline-xref-macro-rx"></block></block>
-  <block id="bd0ab26a1942668f349fc50f75fce99c" category="list-text"><block ref="c1e4d313368d9007a7513e78fb8b6598" category="inline-xref-macro-rx"></block></block>
-  <block id="7d1fe0c90ec59fb67d282729cb6d232f" category="list-text"><block ref="26470bc474ffedd4c6facab2cfc04f9b" category="inline-xref-macro-rx"></block></block>
-  <block id="6af62aec1ec1632d48358c364882e6a2" category="section-title">Mettre à niveau Rancher Server</block>
   <block id="5fe3ac619fc22d4b4488d2da3ed95ac1" category="list-title">Commandes d'API</block>
-  <block id="99c3af29fb477a2e2f9f24ab4b6f5ce7" category="list-text">Lancez la demande de mise à niveau de la liste :</block>
   <block id="0c5c43c7900a58a998c872f937ae33ad" category="inline-link-macro">autoriser</block>
   <block id="f5f61ce15f6fc00904ccb602ea18ba4f" category="admonition">Vous pouvez trouver le porteur<block ref="ce6cc7880b6b116afb8141c6b25e4c8c" prefix=" " category="inline-code"></block> Utilisé par la commande API lorsque vous <block ref="13f13ef2cfa191d3bfde7dc1932402de" category="inline-link-macro-rx"></block>. Le porteur<block ref="ce6cc7880b6b116afb8141c6b25e4c8c" prefix=" " category="inline-code"></block> est dans la réponse curl.</block>
-  <block id="c50b72b45b1056c58b4a36a9830d91ef" category="list-text">Obtenir l'état de la tâche à l'aide de l'ID de tâche de la commande précédente et copier le numéro de version le plus récent de la réponse :</block>
-  <block id="9df9a0d8b4631e538f89f68b44b0f85c" category="list-text">Lancez une demande de mise à niveau de serveur Rancher :</block>
-  <block id="1168cf0849098b691306026239f91215" category="list-text">Obtenir le statut de la tâche à l'aide de l'ID de tâche à partir de la réponse de la commande de</block>
   <block id="137ddd8831f8f1375bde44b1492e802c" category="list-title">ÉTAPES DE L'INTERFACE UTILISATEUR DE L'API REST</block>
   <block id="03917624197381e26d93d8783477b3bf" category="list-text">Sélectionnez *Authorise* et procédez comme suit :</block>
   <block id="498dbe1fd0d4770ec7a8825a95fb73f3" category="list-text">Saisissez l'ID client en tant que<block ref="be50435abc5477c50e3dd17b6f96e68f" prefix=" " category="inline-code"></block>.</block>
   <block id="618de31a7af637f5e228aa0b8c0614ba" category="list-text">Sélectionnez *Autoriser* pour démarrer une session.</block>
   <block id="85bb06226f2384b478691f49e53204fc" category="list-text">Fermez la fenêtre d'autorisation.</block>
-  <block id="25776be1d2e5d55b2bc05e71c0e2bdae" category="list-text">Recherchez la dernière mise à niveau :</block>
-  <block id="ea4da863a729624bbe764b4921a8aa6e" category="list-text">À partir de l'interface utilisateur de l'API REST, exécutez *POST /upgrade​/rancher-versions*.</block>
-  <block id="d12bc9f6ce67dcfbca2165a20c71a35f" category="list-text">Dans la réponse, copiez l'ID de tâche.</block>
-  <block id="2430a0b20635a3c3427236afc5345f37" category="list-text">Exécutez *GET /task​/{taskID}* avec l'ID de tâche de l'étape précédente.</block>
-  <block id="047879c0b552f6d629579015262b1389" category="list-text">À partir de la réponse */task​/{taskID}*, copiez le numéro de version le plus récent que vous souhaitez utiliser pour la mise à niveau.</block>
-  <block id="19e68b947dc6a6966a7002c09aa88668" category="list-text">Exécutez la mise à niveau Rancher Server :</block>
-  <block id="cedac1b5cae79fe3e48638fde8699793" category="list-text">À partir de l'interface utilisateur de l'API REST, exécutez *PUT /upgrade​/rancher​/{version}* avec le numéro de version le plus récent de l'étape précédente.</block>
-  <block id="c6d2919620c22e645fdb08582f69da3a" category="paragraph">La mise à niveau a réussi une fois que l'<block ref="d073edf5e16c479df0cbc1e04c7afc47" prefix=" " category="inline-code"></block> indique<block ref="f899139df5e1059396431415e770c6dd" prefix=" " category="inline-code"></block> et<block ref="53e61336bb49ec978968786b07dea50b" prefix=" " category="inline-code"></block> indique le numéro de version mis à niveau.</block>
-  <block id="fe63721c221acd784ba03bc12f98dcbb" category="section-title">Mise à niveau de la télécommande RKE</block>
-  <block id="0ee97c7580aa123a06a324274f8121cc" category="list-text">Lancez la demande de mise à niveau de la télécommande de télédéverrouillage</block>
-  <block id="b257ebbce53793aadfc99ea056bc00c9" category="list-text">À partir de l'interface utilisateur de l'API REST, exécutez *POST /upgrade​/rke-versions*.</block>
-  <block id="3578e664a30ce418bdf5fcb267a8f8a8" category="list-text">Exécutez la mise à jour RKE :</block>
-  <block id="7c89b0066666056920dfb368652cfda0" category="list-text">À partir de l'interface utilisateur de l'API REST, exécutez *PUT /upgrade/rke/{version}* avec le numéro de version le plus récent de l'étape précédente.</block>
-  <block id="8d432d66818cea4922f09d9d8dc5a215" category="list-text">Copiez l'ID de tâche depuis la réponse.</block>
-  <block id="8cbb61ee635762dcdf6e18872b00f0eb" category="section-title">Appliquer les mises à jour de sécurité du système d'exploitation des nœuds</block>
-  <block id="7da02e27305521fd99a9d14cc60bf756" category="list-text">Lancez la demande de vérification des mises à niveau :</block>
-  <block id="90a78730eaf1094e6294b74cba304e1d" category="list-text">Obtenir l'état de la tâche à l'aide de l'ID de tâche de la commande précédente et vérifier qu'un numéro de version plus récent est disponible à partir de la réponse :</block>
-  <block id="8733fba67d247adfd271aaaf467408d3" category="list-text">Appliquer les mises à jour du nœud :</block>
-  <block id="5f941341e5a26f058a04e00db31f862b" category="admonition">Pour le système d'exploitation de nœud, les mises à niveau sans surveillance des correctifs de sécurité sont exécutées quotidiennement, mais le nœud n'est pas redémarré automatiquement. En appliquant des mises à niveau, vous redémarrez chaque nœud de façon séquentielle afin que les mises à jour de sécurité prennent effet.</block>
-  <block id="07c5c3b5dda586207b33d806206b9105" category="list-text">Obtenir le statut de la tâche à l'aide de l'ID de tâche de la mise à niveau<block ref="6103a2c4cea65e25b7714e910bca8aff" prefix=" " category="inline-code"></block> réponse :</block>
-  <block id="bfb2e24160b4b9bb6a508b1670c71d48" category="list-text">Vérifiez si un package de mise à niveau est disponible :</block>
-  <block id="239d5cf64d01401e455025f7658ca8dd" category="list-text">Dans l'interface utilisateur de l'API REST, exécutez *GET /upgrade/checkNodeUpdates*.</block>
-  <block id="cbd8d6aa0cb34f0b6319bbd7405593fa" category="list-text">Dans la réponse */task​/{taskID}*, vérifiez que le numéro de version est plus récent que celui actuellement appliqué à vos noeuds.</block>
-  <block id="0c1b4c35fbb7cb91cdc6c8e80e4069e8" category="list-text">Appliquer les mises à niveau du système d'exploitation des nœuds :</block>
-  <block id="14f06c631f2b46db62265e16689f5de0" category="list-text">À partir de l'interface utilisateur de l'API REST, exécutez *POST /upgrade​/applyNodeUpdates*.</block>
-  <block id="495a77927689f5e0cb0a71d7b73ee6b7" category="list-text">Dans la réponse */task​/{taskID}*, vérifiez que la mise à niveau a été appliquée.</block>
   <block id="92f931e19caf8af4e3a31a82b06ccabd" category="summary">Obtenez des liens vers les notes de version pour les packages de firmware que vous pouvez télécharger et appliquer aux nœuds NetApp HCI.</block>
   <block id="add6cf39bf48bd4bb95153935993051e" category="doc">Notes de version de Compute Firmware Bundle 2.27</block>
   <block id="ef1e8da076ed36db7d489060adff47fb" category="paragraph">Le bundle de firmware de calcul téléchargeable contient les dernières améliorations de fonctionnalités du BIOS et du BMC, des corrections de bugs et la prise en charge matérielle pour tous les nœuds de calcul NetApp HCI pris en charge.</block>
@@ -346,15 +287,7 @@
   <block id="65102c5055fadf434d3ac16f330e2b45" category="list-text"><block ref="65102c5055fadf434d3ac16f330e2b45" category="inline-link-rx"></block></block>
   <block id="664201cfc1ee6ed25a90ecc4a544c8b4" category="inline-link">NetApp HCI 1.8 et versions antérieures</block>
   <block id="f53dca4485e79543df019ec4f0ebb5ea" category="list-text"><block ref="f53dca4485e79543df019ec4f0ebb5ea" category="inline-link-rx"></block></block>
-  <block id="65e6adcff1000b03a078e05d54c700f1" category="summary">Découvrez comment configurer la surveillance après le déploiement de Rancher sur NetApp HCI.</block>
-  <block id="729e3399d869de5540bc06d71a6bcf81" category="doc">Activer la surveillance</block>
-  <block id="aad6cd40798f943aaf25e268a77af03c" category="paragraph">Une fois que vous avez déployé Rancher sur NetApp HCI, vous pouvez activer la surveillance du stockage Active IQ (pour les systèmes de stockage 100 % Flash SolidFire et NetApp HCI) et la surveillance des ressources de calcul NetApp HCI (pour NetApp HCI uniquement) si ce n'est pas déjà le cas pendant l'installation ou la mise à niveau.</block>
   <block id="bdfb39867dffbc06698f3cbba2891fce" category="inline-link-macro">Activation de la surveillance Active IQ et NetApp HCI</block>
-  <block id="6a1963c30f9c0d2c687641bd503fbc60" category="paragraph">Pour obtenir des instructions sur l'activation de la surveillance, reportez-vous à la section <block ref="f0c3d1a05db024d7d19e48b5f5584b1b" category="inline-link-macro-rx"></block>.</block>
-  <block id="9e478628fa694f82e9fea112dfd76711" category="inline-link">Documentation de l'éleveur sur l'architecture</block>
-  <block id="2efdfe14eb05d4ba8b751f047bafaaa5" category="list-text"><block ref="2efdfe14eb05d4ba8b751f047bafaaa5" category="inline-link-rx"></block></block>
-  <block id="64d112be0af3c89e55d039ab4e700a94" category="inline-link">Terminologie Kubernetes pour Rancher</block>
-  <block id="757ee5041dab5c44f2d1327cd0f760ae" category="list-text"><block ref="757ee5041dab5c44f2d1327cd0f760ae" category="inline-link-rx"></block></block>
   <block id="bc218e71c18c2f809dffb10d3bc2a6e8" category="list-text"><block ref="bc218e71c18c2f809dffb10d3bc2a6e8" category="inline-link-rx"></block></block>
   <block id="a6d7ea2b78f633c345b97fb6be7b0fba" category="summary">Découvrez comment valider votre configuration de prédéploiement à l'aide de Active IQ Config Advisor.</block>
   <block id="2147218284b91cf8dba2750bec60cc5a" category="doc">Validez votre environnement avec Active IQ Config Advisor</block>
@@ -778,15 +711,6 @@
   <block id="88b68b205e674e3025849d8b5b19d8d0" category="admonition">Dans un cluster de stockage à deux nœuds, au moins deux nœuds Witness sont déployés pour assurer la redondance en cas de défaillance du nœud témoin. Lorsque le processus d'installation de NetApp HCI installe Witness Nodes, un modèle de machine virtuelle est stocké dans VMware vCenter que vous pouvez utiliser pour redéployer un nœud témoin s'il est accidentellement retiré, perdu ou corrompu. Vous pouvez également utiliser le modèle pour redéployer un nœud témoin si vous devez remplacer un nœud de calcul défaillant qui héberge le nœud Witness. Pour obtenir des instructions, consultez la section *Redeploy Witness Nodes clusters de stockage à deux et trois nœuds* <block ref="29ec30455b40779461eab8434f6212ca" category="inline-link-macro-rx"></block>.</block>
   <block id="1886c33029d6a5f67a53baeb16356d18" category="inline-link">Cluster de stockage à deux nœuds NetApp HCI | TR-4823</block>
   <block id="23d36a99e35a6625ac76fe1f034e722a" category="list-text"><block ref="23d36a99e35a6625ac76fe1f034e722a" category="inline-link-rx"></block></block>
-  <block id="fb0dc3afb0cd76839a33bce88aca90ab" category="summary">Découvrez comment configurer des règles d'affinité pour les machines virtuelles Rancher afin de bénéficier de la résilience des hôtes.</block>
-  <block id="7cbd1eff19cdbaa29c89553dc167314d" category="doc">Améliorez la résilience des machines virtuelles Rancher</block>
-  <block id="1816422ae322aac270c22277d2d73314" category="paragraph">Une fois que vous avez déployé Rancher sur NetApp HCI, votre environnement vSphere contiendra trois nouveaux nœuds en tant que machines virtuelles pour héberger l'environnement Rancher. L'interface utilisateur web Rancher est disponible depuis chacun de ces nœuds. Pour une résilience totale, chacune des trois machines virtuelles et les disques virtuels correspondants doivent résider sur un hôte physique différent après des événements tels que les cycles de mise sous tension et les basculements.</block>
-  <block id="caba5f1180480863ba21ac9b6f9af133" category="paragraph">Pour vous assurer que chaque machine virtuelle et ses ressources restent sur un hôte physique différent, vous pouvez créer des règles anti-affinité VMware vSphere Distributed Resource Scheduler (DRS). Ce modèle n'est pas automatisé dans le cadre du déploiement de Rancher sur NetApp HCI.</block>
-  <block id="f12702d50ce18a2d66f79b938aae7ec0" category="paragraph">Pour obtenir des instructions sur la configuration des règles d'anti-affinité DRS, consultez les ressources de documentation VMware suivantes :</block>
-  <block id="41e08ba66f98045d039e9d5e7201099c" category="inline-link">Créer des règles anti-affinité VM</block>
-  <block id="92818ce684886b2ba72d43c127697474" category="paragraph"><block ref="92818ce684886b2ba72d43c127697474" category="inline-link-rx"></block></block>
-  <block id="83f1331eb7a42b38646006abc2dee529" category="inline-link">Règles d'affinité vSphere HA et DRS</block>
-  <block id="8ef345d1b0a160d3aad5657a5cfe2f28" category="paragraph"><block ref="8ef345d1b0a160d3aad5657a5cfe2f28" category="inline-link-rx"></block></block>
   <block id="e9c44bbfd795a5d63d74c6a77afee70d" category="summary">Les mentions légales donnent accès aux déclarations de copyright, aux marques, aux brevets, etc.</block>
   <block id="30d965eef5ba25c6b9998ae38270b43e" category="doc">Mentions légales</block>
   <block id="6016a2b341113bf496b719905398ecd2" category="section-title">Droits d'auteur</block>
@@ -1377,34 +1301,6 @@
   <block id="41a0a3c2d231a1f0d2d4f2bd4a6d6e32" category="cell">(Facultatif) service QoSSIOC plug-in vCenter.</block>
   <block id="c24f4c5eef7ec01c46e003a9296c8645" category="cell">8444</block>
   <block id="3caf6e628fa02cf87cb239fac5724085" category="cell">Accès au fournisseur vCenter VASA (VVol uniquement)</block>
-  <block id="e493b0087ae0c25c5f3fdb33ebe4b524" category="summary">Découvrez comment installer Trident après l'installation de Rancher sur NetApp HCI. Trident vous permet de créer, de gérer et d'interagir avec les volumes de stockage persistant dans le format Kubernetes standard que vous connaissez bien.</block>
-  <block id="b8b9eab8c1ed7b79387652490f5724ec" category="doc">Installation de Trident</block>
-  <block id="7897a8f898a641b61ec2d7521c14e598" category="paragraph">Découvrez comment installer Trident après l'installation de Rancher sur NetApp HCI. Trident est un orchestrateur de stockage qui s'intègre avec Docker et Kubernetes, ainsi que des plateformes basées sur ces technologies, telles que Red Hat OpenShift, Rancher et IBM Cloud Private. L'objectif de Trident est de rendre le provisionnement, la connexion et la consommation du stockage transparents et fluides pour les applications. Trident est un projet open source entièrement pris en charge et géré par NetApp. Trident vous permet de créer, de gérer et d'interagir avec les volumes de stockage persistant dans le format Kubernetes standard que vous connaissez bien.</block>
-  <block id="40ef3fb23e015d9b4b46a16fa50f10d3" category="inline-link">Documentation Trident</block>
-  <block id="b15ad636ad40907a2ca34ffebb86ae28" category="admonition">Pour plus d'informations sur Trident, consultez le<block ref="9488620c3498c6d0bb53483131890d10" category="inline-link-rx"></block>.</block>
-  <block id="0e2b19d9e14abb795d1ffe432243f25d" category="list-text">Vous avez installé Rancher sur NetApp HCI.</block>
-  <block id="a16e80cd53753228460383e2bf367729" category="list-text">Vous avez déployé vos clusters utilisateur.</block>
-  <block id="e33f4a72a3e17778955364a9a2a89392" category="list-text">Vous avez configuré les réseaux de clusters utilisateur pour Trident. Voir <block ref="20b7eb4c8716c434ebac083926d84626" category="inline-link-macro-rx"></block> pour obtenir des instructions.</block>
-  <block id="7798ea29a535b3406dded336a5ad3aba" category="list-text">Vous avez terminé les étapes de prérequis pour la préparation du nœud de travail pour Trident. Voir la<block ref="0709800eb8cf192160203401eaaf8586" category="inline-link-rx"></block>.</block>
-  <block id="225967e69a2329ba771d5a7a43ea4e07" category="paragraph">Le catalogue d'installation de Trident est installé dans le cadre de l'installation de Rancher avec NetApp Hybrid Cloud Control. Dans cette tâche, vous utilisez le catalogue d'installation pour installer et configurer Trident. Dans le cadre de l'installation Rancher, NetApp fournit un modèle de nœuds. Si vous n'envisagez pas d'utiliser le modèle de nœud fourni par NetApp et que vous souhaitez provisionner sur RHEL ou CentOS, des exigences supplémentaires peuvent être possibles. Si vous remplacez le nœud de travail par RHEL ou CentOS, plusieurs conditions doivent être respectées. Voir la<block ref="0709800eb8cf192160203401eaaf8586" category="inline-link-rx"></block>.</block>
-  <block id="50d3b12130e56c1873ce3b4fbad32bbc" category="list-text">Dans l'interface utilisateur Rancher, sélectionnez un projet pour votre cluster utilisateur.</block>
-  <block id="30d78027baa4ea8d4913ee529be4bfd0" category="inline-link">Documentation de l'éleveur</block>
-  <block id="5054f5b17e3bf02d8eba619579e55f24" category="admonition">Pour plus d'informations sur les projets et les espaces de noms, reportez-vous au<block ref="2a0c99e5a4166290159375f4999d96b8" category="inline-link-rx"></block>.</block>
-  <block id="25c6103728551568c71fecb7269c7e5a" category="list-text">Sélectionnez *applications*, puis *lancer*.</block>
-  <block id="7b4fbe070a4cf05945c7d1d84fc8a370" category="image-alt">Montre la navigation pour lancer le programme d'installation de Trident.</block>
-  <block id="dee3524805f2daab1f94fad50063730c" category="list-text">Sur la page *Catalog*, sélectionnez le programme d'installation Trident.</block>
-  <block id="384dabcfd215329a80ac9f4d922c11ac" category="image-alt">L'installateur Trident sur la page Catalogue dans Rancher.</block>
-  <block id="ec60b1fc169f63d74fb4b22710d4770a" category="admonition">Sur la page qui s'ouvre, vous pouvez sélectionner la flèche *descriptions détaillées* pour en savoir plus sur l'application Trident et aussi pour trouver le lien vers le<block ref="9488620c3498c6d0bb53483131890d10" category="inline-link-rx"></block>.</block>
-  <block id="5c97f5d07cd2639b98490f73ec5bd7ef" category="list-text">Sélectionnez la flèche *Options de configuration* et entrez les informations d'identification et de configuration de stockage.</block>
-  <block id="81009053d337418c3280749fb5d9d5ed" category="image-alt">Le présente les informations de configuration du stockage que vous devez saisir pour Trident.</block>
-  <block id="2dad51bcd20d5b17efbbd1b0192af080" category="admonition">Le locataire de stockage par défaut est NetApp HCI. Vous pouvez modifier cette valeur. Vous pouvez également modifier le nom du back-end. Cependant, ne modifiez pas la valeur du pilote de stockage par défaut, qui est *solidfire-san*.</block>
-  <block id="f11fba0be5b425a887b4b8c7acf9ab56" category="list-text">Sélectionnez *lancer*.</block>
-  <block id="b25162c263ca64453894714379db8460" category="paragraph">Cela installe la charge de travail Trident sur l'espace de noms *trident*.</block>
-  <block id="3dc71b8d2baf43fdef2f5b148fe7c2b9" category="list-text">Sélectionnez *Ressources &gt; charges de travail* et vérifiez que l'espace de noms *trident* inclut les composants suivants :</block>
-  <block id="38d9d4c41f5caa3e7799e0f202c4533f" category="image-alt">La décrit les composants de l'espace de noms Trident.</block>
-  <block id="143bb69db0e7f26088a643e4a6bc8699" category="list-text">(Facultatif) sélectionnez *Storage* pour le cluster d'utilisateurs pour afficher les classes de stockage que vous pouvez utiliser pour vos volumes persistants.</block>
-  <block id="7fcffc52acd1ce39368840a35c19d7a8" category="admonition">Les trois classes de stockage sont *solidfire-Gold*, *solidfire-Silver* et *solidfire-bronze*. Vous pouvez définir l'une de ces classes de stockage par défaut en sélectionnant l'icône sous la colonne *default*.</block>
-  <block id="20b7eb4c8716c434ebac083926d84626" category="list-text"><block ref="20b7eb4c8716c434ebac083926d84626" category="inline-link-macro-rx"></block></block>
   <block id="4d0f89b3bc61b2c8dda9120d3935ad57" category="doc">Étendez les ressources de calcul NetApp HCI</block>
   <block id="0948987e4b4e66a263c1007184c84ba8" category="paragraph">Une fois le déploiement NetApp HCI terminé, vous pouvez étendre et configurer les ressources de calcul NetApp HCI avec NetApp Hybrid Cloud Control.</block>
   <block id="967aaf9cd998e055946d7ee3f5dfc768" category="list-text">Installez le nouveau nœud dans le châssis NetApp HCI en suivant la <block ref="910964aa6e1db49922721d32931256bd" category="inline-link-macro-rx"></block>.</block>
@@ -1430,8 +1326,6 @@
   <block id="92a8ed36d68e1b878c9a02a330480988" category="inline-link-macro">Gérez les groupes d'accès aux volumes</block>
   <block id="4b78840fe10d478b48df64eca7f72655" category="list-text"><block ref="4b78840fe10d478b48df64eca7f72655" category="inline-link-macro-rx"></block></block>
   <block id="a61d8a4fcaa8b59b1d8f1d63aada7783" category="summary">Versions de micrologiciel et de pilote prises en charge dans les logiciels NetApp HCI et NetApp Element.</block>
-  <block id="2e697d89104c46a74e44aa847695f3f8" category="doc">Versions de firmware et de pilote ESXi prises en charge pour les versions NetApp HCI et de firmware pour les nœuds de stockage NetApp HCI</block>
-  <block id="b757850bdb41a8f86215fd4d7394eeb9" category="paragraph">Versions de firmware et de pilote ESXi prises en charge pour les versions NetApp HCI et de firmware pour les nœuds de stockage NetApp HCI.</block>
   <block id="bf44a0123ec45362af49b3862557cdd8" category="paragraph"><block ref="f4e8c07388940da9080e74e50960909d" category="inline-link-macro-rx"></block>* H610S * H410S</block>
   <block id="a82f3d9d22bfe1382d03945f3377eb65" category="paragraph"><block ref="4fe99558e9030b1914f3007a88f2f74d" category="inline-link-macro-rx"></block>* H615C * H610C * H410C * H300E/H500E/H700E</block>
   <block id="0a5712c2113fc4db522b6907519135e6" category="summary">Découvrez les nouveautés de cette version d'NetApp HCI.</block>
@@ -1481,8 +1375,6 @@
   <block id="8c62a8856619185a333cdec6cc116a79" category="list-text"><block ref="8c62a8856619185a333cdec6cc116a79" category="inline-link-rx"></block></block>
   <block id="89313b3a84c80a382af0b25d8870fc39" category="inline-link">Documentation SolidFire et Element</block>
   <block id="4a3ccd34d84d8d5dcf651bea4f92dde6" category="list-text"><block ref="4a3ccd34d84d8d5dcf651bea4f92dde6" category="inline-link-rx"></block></block>
-  <block id="311f4aa48c89c4e8754b8d93a8d5c0d5" category="inline-link">Versions du micrologiciel et du pilote pour les logiciels NetApp HCI et NetApp Element</block>
-  <block id="8c47ac98e3f72388d0a7fb3d375c0441" category="list-text"><block ref="8c47ac98e3f72388d0a7fb3d375c0441" category="inline-link-rx"></block></block>
   <block id="d77354327bb2b92106f87004bfe23344" category="summary">Vous devrez peut-être remplacer le châssis si le ventilateur, l'unité de traitement centrale (CPU) ou le module de mémoire DIMM (Dual Inline Memory module) tombe en panne, ou si vous devez résoudre les problèmes de surchauffe ou de démarrage. Le voyant orange clignotant à l'avant du châssis indique qu'il est possible de remplacer le châssis. Contactez le support NetApp avant de continuer.</block>
   <block id="410c2e0f6fd43f9d2d93f0fdda486132" category="doc">Remplacer les nœuds H610S</block>
   <block id="dd76252ea7a50def2a98f218cb1505b4" category="inline-link-macro">Article de la base de connaissances</block>
@@ -1540,7 +1432,6 @@
   <block id="736c409b380383ee8843715d26079c63" category="list-text">*Cluster Health* : vous avez effectué des vérifications d'intégrité. Voir <block ref="bdcf6db43efb3c82b174a0c4c0a65c66" category="inline-link-macro-rx"></block>.</block>
   <block id="d12abcbed858bffa82e8d643aeac1e4f" category="inline-link-macro">notes de version et instructions de mise à niveau</block>
   <block id="e242edb20d19e966685dc82f8968dab4" category="list-text">*Contrôleur de gestion de la carte mère (BMC) mis à jour pour les nœuds H610S*: Vous avez mis à niveau la version BMC pour vos nœuds H610S. Voir <block ref="03b6e6df0597f52053c340579d50c0c6" category="inline-link-macro-rx"></block>.</block>
-  <block id="1dc5194bddfa2cc1355dc4c77a729d38" category="admonition">Pour obtenir une matrice complète de micrologiciel et de micrologiciel de pilote pour votre matériel, reportez-vous à la section <block ref="80776e776c76da1f21e9e612d2679ddd" category="inline-link-macro-rx"></block>.</block>
   <block id="2394ff28a38b482ef2918be4c8e7540c" category="list-text">*Contrat de licence utilisateur final (CLUF)* : à partir des services de gestion 2.20.69, vous devez accepter et enregistrer le CLUF avant d'utiliser l'interface utilisateur ou l'API de contrôle du cloud hybride NetApp pour mettre à niveau le micrologiciel de stockage :</block>
   <block id="5212e4232f93722ce70d3ed042cd25c1" category="paragraph">Choisissez l'une des options de mise à niveau du micrologiciel de stockage suivantes :</block>
   <block id="71894c0623112f371e3598666af16695" category="list-text"><block ref="c67f607f0c5a6b98a7e28e151694a09a" category="inline-xref-macro-rx"></block></block>
@@ -1641,19 +1532,6 @@
   <block id="0dc6c0e63057b6a7522f5bbf03ae2e48" category="list-text">Exécutez l'API *GET ​/upgrades/{upseId}* plusieurs fois, selon les besoins, jusqu'à ce que le processus soit terminé.</block>
   <block id="05e1370c6bc841bbf10001b3bec41c0e" category="paragraph">Pendant la mise à niveau, le<block ref="9acb44549b41563697bb490144ec6258" prefix=" " category="inline-code"></block> indique<block ref="75101dcdfc88455bcafc9e53e0b06689" prefix=" " category="inline-code"></block> si aucune erreur n'est détectée. Lorsque chaque nœud est mis à niveau, le<block ref="2764ca9d34e90313978d044f27ae433b" prefix=" " category="inline-code"></block> la valeur passe à<block ref="b2937dba94e898beb5b18662e63c5a31" prefix=" " category="inline-code"></block>.</block>
   <block id="78cd54a4d18290c804697177cdb2c7d2" category="paragraph">La mise à niveau a réussi une fois que l'<block ref="354f047ba64552895b016bbdd60ab174" prefix=" " category="inline-code"></block> la valeur est<block ref="f899139df5e1059396431415e770c6dd" prefix=" " category="inline-code"></block> et le<block ref="9ed39e2ea931586b6a985a6942ef573e" prefix=" " category="inline-code"></block> indique<block ref="a5d7ceb2c59b8cee46c2953fec9abc19" prefix=" " category="inline-code"></block>.</block>
-  <block id="1ec694429830f2bfceb3f33883c0409c" category="summary">Une fois Rancher déployé sur NetApp HCI, vous pouvez configurer des clusters utilisateur et ajouter des applications à ces clusters.</block>
-  <block id="602d96c7ede8c3dc0247f58aa01ea001" category="doc">Déploiement de clusters et d'applications utilisateur</block>
-  <block id="b20dacbc4fe1b1600ba289ffa6be3d8c" category="section-title">Déployer les clusters utilisateur</block>
-  <block id="088f2225be7630de7bb024bb63149cd2" category="paragraph">Après le déploiement, les équipes Dev et Ops peuvent ensuite déployer des clusters utilisateur Kubernetes, comme n'importe quel déploiement Rancher, sur lesquels elles peuvent déployer des applications.</block>
-  <block id="f7e374f64d520b4e1b3e20da4479cc75" category="list-text">Accédez à l'interface utilisateur Rancher à l'aide de cette URL fournie à la fin du déploiement Rancher.</block>
-  <block id="6de5ea620854d6ef00f0472c2627c0de" category="inline-link">déploiement des workloads</block>
-  <block id="3f67e5faa8d61856d62fd3bf38d1d1f0" category="list-text">Création de clusters utilisateur. Voir la documentation Rancher à propos de<block ref="de37c412eaa4ed32c09885b710770c8d" category="inline-link-rx"></block>.</block>
-  <block id="d8bf91c01a11c7eb2d2b9f401ecfaf66" category="inline-link">Configuration des clusters Kubernetes dans Rancher</block>
-  <block id="ab3b64f6fb89cdcf991607729d1d2e6b" category="list-text">Provisionnez les clusters utilisateur dans Rancher sur NetApp HCI. Voir la documentation Rancher à propos de<block ref="8f23a5a737100faa947353c1709144ae" category="inline-link-rx"></block>.</block>
-  <block id="930925e67b4f31f371692edcf5e02312" category="section-title">Déploiement des applications sur les clusters des utilisateurs</block>
-  <block id="c7ba6659ee3453e072a20d61ffa3ee7e" category="paragraph">Comme tous les déploiements Rancher, vous ajoutez des applications sur les clusters Kubernetes.</block>
-  <block id="002edcf32ae0a52094dea43914490912" category="inline-link">déploiement des applications dans les clusters</block>
-  <block id="0dfc151b6b432582cded32c687420bb1" category="paragraph">Voir la documentation Rancher à propos de<block ref="24f6419d6880471b27f9717bc8197f35" category="inline-link-rx"></block>.</block>
   <block id="1ed1378560f3434340b1ab5dbf1db633" category="paragraph">Vous devrez peut-être ajouter une ressource si vous avez récemment fait évoluer votre installation et que de nouvelles ressources n'ont pas été ajoutées automatiquement à votre configuration. Utilisez ces API pour ajouter des ressources qui sont des ajouts récents à votre installation.</block>
   <block id="9a4458f563e0cfb715b5315a7d298d15" category="inline-link-macro">Création d'un nouveau rôle NetApp HCC dans vCenter</block>
   <block id="0079b2664bc7f7dd0d8765a4562049ed" category="list-text">Vous avez <block ref="6aaf2894037d718da471677b2a2ed96d" category="inline-link-macro-rx"></block> Limiter l'affichage des services de nœud de gestion aux ressources NetApp uniquement.</block>
@@ -1764,12 +1642,6 @@
   <block id="1aaeb3c25662c515ce85d90c92c811d9" category="list-text">CVE-2019-19922, CVE-2019-20054</block>
   <block id="0d0363aca7b13dac473777bbffdc6dfc" category="list-text">CVE-2019-19447, CVE-2019-19767, CVE-2019-10220</block>
   <block id="9bf1d13b1eb42cc94b0a13c290a0dca1" category="paragraph">Cette version ne contient aucun problème connu.</block>
-  <block id="5790561c8766bdfa450f5782bf99cc31" category="summary">Découvrez comment configurer le placement des machines virtuelles pour une résilience optimale après l'installation de Rancher sur NetApp HCI.</block>
-  <block id="367e93552960b0b7853ed2a7913cf75a" category="doc">Configurez la résilience</block>
-  <block id="601df7bdf217f94745db21d8691eede5" category="paragraph">Découvrez comment configurer le placement des machines virtuelles pour une résilience optimale après l'installation de Rancher sur NetApp HCI.</block>
-  <block id="0a0cb5e9735b98293e4077a08b7c885e" category="paragraph">Ces aspects de la résilience peuvent être pris en compte :</block>
-  <block id="cd0a7553973c36874cfb1b0fb6494c54" category="list-text">Les clusters de gestion sont résilients si vous configurez l'équilibrage de charge ou le proxy Round Robin.</block>
-  <block id="b9d4c1f1b0ddbc0093c4e515843776a7" category="list-text">Pour les clusters utilisateur, il est possible de configurer la résilience en fonction du mode de configuration de ces clusters utilisateur.</block>
   <block id="246ad48c2457f4d117d2a2deae096786" category="summary">Découvrez comment configurer les paramètres réseau de déploiement NetApp HCI.</block>
   <block id="e2a7e1b0e5f6f59b627d2fc40fab294f" category="doc">Configurez les paramètres réseau</block>
   <block id="1666514145f7e9412791dbac474af211" category="paragraph">NetApp HCI fournit une page de paramètres réseau comportant plusieurs sections afin de simplifier la configuration du réseau. Vous pouvez passer par chaque section et entrer des informations ou attribuer des adresses IP pour les hôtes et les nœuds de chaque réseau.</block>
@@ -1851,15 +1723,6 @@
   <block id="d0bebc2d0d59d81fb69ab0560ae9da2d" category="cell">Attribuer manuellement des noms de clusters et d'hôtes</block>
   <block id="dc5912657448d08b6ff651b150a8f21c" category="list-text">Sélectionnez l'option *attribuer manuellement des noms de cluster / d'hôte*.</block>
   <block id="1b352ea909d56e2bdb3740128257455e" category="list-text">Dans la colonne *Host / Cluster Name*, entrez le nom d'hôte pour chaque hôte et un nom de cluster pour le cluster de stockage.</block>
-  <block id="52263821f1de62891c085e4b6cd3e67c" category="summary">Découvrez les tâches que vous avez effectuées après l'installation de Rancher sur NetApp HCI.</block>
-  <block id="f0f4a39e28b4ed1b4a2fd317f8bbae7c" category="doc">Activités complètes de post-déploiement pour Rancher sur NetApp HCI</block>
-  <block id="f27801207bee2ae9e29fa4ce2382b3a9" category="paragraph">Une fois Rancher déployé sur NetApp HCI, vous devriez mener à bien vos activités de post-déploiement.</block>
-  <block id="b9464af806df275ebc4d01f5023e78f3" category="paragraph">Après le déploiement, vous pouvez :</block>
-  <block id="fb083b9e2b00271809e7c5daaeed4034" category="inline-link-macro">Installez Trident avec Rancher sur NetApp HCI</block>
-  <block id="e699403e446949a61b34fc895e0cd096" category="list-text"><block ref="e699403e446949a61b34fc895e0cd096" category="inline-link-macro-rx"></block></block>
-  <block id="999511c3c86f8eaef2679ab0fd8b43a5" category="inline-link-macro">Configurer l'équilibrage de charge</block>
-  <block id="097cafc9a0288257b88063b097123f95" category="list-text"><block ref="097cafc9a0288257b88063b097123f95" category="inline-link-macro-rx"></block></block>
-  <block id="98b5e630c4b49d96673dfb787a6b52d9" category="list-text"><block ref="98b5e630c4b49d96673dfb787a6b52d9" category="inline-link-macro-rx"></block></block>
   <block id="7e86bef3be3ca5775b53afeb2c3e4d58" category="summary">Vous pouvez consulter les ressources de stockage et de calcul sur le tableau de bord NetApp de contrôle du cloud hybride. Vous pouvez également surveiller la capacité de stockage, les performances de stockage et l'utilisation du calcul.</block>
   <block id="6fb2daceb6ae116728928a8afc5adda1" category="doc">Surveillez les ressources de stockage et de calcul dans le tableau de bord Cloud Control</block>
   <block id="fdb79afd4584476b4b03d709c84868eb" category="paragraph">Grâce au tableau de bord NetApp de contrôle du cloud hybride, vous pouvez visualiser en un coup d'œil toutes les ressources de stockage et de calcul. Vous pouvez également surveiller la capacité de stockage, les performances de stockage et l'utilisation du calcul.</block>
@@ -2638,7 +2501,6 @@
   <block id="7574455cfeef101402ffde3ea33bd53a" category="cell">3B08.CO ​ ​</block>
   <block id="f6c9b6a55fa82505a20a84fc29dd1409" category="inline-link-macro">pack du firmware des calculs 2.27</block>
   <block id="590f0f5145e5d58d73d507c6a67aa0b2" category="admonition">Les nœuds de calcul H615C doivent mettre à jour le firmware du BMC vers la version 4.68 à l'aide du <block ref="c58be2f499a493f0490ff81a29aa7beb" category="inline-link-macro-rx"></block> Pour permettre au contrôle du cloud hybride NetApp d'effectuer des mises à niveau de firmware futures.</block>
-  <block id="b24f3db75077a578765967e0b8ffa295" category="admonition">Pour obtenir une matrice complète de micrologiciel et de micrologiciel de pilote pour votre matériel, reportez-vous à la section<block ref="54a79ab153742147d13ffd4ac16bf6ba" category="inline-link-rx"></block> (connexion requise).</block>
   <block id="92a2b5cb9c6906035c2864fa225e1940" category="inline-link-macro">article</block>
   <block id="a6c551bfacbff9bc6d510d240a1f729e" category="list-text">*Ordre de démarrage du BIOS* : modifiez manuellement l'ordre de démarrage dans la configuration du BIOS pour chaque nœud pour vous assurer<block ref="1561e6bbe24834ad1f5a1b8b6015f1a8" prefix=" " category="inline-code"></block> apparaît dans la liste de démarrage. Voir ceci <block ref="40fb6836e33e97dd94fb747393132791" category="inline-link-macro-rx"></block> pour en savoir plus.</block>
   <block id="71ff71526d15db86eb50fcac245d183b" category="inline-link-macro">INTERFACE UTILISATEUR</block>
@@ -3477,12 +3339,6 @@
   <block id="497d518d6e399c2f91b16e0dec717424" category="summary">Vous pouvez afficher l'inventaire de votre système dans le contrôle du cloud hybride.</block>
   <block id="acdaf51e84092f9ece736cf38c23250f" category="doc">Affichez votre inventaire NetApp HCI dans le cloud hybride Control</block>
   <block id="bc7eee2e46f7815a5e4e0a3de181052f" category="paragraph">Vous pouvez afficher l'inventaire de vos systèmes NetApp HCI dans le cloud hybride.</block>
-  <block id="cd01b577211626f40fb00014ea3e0fcd" category="summary">Découvrez comment vous assurer que les licences utilisées pour Rancher correspondent à ce que vous avez acheté.</block>
-  <block id="61e71dfc6deba947f13bdfb371c1367a" category="doc">Parité du support Rancher</block>
-  <block id="76a1a114dd85548ee517a8189832850d" category="paragraph">Une fois que vous avez déployé Rancher sur NetApp HCI, vous devez vérifier que le nombre de cœurs de support Rancher que vous avez achetés correspond au nombre de cœurs de CPU que vous utilisez pour les machines virtuelles et les clusters d'utilisateurs de gestion Rancher.</block>
-  <block id="b823f176b294e16e1fa857ec3ef1c067" category="paragraph">Si vous avez acheté le support Rancher pour une seule partie de vos ressources de calcul NetApp HCI, vous devez agir dans VMware vSphere pour assurer que Rancher sur NetApp HCI et ses clusters utilisateurs gérés s'exécutent uniquement sur des hôtes pour lesquels vous avez acheté le support Rancher. Reportez-vous à la documentation de VMware vSphere pour plus d'informations sur la manière d'assurer cette opération en limitant les charges de travail de calcul à des hôtes spécifiques.</block>
-  <block id="921561ec262e185544490434633fed0f" category="list-text"><block ref="921561ec262e185544490434633fed0f" category="inline-link-rx"></block></block>
-  <block id="752e3c55fe31911c926d43b2b70671b4" category="list-text"><block ref="752e3c55fe31911c926d43b2b70671b4" category="inline-link-rx"></block></block>
   <block id="82da7460b0bbc8ab9387a5ecce70e427" category="summary">Découvrez comment mettre les nœuds de calcul NetApp HCI sous tension.</block>
   <block id="4c34f8908d9da0685fac14ae7888129c" category="doc">Alimentation des ressources de calcul d'un système NetApp HCI</block>
   <block id="6783c1af3564f65cd85cadf7dafb2c1a" category="paragraph">Une fois l'interruption planifiée terminée, vous pouvez mettre les ressources de calcul d'un système NetApp HCI sous tension.</block>
@@ -3900,16 +3756,6 @@
   <block id="a7b014ddeea23f04154bfda4523adce9" category="list-text"><block ref="a7b014ddeea23f04154bfda4523adce9" category="inline-link-macro-rx"></block></block>
   <block id="9a9946a3520a86dd148888587675f525" category="list-text"><block ref="9a9946a3520a86dd148888587675f525" category="inline-link-macro-rx"></block></block>
   <block id="1684a001fdc92bf11adbffa7d65e54ef" category="list-text"><block ref="1684a001fdc92bf11adbffa7d65e54ef" category="inline-link-macro-rx"></block></block>
-  <block id="7ec16a581bd05504813a058819a10df8" category="summary">Découvrez comment gérer Rancher sur NetApp HCI.</block>
-  <block id="c73d8b49478fbc5a0081278bba3fb338" category="doc">Gérez Rancher sur NetApp HCI</block>
-  <block id="9ca21fe81a57cfb93619b0cc1bd5781c" category="paragraph">Après avoir déployé Rancher sur NetApp HCI, vous pouvez afficher les URL et l'état des clusters de serveurs Rancher. Vous pouvez également supprimer le serveur Rancher.</block>
-  <block id="79221351a1980457abaf161f7a11e6af" category="section-title">Identifiez les URL et l'état des clusters de serveurs Rancher</block>
-  <block id="d45b0ad0d7550d2d1a1e2f82b53c5fe3" category="paragraph">Vous pouvez identifier les URL de cluster de serveurs Rancher et déterminer l'état du serveur.</block>
-  <block id="2200d510e8c5f5ad9c50b3eda02d3004" category="list-text">Dans le Tableau de bord, sélectionnez l'icône Options en haut à droite et sélectionnez *configurer*.</block>
-  <block id="854244edd4994fb0cc18aed42ab9a855" category="image-alt">Page Configuration du rancher</block>
-  <block id="97dfaa5c0f68fc1aadde69740e8e0d88" category="paragraph">La page Rancher Server clusters affiche une liste des clusters de serveurs Rancher qui ont été déployés, l'URL associée et l'état.</block>
-  <block id="6e8ed183d32acca51cc491b8f9adaa46" category="inline-link-macro">Déposer le Rancher</block>
-  <block id="291bb035491491240cccac88cbd990bd" category="list-text"><block ref="291bb035491491240cccac88cbd990bd" category="inline-link-macro-rx"></block></block>
   <block id="0559864e7d51a9f4c1ef64909822a28b" category="summary">Découvrez comment accéder au moteur de déploiement NetApp dans les environnements qui utilisent DHCP pour attribuer des adresses IP.</block>
   <block id="60ab3097a5dcf3bfdf59a8bc8a6a347c" category="doc">Accès au moteur de déploiement NetApp dans des environnements avec DHCP</block>
   <block id="c70768cc652964695fbfa2d881373209" category="paragraph">Dans les environnements dans lesquels les serveurs acquièrent automatiquement une configuration IPv4 à partir de DHCP, vous pouvez accéder au moteur de déploiement NetApp à l'aide de l'adresse IPv4 attribuée à l'interface Bond1G sur l'un des nœuds de stockage. Vous pouvez utiliser une clé USB pour récupérer l'adresse IPv4 à partir de l'un des nœuds de stockage. Le moteur de déploiement NetApp détecte automatiquement les autres nœuds de calcul et de stockage qui utilisent les adresses IPv4 attribuées par DHCP. Vous ne devez pas utiliser cette méthode sauf si votre réseau a des exigences spéciales.</block>
@@ -3994,14 +3840,7 @@
   <block id="a1cea245b8c0c135f94686cb958182c1" category="list-text">CVE-2019-1010022, CVE-2019-9169, CVE-2017-15804, CVE-2018-11236, CVE-2017-15670, CVE-2019-1010023, CVE-2015-8982, CVE-2015-8983, CVE-2017-16997, CVE-2019-20838,</block>
   <block id="7d90f1467b98485e9cf2b2fb83702c8d" category="list-text">CVE-2017-1000408, CVE-2017-1000409, CVE-2018-1000001, CVE-2018-19591, CVE-2009-5155, CVE-2018-20796, CVE-2016-3706, CVE-2020-1752, CVE-2019-1010024, CVE-2019-1010025,</block>
   <block id="cf261c3577b4324bcb29a13a2bf54a6f" category="list-text">CVE-2017-15671, CVE-2015-8985, CVE-2016-4429, CVE-2016-10739, CVE-2018-6485, CVE-2020-10029, CVE-2020-14155</block>
-  <block id="c7bc15401e60cafe10794d83f9b6cd85" category="summary">Découvrez les tâches que vous pourriez avoir besoin d'effectuer après l'installation de Rancher sur NetApp HCI.</block>
   <block id="423e5cc40b28eed3cd77ce735d4589e1" category="doc">Présentation des tâches post-déploiement</block>
-  <block id="2762edb7d4f681b6a17dff45c92924ab" category="paragraph">Une fois que vous avez déployé Rancher sur NetApp HCI, vous devez continuer vos activités de post-déploiement.</block>
-  <block id="c543ef56d9d045884c703917c22c41af" category="list-text"><block ref="c543ef56d9d045884c703917c22c41af" category="inline-link-macro-rx"></block></block>
-  <block id="aa8b0edee32f62a4e1890e3696545c25" category="list-text"><block ref="aa8b0edee32f62a4e1890e3696545c25" category="inline-link-macro-rx"></block></block>
-  <block id="fce2ba134f81ebea42078bede4cbea80" category="inline-link-macro">Configurez la surveillance</block>
-  <block id="bfa008d4db0f1fb52ec22703ccc0e890" category="list-text"><block ref="bfa008d4db0f1fb52ec22703ccc0e890" category="inline-link-macro-rx"></block></block>
-  <block id="659e3d1abdbb701a520e342e48fbb8b3" category="list-text"><block ref="659e3d1abdbb701a520e342e48fbb8b3" category="inline-link-macro-rx"></block></block>
   <block id="2c1b0c59d4422ac6187c11d2e6528980" category="summary">Si votre châssis présente une panne de ventilateur ou un problème d'alimentation, vous devez le remplacer dès que possible. Les étapes de la procédure de remplacement du châssis dépendent de la capacité du cluster et de la configuration NetApp HCI, qui nécessite une analyse approfondie et une planification minutieuse. Vous devez contacter le support NetApp pour obtenir des conseils et commander un châssis de remplacement.</block>
   <block id="282cae7b3ff41211fefccfd98ad9eb8a" category="paragraph">Avant de remplacer le châssis, tenez compte des points suivants :</block>
   <block id="14c7b76b720b37a2082055dd7000a107" category="list-text">Votre rack dispose-t-il d'espace supplémentaire pour un nouveau châssis ?</block>
@@ -4113,7 +3952,6 @@
   <block id="f77963c528aa19e59cf9f7c9d5b4a19d" category="summary">Lors de la mise à niveau d'un système NetApp HCI, les pilotes de nœud de calcul sont mis à niveau.</block>
   <block id="0c13e0dd6ebaa11c814ce3c5b29ab7f1" category="paragraph">Pour tout nœud de calcul H-Series, vous pouvez mettre à jour les pilotes utilisés sur les nœuds à l'aide de VMware Update Manager.</block>
   <block id="4b8861a11346d673205d074f862db70a" category="inline-link">Versions de micrologiciel et de pilote ESXi prises en charge</block>
-  <block id="ac4ea0116877e7d9fa4a0111b67b92f1" category="paragraph">Reportez-vous à la matrice du micrologiciel et du pilote de votre matériel à l'adresse<block ref="70c4c9f03a0e1a210c8e6bdafdb7db30" category="inline-link-rx"></block>.</block>
   <block id="cae4b286c77e42f24641d126e94e3848" category="paragraph">Effectuez une seule opération de mise à jour à la fois.</block>
   <block id="7f1cb6f883abc23a81f6db00c067e34f" category="paragraph">Vous devez vérifier la version actuelle du pilote VMware ESXi avant de tenter de calculer les mises à niveau du micrologiciel. Si le pilote est obsolète, mettez-le d'abord à niveau. Mettez ensuite à niveau le firmware de calcul de vos nœuds de calcul.</block>
   <block id="3e79f2f4eea24dddb8f0e1d175482fea" category="inline-link">Les téléchargements de logiciels NetApp HCI</block>
@@ -4523,7 +4361,6 @@
   <block id="989e5f78df6a0ad43d822c87676bc3ab" category="list-text">Sélectionnez l'icône actions du lecteur que vous souhaitez ajouter et sélectionnez *Ajouter*.</block>
   <block id="ccb53991fe0d1c4591a2709652dd65b1" category="list-text">Dans le point d'extension NetApp Element Management du client Web vSphere, sélectionnez *NetApp Element Management &gt; Cluster &gt; Drives*.</block>
   <block id="6ce4b425965b75929d52b1096702e4aa" category="list-text">Dans la liste déroulante disponible, sélectionnez le lecteur et sélectionnez *Ajouter*.</block>
-  <block id="8211faa645efca9f476617d0cf044b3b" category="doc">Présentation du rancher sur NetApp HCI</block>
   <block id="1cf4d427bff1f4dba9f87b3f1680ed98" category="paragraph">La version 2.146 contient des corrections de bugs générales.</block>
   <block id="c5f071a4694866c60342243298c3c00f" category="cell">*NATP3.10*</block>
   <block id="34f75d682a9b0c834eb7a09afb2267bf" category="cell">*3B07*</block>
@@ -4547,14 +4384,6 @@
   <block id="98d81cc220d6035573741583a682c9d7" category="list-text">CVE-2020-8738, CVE-2020-8764, CVE-2020-0590, CVE-2020-8705</block>
   <block id="c2f21689edfc9aacc7e851d52e373bd7" category="list-text">CVE-2020-0587, CVE-2020-0591, CVE-2020-0592, CVE-2020-8740</block>
   <block id="17335b09a0f86f513c1f80c9ce86c9d1" category="list-text">CVE-2020-0592, CVE-2020-0588, CVE-2020-8696</block>
-  <block id="647e16f66554f636cd0b5856dbc0d30b" category="summary">Après le déploiement Rancher, vous pouvez créer des clusters utilisateur Kubernetes à l'aide de l'interface utilisateur Rancher.</block>
-  <block id="4fe28b5e264a9cae95fe218091fda5ee" category="doc">Création de clusters utilisateur</block>
-  <block id="281011a597f3978859eb88d0e442fe82" category="paragraph">Après le déploiement Rancher, vous pouvez créer des clusters utilisateur Kubernetes à l'aide de l'interface utilisateur Rancher. Vous pouvez créer des clusters hébergés par différents fournisseurs Kubernetes (par exemple, Google Kubernetes Engine) ou par le programme d'installation de Rancher Kubernetes Engine (RKE), qui est le programme d'installation Kubernetes de Rancher.</block>
-  <block id="7183a84f8c3c10ea14c0963f0814e0b8" category="admonition">Pour plus d'informations sur les exigences de création des clusters, reportez-vous à la section<block ref="88c775be6750386c87da6e3ce6d28732" category="inline-link-rx"></block>.</block>
-  <block id="96acfd2f5960a8ebc43ea27af65e4f25" category="list-text">Vous disposez des adresses IP statiques nécessaires. Chaque cluster utilisateur nécessite trois adresses IP statiques.</block>
-  <block id="deebab2c662e1b25eb3d473889da8c24" category="list-text">Vous vous êtes familiarisé avec les conditions répertoriées dans le<block ref="88c775be6750386c87da6e3ce6d28732" category="inline-link-rx"></block>.</block>
-  <block id="a1a20e48c6b33d54067bc9f82be85325" category="list-text">Dans le contrôle de cloud hybride NetApp, sélectionnez l'URL fournie à la fin du déploiement Rancher.</block>
-  <block id="4eca7112a8ddccdb8eea23dc6752cfbc" category="list-text">Dans l'interface utilisateur Rancher, créez le cluster utilisateur.</block>
   <block id="4d5acc980b7ead0070250846c5ed508d" category="summary">Lorsque vous développez un cluster de stockage à deux nœuds sur quatre nœuds ou plus, vous pouvez supprimer la paire de nœuds Witness pour libérer des ressources de calcul dans votre installation NetApp HCI.</block>
   <block id="6dcea97457ab564f537b803c1f17378d" category="doc">Supprimez les nœuds témoins après l'extension du cluster</block>
   <block id="7cbe90c560d6fac2dfbe39c216268e68" category="paragraph">Lorsque vous développez un cluster de stockage à deux nœuds sur quatre nœuds ou plus, vous pouvez supprimer la paire de nœuds Witness pour libérer des ressources de calcul dans votre installation NetApp HCI. Les nœuds témoins précédemment utilisés par le cluster de stockage sont toujours visibles en tant que serveurs virtuels de secours dans le client Web vSphere.</block>
@@ -4602,23 +4431,6 @@
   <block id="e9649f789dba33069d65dd43f646890f" category="list-text"><block ref="ab3ca5933bb57bf5671eabef88a511cb" category="inline-link-rx"></block> pour tous les datastores contrôlés par le plug-in.</block>
   <block id="c238cdf4d684fe1ceb6e88d6f4b60ebe" category="inline-link">Rapport technique NetApp HCI sur le cluster de stockage à deux nœuds</block>
   <block id="6a718d1cc3413213dbf56882de72ccb2" category="list-text"><block ref="6a718d1cc3413213dbf56882de72ccb2" category="inline-link-rx"></block></block>
-  <block id="9b7bb36b310f8ee8e2e028e42b095b77" category="doc">Rancher sur les concepts NetApp HCI</block>
-  <block id="46d2eed8ffa3441771a3cebe7d1f1a05" category="paragraph">Apprenez les concepts de base relatifs à Rancher sur NetApp HCI.</block>
-  <block id="e2fb643ff693958331473dfe3fcd9263" category="list-text">*Rancher Server* ou *Plan de contrôle* : le plan de contrôle Rancher, parfois appelé _Rancher Server_, provisionne, gère et surveille les clusters Kubernetes utilisés par les équipes de développement et d'opérations.</block>
-  <block id="e31d2b60da791c899f94bb4cb73679ca" category="inline-link">Documentation du rancher sur les catalogues</block>
-  <block id="6185d522566bca6babef053c2bc1f53d" category="list-text">*Catalogues* : les catalogues sont des référentiels GitHub ou Helm Chart remplis d'applications prêtes à être déployées. Rancher permet d'utiliser un catalogue de graphiques Helm pour déployer facilement les applications à plusieurs reprises. Rancher inclut deux types de catalogues : catalogues globaux intégrés et catalogues personnalisés. Trident est déployé en tant que catalogue. Voir<block ref="ba870d4de503a3f035878d62b86bb946" category="inline-link-rx"></block>.</block>
-  <block id="46f00c1f2b2f504fa180b6a0a8549857" category="list-text">*Cluster de gestion* : rancher sur NetApp HCI déploie trois machines virtuelles sur le cluster de gestion Rancher, ce qui vous permet d'utiliser Rancher, le contrôle de cloud hybride et le plug-in vCenter. Les machines virtuelles des clusters de gestion hébergent le serveur Rancher, le moteur RKE Rancher Kubernetes et le système d'exploitation Linux.</block>
-  <block id="b469059473293c3804d2330f46b0ff4c" category="list-text">*Clusters utilisateur* : ces clusters Kubernetes en aval exécutent vos applications et services. Dans les installations Kubernetes de Rancher, le cluster de gestion doit être distinct des clusters utilisateur. Tout cluster qu'un utilisateur Rancher déploie depuis Rancher ou importe dans Rancher est considéré comme un cluster utilisateur.</block>
-  <block id="10f7387c33a67c92542de362d9246058" category="list-text">*Modèle de nœud Rancher* : le contrôle de cloud hybride utilise un modèle de nœud Rancher pour simplifier le déploiement.</block>
-  <block id="c0f5988a355d70bc72528826b19d4c26" category="inline-link">Documentation de l'opérateur de rancher sur les modèles de nœud</block>
-  <block id="499c79030e29f88105a315c240050806" category="paragraph">Voir <block ref="502a349939ea68203db76329f0b74f74" category="inline-link-rx"></block>.</block>
-  <block id="20fb03d5b7e1bdf31a9e4e7a5186cdaa" category="section-title">Concepts relatifs au logiciel Trident et au stockage persistant</block>
-  <block id="d80da136ed74275246f9bb62bcb18fd5" category="paragraph">Trident, une application Kubernetes native, s'exécute directement dans un cluster Kubernetes. Avec Trident, les utilisateurs de Kubernetes (développeurs, data Scientists et administrateurs Kubernetes) peuvent créer, gérer et interagir avec les volumes de stockage persistant dans le format Kubernetes standard qu'ils connaissent déjà. Avec Trident, les solutions NetApp peuvent répondre aux demandes de volume persistant des clusters Kubernetes.</block>
-  <block id="34082ca8b85231a5ceadeca185de3f43" category="paragraph">Rancher permet d'utiliser un volume persistant, qui existe indépendamment de n'importe quel pod spécifique et sa propre durée de vie. L'utilisation de Trident pour gérer les demandes de volume persistant isole les développeurs qui créent des pods à partir des détails d'implémentation de niveau inférieur du stockage auxquels ils accèdent.</block>
-  <block id="140884f15a39b9fb66370d34b5d2da10" category="paragraph">Lorsqu'une application conteneurisée émet une demande de demande de volume persistant, Trident provisionne le stockage dynamiquement selon les paramètres requis par rapport à la couche de stockage du logiciel NetApp Element dans NetApp HCI.</block>
-  <block id="f0ffe5389e0877edf8755ea82e7f1779" category="paragraph">Un catalogue Trident est disponible pour Rancher sur NetApp HCI et s'exécute dans les clusters utilisateurs. Dans le cadre de l'implémentation Rancher sur NetApp HCI, un installateur Trident est disponible par défaut dans le catalogue Rancher. L'inclusion de ce catalogue simplifie le déploiement Trident dans les clusters utilisateur.</block>
-  <block id="245992ff42ba518324a42fc0a5a5c00e" category="paragraph">Voir <block ref="e699403e446949a61b34fc895e0cd096" category="inline-link-macro-rx"></block>.</block>
-  <block id="b8ab206de7473fae6f35c2f16c0992e0" category="paragraph">Pour plus d'informations, consultez la<block ref="9488620c3498c6d0bb53483131890d10" category="inline-link-rx"></block>.</block>
   <block id="3d88eccede78973ae8a797d389084bbb" category="summary">Les nœuds H615C et H610S prennent en charge deux unités d'alimentation c.c. de –48 à –60 V. Ces unités sont disponibles en tant qu'add-ons facultatifs lorsque vous commandez des nœuds H615C ou H610S. Vous pouvez utiliser le même ensemble d'instructions pour retirer les unités d'alimentation CA du châssis et les remplacer par des unités d'alimentation CC, ou pour remplacer une unité d'alimentation CC défectueuse par une nouvelle unité d'alimentation CC.</block>
   <block id="68d24e7063286ddc3df9a2da6a07cac6" category="paragraph">Les nœuds H615C et H610S prennent en charge deux unités d'alimentation c.c. de –48 à –60 V. Ces unités sont disponibles en tant qu'add-ons facultatifs lorsque vous commandez des nœuds H615C ou H610S. Vous pouvez utiliser ces instructions pour retirer les unités d'alimentation CA du châssis et les remplacer par des unités d'alimentation CC, ou pour remplacer une unité d'alimentation CC défectueuse par une nouvelle unité d'alimentation CC.</block>
   <block id="d7ed05503c9b204f905bb43a06d64513" category="list-text">Si vous remplacez une unité d'alimentation CC défectueuse, vous avez acheté une unité d'alimentation CC de remplacement.</block>
@@ -4834,48 +4646,6 @@
   <block id="dfd0dbcc69b48a973f522e75818b594d" category="cell">Si vous mettez à niveau un cluster H610S exécutant une version d'Element antérieure à 11.8, vous voyez l'état<block ref="95caf0460bfda12f8e917cd3e70fe1ed" prefix=" " category="inline-code"></block> dans le corps de réponse. Vous devez effectuer des étapes de mise à niveau supplémentaires pour chaque nœud de stockage H610S.</block>
   <block id="fb9099604c3233c77b3c8b5487c99eb3" category="list-text">Suivez les étapes de mise à niveau supplémentaires décrites dans ce document<block ref="f89d7bc8c94108aeb49b4fdeac4ce106" category="inline-link-rx"></block> pour chaque nœud.</block>
   <block id="81175df6f619617903d93fd97b35f2a3" category="list-text">Entrez<block ref="03a59f77ab63b5c97788855227f2b3c6" prefix=" " category="inline-code"></block> dans le corps de la demande.</block>
-  <block id="26970fbb3ed65d1f3145c7f705874131" category="summary">Découvrez comment contrôler Rancher sur NetApp HCI.</block>
-  <block id="a282a2ecd8d8b032df1602b6d6bfc2f4" category="doc">Surveillez un Rancher sur l'implémentation de NetApp HCI</block>
-  <block id="f29ace858b3a3a7be14330f073b42235" category="paragraph">Il existe plusieurs façons de surveiller les serveurs Rancher, les clusters de gestion et d'autres détails.</block>
-  <block id="593f52e571df0ab61f6211b57e2ab8da" category="list-text">Le contrôle des clouds hybrides NetApp</block>
-  <block id="a2c23f214bc0e41b42b00e116b599cdb" category="list-text">Interface utilisateur du rancher</block>
-  <block id="9b2dd5f36ee111b85cbdd29e104e3e55" category="list-text">NetApp Active IQ</block>
-  <block id="4a5003b5a14bf1cdb6d6ea04403b7f87" category="section-title">Surveillez Rancher avec le contrôle des clouds hybrides NetApp</block>
-  <block id="b5b5409bb010eedb637dd0c39fa70d27" category="paragraph">En utilisant le contrôle de cloud hybride NetApp, vous pouvez afficher l'état des clusters des serveurs Rancher et Rancher. Vous pouvez également surveiller les nœuds dans lesquels Rancher fonctionne.</block>
-  <block id="3d7e04bf0d4addc0329486f7be80e9e0" category="list-text">Connectez-vous à NetApp Hybrid Cloud Control en fournissant les identifiants de l'administrateur du cluster de stockage Element.</block>
-  <block id="cea7cde213deb7206c7dd3fa9747be1f" category="list-text">Dans le tableau de bord, cliquez sur l'icône Options en haut à droite et sélectionnez *configurer*.</block>
-  <block id="13eca9f4d08bbbfc225ef21f431c4b0a" category="list-text">Pour afficher les informations sur les nœuds, développez le nom de votre cluster de stockage à partir du tableau de bord de contrôle du cloud hybride, puis cliquez sur *noeuds*.</block>
-  <block id="4dd805dc4086cdd6eb0ba38e2287ea3a" category="section-title">Moniteur Rancher en utilisant l'interface utilisateur Rancher</block>
-  <block id="971513afceb1f4109b676dd765ce8780" category="paragraph">Grâce à l'interface utilisateur Rancher, vous pouvez afficher des informations sur Rancher sur les clusters de gestion NetApp HCI et les clusters utilisateurs.</block>
-  <block id="788d89959ce2b7d8a53516afb1ec30c1" category="admonition">Dans l'interface utilisateur Rancher, les clusters de gestion sont appelés « clusters locaux ».</block>
-  <block id="fc5f9f675ea2c8f52d6eba7d183d3b21" category="inline-link">Surveillance dans Rancher v2.5</block>
-  <block id="d2c221d3761cc05e7a4101aee7b6ba01" category="list-text">Voir<block ref="8ed5ec599c1540524106641c1878ee26" category="inline-link-rx"></block>.</block>
-  <block id="cb7be35dc06b88ecaf2448424de19c04" category="section-title">Surveillez Rancher à l'aide de NetApp Active IQ</block>
-  <block id="1b7b4164c920ad52a2757fc2eb1f54dd" category="paragraph">Avec NetApp Active IQ, vous pouvez afficher les données de télémétrie Rancher, notamment des informations sur l'installation, des nœuds, des clusters, l'état, des informations sur l'espace de noms, entre autres.</block>
-  <block id="fd94f5de9314aeeb79fbbce95c76a515" category="list-text">Dans le menu supérieur droit, sélectionnez *NetApp Active IQ*.</block>
-  <block id="eaf20e040245b6ec73bd8268613fc43c" category="section-title">Surveillez Rancher à l'aide de vCenter Server</block>
-  <block id="77bdc785d9dab0917f6a0b8e4f7c435f" category="paragraph">Avec vCenter Server, vous pouvez surveiller les machines virtuelles Rancher.</block>
-  <block id="0a13f81a8c28eff02ecfbcd59702e048" category="summary">Découvrez comment supprimer une installation Rancher sur le déploiement NetApp HCI, pour que vous puissiez procéder à un redéploiement.</block>
-  <block id="3ce2bef2cfe4dfb79b63805a94d94455" category="doc">Déposez une installation Rancher sur NetApp HCI</block>
-  <block id="01b8d76a05424c5a48cc7fe45bbdc046" category="paragraph">Si vous déployez accidentellement Rancher sur NetApp HCI avec des informations incorrectes (par exemple un FQDN de serveur Rancher incorrect), vous devez supprimer l'installation, puis redéployer. Suivez ces étapes pour supprimer l'installation Rancher sur l'instance NetApp HCI.</block>
-  <block id="b92d7a4a5be32cf1401dd0a8279c1b50" category="paragraph">Cette action ne supprime pas les clusters utilisateur.</block>
-  <block id="f18c8be3e8e4e5d24084b8bd03712c4a" category="admonition">Vous pouvez conserver les clusters utilisateur. Si vous les conservez, vous pouvez les migrer ultérieurement vers une autre implémentation Rancher. Si vous souhaitez supprimer les clusters d'utilisateurs, vous devez le faire avant de supprimer le serveur Rancher ; sinon, la suppression des clusters d'utilisateurs après la suppression du serveur Rancher est plus difficile.</block>
-  <block id="7803155f9118273a9de77723047763f6" category="list-text"><block ref="4d623ac50cac9ba4597fc83a81f80303" category="inline-xref-macro-rx"></block> (Recommandé)</block>
-  <block id="10bc8f50bd2a6218b05cca8f249f412e" category="list-text"><block ref="8e1964f3e0cd20ec7f11eb1f07b6f171" category="inline-xref-macro-rx"></block></block>
-  <block id="42d022f0df9a20de9981ed6e945e669a" category="section-title">Optimisez le Rancher sur NetApp HCI avec le contrôle des clouds hybrides NetApp</block>
-  <block id="4e05136943ec458646b34a11a676d9e3" category="paragraph">Vous pouvez utiliser l'interface utilisateur Web NetApp Hybrid Cloud Control pour supprimer les trois machines virtuelles qui ont été configurées pendant le déploiement afin d'héberger le serveur Rancher.</block>
-  <block id="304d17f3ca1fa6d017251e7742842239" category="list-text">Dans le volet *Rancher Server clusters*, cliquez sur *Configure Rancher Server clusters*.</block>
-  <block id="80bf412a598b521e865c2b5528b46e7e" category="list-text">Sélectionnez le menu *actions* pour l'installation Rancher que vous devez supprimer.</block>
-  <block id="d69e2e498ca49cff54bcfe528f206ba2" category="admonition">Lorsque vous cliquez sur *Delete*, le Rancher est immédiatement supprimé du cluster de gestion NetApp HCI.</block>
-  <block id="0f024621e0673f1f4e657983682d6e72" category="list-text">Sélectionnez *Supprimer*.</block>
-  <block id="f74214d8c590939b207f6b9d28be697e" category="section-title">Supprimez Rancher sur NetApp HCI à l'aide de l'API REST</block>
-  <block id="e8be3c05b7fc19713d93cc42713bf53e" category="paragraph">Vous pouvez utiliser l'API REST NetApp Hybrid Cloud Control pour supprimer les trois machines virtuelles qui ont été configurées pendant le déploiement et héberger le serveur Rancher.</block>
-  <block id="ba8ea8256e0d2a7abdebea804532ee37" category="list-text">Saisissez l'adresse IP du nœud de gestion suivie de<block ref="3c0cd0db849122b6fcb84f6c7bd5fbe7" prefix=" " category="inline-code"></block>:</block>
-  <block id="57b1c457f38ba78753cb87decf2e8d6e" category="list-text">Cliquez sur *POST/détruire*.</block>
-  <block id="8db289a0b3d19342318145981cd7e0a7" category="list-text">Dans la zone de texte corps de la demande, entrez le FQDN du serveur Rancher comme<block ref="82923f32d786fad5433ee531b1ea9e03" prefix=" " category="inline-code"></block> valeur.</block>
-  <block id="02b4e566163750b5c0d71a3e8231faa8" category="paragraph">Après plusieurs minutes, les machines virtuelles du serveur Rancher ne devraient plus être visibles dans la liste hôtes et clusters du client vSphere. Une fois le retrait terminé, vous pouvez utiliser le contrôle de cloud hybride NetApp pour redéployer Rancher sur NetApp HCI.</block>
-  <block id="71ad76db061a5d9fefe0c32bc31810c1" category="inline-link">Dépannage du déploiement de l'éleveur</block>
-  <block id="7ea876a6c1e6e26458a429794b25cdb3" category="list-text"><block ref="7ea876a6c1e6e26458a429794b25cdb3" category="inline-link-rx"></block></block>
   <block id="06770b8698b0f11729c64d4464633b5d" category="summary">Découvrez comment importer un profil d'installation NetApp HCI qui permettra à NetApp HCI de remplir automatiquement les champs de l'assistant du moteur de déploiement NetApp.</block>
   <block id="477c50493c0b7816fb6b8e788678ff31" category="doc">Importer un profil d'installation</block>
   <block id="bdf9c1e831a86e4dccf4c8afd08031de" category="inline-link">ConfigBuilder</block>
@@ -4900,61 +4670,6 @@
   <block id="13004d9ad6d187899e4c8b913c50f2cf" category="list-text">*2 option de câble* : l'option à deux câbles combine la gestion, la machine virtuelle et le trafic de stockage sur deux ports liés. Cette option de câblage requiert VDS et l'active automatiquement. Vous devez disposer d'une licence vSphere Enterprise plus prête à être appliquée après le déploiement.</block>
   <block id="5c562dc8940c1926534320d7954ae6ee" category="list-text">Certaines options de câblage affichent plusieurs vues du panneau arrière de différents types de matériel de nœuds. Parcourez les vues du panneau arrière pour voir comment connecter les câbles réseau pour ce modèle de nœud spécifique et cette option de câblage.</block>
   <block id="a8b6dee16fc90fd95888b26871a0a869" category="list-text">Lorsque vous avez terminé, cliquez sur *Continuer*.</block>
-  <block id="7f3b622424e8f9729d8e5a393a7680c1" category="doc">Déployez Rancher sur NetApp HCI</block>
-  <block id="c5e36f8eabaaead031b057acc32e5736" category="paragraph">Pour utiliser Rancher sur votre environnement NetApp HCI, vous devez d'abord déployer Rancher sur NetApp HCI.</block>
-  <block id="5da8513c5ceea22f3d11612e6d669f54" category="inline-link-macro">Exigences pour Rancher sur NetApp HCI</block>
-  <block id="0268034483ceb7fef2b37edff0d3c5d6" category="admonition">Avant de démarrer le déploiement, assurez-vous de vérifier l'espace libre du datastore et autre <block ref="0f3ff3fa94926d14d00ec4c1d971e4ba" category="inline-link-macro-rx"></block>.</block>
-  <block id="c713fd86796be3114956ca58ac1200bd" category="admonition">Le support rancher n'est pas inclus dans votre contrat NetApp support Edge. Contactez le service commercial de NetApp ou votre revendeur pour plus d'informations. Si vous achetez le support Rancher auprès de NetApp, vous recevrez un e-mail avec des instructions.</block>
-  <block id="487324d4536d7ebcac64ea746387f47b" category="section-title">Que se passe-t-il lorsque vous déployez Rancher sur NetApp HCI ?</block>
-  <block id="1fb1918534fb4625b5e9840ae10b1a06" category="paragraph">Le déploiement implique les étapes suivantes, décrites chacune ultérieurement :</block>
-  <block id="b36bb3862ba384cb11cc6dd61944d8c8" category="list-text">Utilisez le contrôle de cloud hybride NetApp pour initier le déploiement.</block>
-  <block id="7d0f93deb21a0d0a7e352fb6927a0c1b" category="list-text">Le déploiement Rancher crée un cluster de gestion, qui inclut trois machines virtuelles.</block>
-  <block id="33648668a0c68c30968b6eb667c1052e" category="paragraph">Chaque machine virtuelle est affectée à tous les rôles Kubernetes du plan de contrôle et du travail. Cela signifie que l'interface utilisateur Rancher est disponible sur chaque nœud.</block>
-  <block id="0dab1f97df9e0ce392445d8a09baa42a" category="list-text">Le plan de contrôle Rancher (ou _Rancher Server_) est également installé, en utilisant le modèle de nœud NetApp HCI dans Rancher pour faciliter le déploiement. Le plan de contrôle Rancher fonctionne automatiquement avec la configuration utilisée dans le moteur de déploiement NetApp, qui a été utilisée pour créer l'infrastructure NetApp HCI.</block>
-  <block id="94b17b0931ee8097201e38cbcf0b8545" category="list-text">Après le déploiement, vous recevrez un e-mail de NetApp vous offrant la possibilité de vous inscrire au support NetApp sur les déploiements Rancher sur NetApp HCI.</block>
-  <block id="09785d13d17a7e680226519e3f7b03d8" category="list-text">Après le déploiement, les équipes Dev et Ops peuvent ensuite déployer des clusters utilisateurs, comme n'importe quel déploiement Rancher.</block>
-  <block id="7310aa3448f858eb0ccdae553808c4a3" category="section-title">Étapes de déploiement de Rancher sur NetApp HCI</block>
-  <block id="add0bdfadd7e3b0834216b85a3fe3ebf" category="list-text"><block ref="021f3523b690ac5a23a049d2063a30c4" category="inline-xref-macro-rx"></block></block>
-  <block id="e88f47dc973665dfd8894a8163ac874c" category="list-text"><block ref="25f2e168e26f38c0f2f12aac930bc055" category="inline-xref-macro-rx"></block></block>
-  <block id="57ced46cb474fe27b777ae0fa2f87427" category="list-text"><block ref="bca82a5c16879442723dfa012ea48de9" category="inline-xref-macro-rx"></block></block>
-  <block id="02c9c0f23e51b8fa01a183d8a28f7be1" category="section-title">Accédez au contrôle du cloud hybride NetApp</block>
-  <block id="c90fc057996e7813e2c2d7284092b246" category="paragraph">Pour commencer le déploiement, accédez à NetApp Hybrid Cloud Control.</block>
-  <block id="73a4cf300ef93df251f267b4eb4b8109" category="list-text">Dans le contrôle du cloud hybride, cliquez sur l'icône *Rancher* en bas à gauche de la barre de navigation.</block>
-  <block id="3542f74f39536cba293ba9b957ea29d1" category="image-alt">Tableau de bord et icône Rancher de contrôle du cloud hybride NetApp</block>
-  <block id="3d89aa38424590c43adbaa712d73444e" category="paragraph">Une fenêtre contextuelle affiche un message sur la mise en route avec Rancher.</block>
-  <block id="6d750a8c22ae4cb041314a35b7d3eb98" category="image-alt">Image démarrage du rancher</block>
-  <block id="db1b140376c6443104cac68b0abf7838" category="list-text">Cliquez sur *déployer Rancher*.</block>
-  <block id="2b35efdcb41d294af12c832adcc971ae" category="paragraph">L'interface Rancher s'affiche.</block>
-  <block id="5565efb63f30ab2bf9cf14682bc63af6" category="image-alt">Page de déploiement de l'éleveur</block>
-  <block id="bcddafd45995462be87118577259749d" category="paragraph">Vos identifiants vCenter sont collectés en fonction de votre installation du moteur de déploiement NetApp.</block>
-  <block id="a0f2d6e17d1ed31838b00dd027976028" category="list-text">Entrez les informations *Ressources vCenter*. Certains champs sont décrits ci-après.</block>
-  <block id="674cf0db8503e8561d9c33a8b3441de9" category="list-text">*Datacenter* : sélectionnez un centre de données. Après avoir sélectionné le centre de données, tous les autres champs sont préremplis, mais vous pouvez les modifier.</block>
-  <block id="9e6aeb20d552eb52f48661655350e373" category="list-text">*Datastore* : sélectionnez un datastore sur les nœuds de stockage NetApp HCI. Ce datastore doit être résilient et accessible pour tous les hôtes VMware. Ne sélectionnez pas un datastore local accessible à un seul des hôtes.</block>
-  <block id="eb9edd9e4495c85030d2bccb46f93fb0" category="list-text">*Réseau de gestion* : il devrait être accessible à partir des stations de gestion et du réseau de machines virtuelles sur lequel les clusters d'utilisateurs seront hébergés.</block>
-  <block id="7233774133fa6e06ba9f07d853dd9074" category="list-text">Entrer les informations *Paramètres de déploiement* :</block>
-  <block id="d8253ecb2b1cebb7e728a4bd0dd0fdee" category="list-text">*Serveurs DNS* : facultatif. Si vous utilisez l'équilibrage de la charge, entrez les informations du serveur DNS interne.</block>
-  <block id="4bbfb635e2840053ab98ec1648cc4fd5" category="list-text">*FQDN serveur Rancher* : pour s'assurer que le serveur Rancher reste disponible pendant les pannes de nœud, fournissez un nom de domaine complet (FQDN) que votre serveur DNS peut résoudre à n'importe quelle adresse IP attribuée aux nœuds du cluster Rancher Server. Ce FQDN avec le préfixe « https » devient l'URL Rancher que vous utiliserez pour accéder à votre implémentation Rancher.</block>
-  <block id="90fe893e70cd1360ad6ef981c462227f" category="paragraph">Si aucun nom de domaine n'est fourni, le DNS générique sera utilisé à la place et vous pourrez accéder au serveur Rancher à l'aide de l'une des URL présentées une fois le déploiement terminé.</block>
-  <block id="53db7136f5132e9fff23eda47b428f36" category="list-text">Entrer *Paramètres avancés* informations :</block>
-  <block id="870bf6a0be7ca318021fecdc054f9039" category="list-text">*Affecter des adresses IP statiques* : si vous activez l'adressage IP statique, indiquez les adresses IP de départ pour trois adresses IPv4 dans l'ordre, une pour chaque machine virtuelle de cluster de gestion. Rancher sur NetApp HCI déploie trois machines virtuelles de clusters de gestion.</block>
-  <block id="764c32019202cd8135ea005a4604fac9" category="list-text">*Configurer le serveur proxy* :</block>
-  <block id="d998fbd86d4b42bf32a0067aa76a7e50" category="list-text">Vérifiez et cochez la case correspondant au contrat de licence utilisateur final Rancher.</block>
-  <block id="b942eefa3f05652b2ba84a488c56cd6a" category="list-text">Vérifiez et cochez la case pour confirmer les informations sur le logiciel Rancher.</block>
-  <block id="630ecc37093c078a691a0c95080f0fb3" category="list-text">Cliquez sur *déployer*.</block>
-  <block id="09b1ef440dc9814b56c03ca0f48fa92d" category="paragraph">Une barre indique la progression du déploiement.</block>
-  <block id="77f5be726a980cf37bdc3392ee00b99a" category="admonition">Le déploiement de Rancher peut prendre environ 15 minutes.</block>
-  <block id="7d00b25d49c208c7497113c8a99a4dc0" category="paragraph">Une fois le déploiement terminé, Rancher affiche un message sur l'achèvement et fournit une URL Rancher.</block>
-  <block id="046f0a663efcda8167e84062d9694df2" category="image-alt">URL et fin du déploiement du rancher</block>
-  <block id="6d461635879b4b337e8c5b27f6323b44" category="list-text">Notez cette URL Rancher qui s'affiche à la fin du déploiement. Vous utiliserez cette URL pour accéder à l'interface utilisateur Rancher.</block>
-  <block id="f4ad5fe6377e47eb0f1d3efd91917e13" category="section-title">Vérifiez votre déploiement à l'aide de vCenter Server</block>
-  <block id="6c8f5781f8959d00ff258798ba1d4a06" category="paragraph">Dans votre client vSphere, vous pouvez voir le cluster de gestion Rancher, qui inclut trois machines virtuelles.</block>
-  <block id="6d5e0d8752a1244db9529c72a9402187" category="admonition">Une fois le déploiement terminé, ne modifiez pas la configuration des clusters de machines virtuelles de serveurs Rancher ou ne supprimez pas les machines virtuelles. Le rancher sur NetApp HCI s'appuie sur la configuration du cluster de gestion RKE déployée pour fonctionner normalement.</block>
-  <block id="9ce36cf8bc97284a665ac4d465211731" category="inline-link-macro">Effectuer les tâches post-déploiement</block>
-  <block id="0d15f5317410136724749d58832233cd" category="list-text"><block ref="0d15f5317410136724749d58832233cd" category="inline-link-macro-rx"></block></block>
-  <block id="50488dc9ca0f950ef434f471ee1a1ea1" category="list-text"><block ref="50488dc9ca0f950ef434f471ee1a1ea1" category="inline-link-macro-rx"></block></block>
-  <block id="a8d78fc8303b6d61ea41eafdef248a47" category="list-text"><block ref="a8d78fc8303b6d61ea41eafdef248a47" category="inline-link-macro-rx"></block></block>
-  <block id="6278dd89bb92f73312cbf2054d93c376" category="inline-link-macro">Moniteur Rancher sur NetApp HCI</block>
-  <block id="d02a7642ad872d8357ae09eaeff5fb70" category="list-text"><block ref="d02a7642ad872d8357ae09eaeff5fb70" category="inline-link-macro-rx"></block></block>
   <block id="2d8f994f4609318ca067ff2fd4bfcc41" category="paragraph">La version 12.2.109 introduit la prise en charge de BMC avec les API DMTF Redfish, qui permet d'exploiter à l'avenir la solution NetApp Hybrid Cloud Control. Les mises à jour du micrologiciel contiennent également des correctifs généraux et permettent de résoudre les problèmes de mémoire. Les mises à jour BMC pour les nœuds de calcul H300E, H500E et H700E corrigent plusieurs vulnérabilités de sécurité, notamment CVE-2019-16649, CVE-2019-16650 et CVE-2019-6260.</block>
   <block id="4605237fc29d65cc28090a6d12e07043" category="cell">*NA3.7*</block>
   <block id="17a0ee184d60e3ab5940f9fee65d7be6" category="cell">*3B01*</block>
@@ -5043,71 +4758,7 @@
   <block id="ed4eabd0a7faf90688c2b330943ea2a2" category="admonition">Vous pouvez également attendre 2 minutes que l'inventaire soit mis à jour dans l'interface utilisateur NetApp Hybrid Cloud Control.</block>
   <block id="a3b41c5e4b5982a5e45a7cfad493bb3f" category="list-text">Réglez rafraîchissement sur<block ref="f827cf462f62848df37c5e1e94a4da74" prefix=" " category="inline-code"></block>.</block>
   <block id="a52a9f02c0e24c19edaf43a1f495058c" category="list-text">Actualisez le navigateur NetApp Hybrid Cloud Control pour voir tous les changements.</block>
-  <block id="5532c6e8d75844327b5edc690cbae5c1" category="summary">Découvrez les exigences d'une installation Rancher sur NetApp HCI réussie.</block>
-  <block id="d202289742d17f7ee5292dbdc580c12f" category="doc">Exigences pour Rancher sur NetApp HCI</block>
-  <block id="d18495ea55e4fc04be659f9f7654cfeb" category="paragraph">Avant d'installer Rancher sur NetApp HCI, assurez-vous que votre environnement et votre système NetApp HCI répondent à ces exigences.</block>
-  <block id="7d25e05d224fca2eb306788617dd64c8" category="admonition">Si vous déployez accidentellement Rancher sur NetApp HCI avec des informations incorrectes (par exemple un FQDN de serveur Rancher incorrect), il n'y a aucun moyen de corriger le déploiement sans le supprimer et le redéployer. Vous devrez supprimer le Rancher sur l'instance NetApp HCI, puis redéployer Rancher sur NetApp HCI depuis l'interface utilisateur de contrôle de cloud hybride NetApp. Voir <block ref="3121dc1b9111bb157a7a952ee2ca3268" category="inline-link-macro-rx"></block> pour en savoir plus.</block>
-  <block id="90ab3e774415f0dcefd1c9d338cdbd38" category="section-title">Exigences en matière de nœuds</block>
-  <block id="f8f561fc5b9d026f2ae554e149c70761" category="list-text">Assurez-vous que votre système NetApp HCI dispose d'au moins trois nœuds de calcul, ce qui est nécessaire pour assurer la résilience totale. Rancher sur NetApp HCI n'est pas pris en charge dans les configurations de stockage uniquement.</block>
-  <block id="1c775ac4e1eb07330d8e02239a97851e" category="list-text">Assurez-vous que le datastore que vous prévoyez d'utiliser pour le déploiement Rancher sur NetApp HCI dispose d'au moins 60 Go d'espace libre.</block>
-  <block id="8fd967b78ccb361d1c1f8a242538e631" category="list-text">Assurez-vous que votre cluster NetApp HCI exécute des services de gestion version 2.17 ou ultérieure.</block>
-  <block id="2e0b8d072e1de4ee478380363f57b355" category="section-title">Détails du nœud</block>
-  <block id="951ab8c224557fce211ae2722923de5c" category="paragraph">Rancher sur NetApp HCI déploie un cluster de gestion à trois nœuds.</block>
-  <block id="a894a1c771c3346a7542b360b3189472" category="paragraph">Tous les nœuds présentent les caractéristiques suivantes :</block>
   <block id="5d56dbd20d9ee1ab8a722ff12e331953" category="cell">VCPU</block>
-  <block id="6b434693316483f128337cdcf1e78768" category="cell">MÉMOIRE VIVE (GO)</block>
-  <block id="4529448db618b1e651bf3f0393b652fb" category="cell">Disque (Go)</block>
-  <block id="c9f0f895fb98ab9159f51fd0297e236d" category="cell">8</block>
-  <block id="98f13708210194c475687be6106a3b84" category="cell">20</block>
-  <block id="bdd8837c5f5666c1f37ec05326aa385f" category="section-title">Exigences liées au réseau</block>
-  <block id="cfe67dd759ec292a8e9dcf3898f1ebe0" category="list-text">Assurez-vous que le réseau que vous prévoyez de déployer le Rancher sur des clusters de gestion NetApp HCI dispose d'une route vers le réseau de gestion des nœuds.</block>
-  <block id="d65a3c7c73745cbfda3d6240008a8e3b" category="list-text">Rancher sur NetApp HCI prend en charge les adresses DHCP pour le plan de contrôle (serveur Rancher) et les clusters utilisateur, mais nous recommandons des adresses IP statiques pour les environnements de production. Vérifiez que vous avez alloué les adresses IP statiques nécessaires si vous déployez dans un environnement de production.</block>
-  <block id="dd5830bc858985a80fd55f24d880c367" category="list-text">Le serveur de rancher nécessite trois adresses IP statiques.</block>
-  <block id="c8852ab393955c6490edd683effed703" category="list-text">Chaque cluster utilisateur nécessite autant d'adresses IP statiques que de nœuds dans le cluster. Par exemple, un cluster utilisateur avec quatre nœuds nécessite quatre adresses IP statiques.</block>
-  <block id="6482690d58a3ce99daffc8c9e749e188" category="list-text">Si vous prévoyez d'utiliser un adressage DHCP pour le plan de contrôle Rancher ou les clusters utilisateurs, assurez-vous que la durée de location DHCP est d'au moins 24 heures.</block>
-  <block id="ca2d4d52502e2c68a5ab10a7dfee5a72" category="list-text">Si vous avez besoin d'utiliser un proxy HTTP pour activer l'accès Internet pour Rancher sur NetApp HCI, vous devez modifier le pré-déploiement du nœud de gestion. Connectez-vous au nœud de gestion à l'aide de SSH et suivez le<block ref="43ab747d974a0561608b35356d6b5482" category="inline-link-rx"></block> Dans la documentation de Docker pour mettre à jour manuellement les paramètres proxy de Docker.</block>
-  <block id="d8f7fbee495dc94a54282ca497b38b0c" category="list-text">Si vous activez et configurez un serveur proxy pendant le déploiement, les plages d'adresses IP et les domaines suivants sont automatiquement ajoutés aux paramètres noProxy du serveur Rancher :</block>
-  <block id="387be85ed1524b84d0605fab6ab99a21" category="list-text">Assurez-vous que votre nœud de gestion peut utiliser DNS pour résoudre le nom d'hôte<block ref="9970fcea0b4e812af61d936ccb60372b" prefix=" " category="inline-code"></block> À une adresse IP. Il s'agit du fournisseur DNS utilisé pendant le déploiement ; si le nœud de gestion ne parvient pas à résoudre cette URL, le déploiement échouera.</block>
-  <block id="5e46fc6ced2f99a38968e9ac85a0a8cd" category="list-text">Assurez-vous d'avoir configuré des enregistrements DNS pour chaque adresse IP statique dont vous avez besoin.</block>
-  <block id="3d065b1064b64a83258ea086e540e24c" category="section-title">Configuration requise pour VMware vSphere</block>
-  <block id="63b85c608c2034c828efadd0a0f6de0d" category="list-text">Assurez-vous que l'instance VMware vSphere que vous utilisez est la version 6.5, 6.7 ou 7.0.</block>
-  <block id="5d6ffa49e809cebbd1b40d378382cef8" category="list-text">Vous pouvez utiliser une configuration réseau de switchs standard vSphere (VSS), mais, si c'est le cas, vous pouvez vous assurer que les switchs virtuels et les hôtes physiques utilisés pour les VM Rancher peuvent accéder à tous les mêmes groupes de ports, de la même manière que vous garantiriez l'utilisation de machines virtuelles régulières.</block>
-  <block id="bbe19407c7eae60b683129c569b8bf2a" category="section-title">Considérations relatives au déploiement</block>
-  <block id="c9d36779289fd65739a9602767bea548" category="paragraph">Il serait intéressant de prendre en compte les considérations suivantes :</block>
-  <block id="85ba80ebfec3b36f46fa91c2da8801e0" category="list-text">Types de déploiements</block>
-  <block id="811df4f2222b474831d0729d37981ae9" category="list-text">Déploiements de démonstration</block>
-  <block id="5d1b507574b37de234ceaf10fb41886f" category="list-text">Déploiements en production</block>
-  <block id="7e1ec8f165209a950133dcbbbb370102" category="list-text">FQDN de rancher</block>
-  <block id="42d7f11b605dd889bb7685ff9f69001a" category="admonition">Rancher sur NetApp HCI n'est pas résilient aux pannes de nœuds, sauf si vous configurez un certain type d'équilibrage de charge réseau. Pour une solution simple, créez une entrée DNS Round Robin pour les trois adresses IP statiques réservées au serveur Rancher. Ces entrées DNS doivent se résoudre au FQDN du serveur Rancher que vous utiliserez pour accéder à l'hôte du serveur Rancher, qui sert l'interface utilisateur Web Rancher une fois le déploiement terminé.</block>
-  <block id="290b7bfb38f6f8cfeb3ef8b9e8bb857c" category="paragraph">Vous pouvez déployer Rancher sur NetApp HCI de plusieurs manières :</block>
-  <block id="5e7c6745478b902dabdd2ae842a2ead7" category="list-text">*Déploiements de démonstration*: Si DHCP est disponible dans l'environnement de déploiement ciblé et que vous voulez tester les capacités Rancher sur NetApp HCI, alors un déploiement DHCP est le plus logique.</block>
-  <block id="930bc87dea1e90011d62dbf2c01aa2de" category="paragraph">Dans ce modèle de déploiement, l'interface utilisateur Rancher est accessible depuis chacun des trois nœuds du cluster de gestion.</block>
-  <block id="56d4818114d35d0e9d908ec192205e85" category="paragraph">Si votre entreprise n'utilise pas DHCP, vous pouvez toujours l'essayer en utilisant quatre adresses IP statiques allouées avant le déploiement, comme dans le cas d'un déploiement en production.</block>
-  <block id="ba27bf842baf1551341dc65f57864a03" category="list-text">*Déploiements de production* : pour les déploiements de production ou lorsque DHCP n'est pas disponible dans l'environnement de déploiement ciblé, un peu plus de travail de pré-déploiement est nécessaire. La première étape consiste à obtenir trois adresses IP consécutives. Vous entrez le premier pendant le déploiement.</block>
-  <block id="e8f706afb30c333aa54417697f3d2e50" category="paragraph">Nous recommandons d'utiliser l'équilibrage de charge L4 ou la configuration DNS Round-Robin pour les environnements de production. Ceci nécessite une quatrième adresse IP et une entrée séparée dans votre configuration DNS.</block>
-  <block id="2fa91d4f9c97b61702d9e98d8bbc1e4a" category="list-text">*L4 load balancing* : il s'agit d'une technique dans laquelle une machine virtuelle ou un conteneur hébergeant une application comme nginx est configuré pour distribuer des requêtes entre les trois nœuds du cluster de gestion.</block>
-  <block id="9bc3e553696928d8c41bbf87b30c3d64" category="list-text">*DNS Round-Robin* : il s'agit d'une technique où un seul nom d'hôte est configuré dans le système DNS qui fait pivoter les demandes parmi les trois hôtes qui forment le cluster de gestion.</block>
-  <block id="8c08887d302672e057ebca43d69bbbfa" category="paragraph">L'installation nécessite l'affectation d'une URL Rancher, qui inclut le nom de domaine complet (FQDN) de l'hôte où l'interface utilisateur Rancher sera desservie une fois l'installation terminée.</block>
-  <block id="64ede50cfa29c041a4333b9a3770a25f" category="paragraph">Dans tous les cas, l'interface utilisateur Rancher est accessible dans votre navigateur via le protocole https (port 443).</block>
-  <block id="5162841982f8544c0eeb5fa5e5bd13e7" category="paragraph">Pour les déploiements de production, un FQDN configuré pour équilibrer les charges sur les nœuds du cluster de gestion doit être configuré. Sans nom de domaine complet ni équilibrage de charge, l'environnement n'est pas résilient et ne convient qu'aux environnements de démonstration.</block>
-  <block id="a60e89da505f30c30d2c3905deeb6331" category="section-title">Ports requis</block>
-  <block id="2a0bbdb7fd7e7c40b4329bd7b65e0169" category="paragraph">Assurez-vous que la liste des ports dans la section "ports pour nœuds de serveur Rancher sur RKE" de la section *nœuds Rancher* du fonctionnaire<block ref="090711aa00cd3a26771fc9eebc6c3e35" category="inline-link-rx"></block> Sont ouverts dans votre configuration de pare-feu vers et depuis les nœuds exécutant le serveur Rancher.</block>
-  <block id="aa0efc5a9f5b0ab58a228c257b8d6e73" category="section-title">URL requises</block>
-  <block id="8ffdb46d17db172f0b32297bc6b47b66" category="paragraph">Les URL suivantes doivent être accessibles depuis les hôtes où réside le plan de contrôle Rancher :</block>
-  <block id="cc489321beea3fef2cf8dddbdb0449d7" category="cell"><block ref="cc489321beea3fef2cf8dddbdb0449d7" category="inline-link-rx"></block></block>
-  <block id="27b235783d3b1511f3a05914bba0aefc" category="cell">Intégration Kubernetes</block>
-  <block id="7640b735800fb573294e3721e5e4c26c" category="cell"><block ref="7640b735800fb573294e3721e5e4c26c" category="inline-link-rx"></block></block>
-  <block id="058dd5b5aefdef3779a7bb0949d73299" category="cell">Téléchargements de logiciels de rancher</block>
-  <block id="cb52a14aeda870d7aeedddff3c9398b7" category="cell"><block ref="cb52a14aeda870d7aeedddff3c9398b7" category="inline-link-rx"></block></block>
-  <block id="4a82a5443e1436f7bb40570b65ccc129" category="cell">Service d'entropie Ubuntu pour la génération de nombres aléatoires</block>
-  <block id="fee5d54d24df8b982c563a601e36681b" category="cell"><block ref="fee5d54d24df8b982c563a601e36681b" category="inline-link-rx"></block></block>
-  <block id="2b5905577a3340ff7ea3971b774d9ef6" category="cell">Ajouts d'invités VMware</block>
-  <block id="b6e0a0e9517086d22f7a580a9c4243ca" category="cell"><block ref="b6e0a0e9517086d22f7a580a9c4243ca" category="inline-link-rx"></block></block>
-  <block id="e13e3d40c9630b344027c17326435949" category="cell">Clé publique Docker Ubuntu GPG</block>
-  <block id="3d37b66329b9261329273dd9d0fc9742" category="cell"><block ref="3d37b66329b9261329273dd9d0fc9742" category="inline-link-rx"></block></block>
-  <block id="f23afc7d77043a40f0b5b1e01a940eb6" category="cell">Lien de téléchargement Docker</block>
-  <block id="939085619eb0ae46b4cc41c488483967" category="cell"><block ref="939085619eb0ae46b4cc41c488483967" category="inline-link-rx"></block></block>
-  <block id="4a86ebf360b1a8f81fa11efe200cc636" category="cell">Docker Hub pour le contrôle du cloud hybride NetApp</block>
   <block id="1fb2ac9e5fd1ec2b156464d754a63871" category="summary">Découvrez les tâches post-déploiement que vous devez effectuer après le déploiement de NetApp HCI.</block>
   <block id="2fe2193ce68255102ca3d3592602ae77" category="doc">Modifications de mise en réseau prises en charge</block>
   <block id="d4197debfb75901bf599a0905cf94d87" category="paragraph">Une fois que vous avez déployé NetApp HCI, vous pouvez modifier la configuration réseau par défaut de manière limitée. Cependant, vous devez répondre à certaines exigences pour un fonctionnement optimal et une détection correcte du réseau. Si vous ne remplissez pas ces conditions, vous risquez d'entraîner un comportement inattendu et d'empêcher l'extension des ressources de calcul et de stockage.</block>
@@ -5805,10 +5456,6 @@
   <block id="53654e7a47cd63eafdad4a09421dd587" category="list-text">Configurez l'adresse IP, le masque de sous-réseau et l'adresse de passerelle pour Bond1G et Bond10G dans l'interface utilisateur. Vous pouvez également configurer un ID VLAN pour chaque réseau si nécessaire.</block>
   <block id="d32fbb57afe41a4491b4d1111a1a808a" category="list-text">Répétez l'étape 2 pour les nœuds de calcul et de stockage restants.</block>
   <block id="b6f5ad3bd2d2657d10fd80b3562503e6" category="list-text">Accédez à l'adresse IP Bond1G que vous avez attribuée au nœud de stockage de contrôle. Par exemple :</block>
-  <block id="9301959015fcd4fd07a22d67bff8b08d" category="summary">Découvrez comment configurer l'équilibrage de charge après l'installation de Rancher sur NetApp HCI.</block>
-  <block id="c9aa1445bb9586d749456d091f0cb97e" category="paragraph">Découvrez comment configurer l'équilibrage de charge après l'installation de Rancher sur NetApp HCI. L'équilibrage des charges pour Rancher sur NetApp HCI implique l'utilisation de clusters de gestion.</block>
-  <block id="048c5186fab0a3dbcb198829f81fc851" category="paragraph">Pour les charges de travail de production, il convient d'envisager une technique telle que DNS Round-Robin ou un équilibreur de charge L4 pour la valeur de l'URL Rancher. Soit l'une de ces techniques distribuera l'accès à l'interface utilisateur Rancher et fournira la résilience la plus importante.</block>
-  <block id="8905b00e950e35009cb1c7f629755863" category="paragraph">L'équilibrage de charge L4 est une technique selon laquelle une machine virtuelle ou un conteneur qui héberge une application est configuré de manière à distribuer les requêtes entre les trois nœuds du cluster de gestion.</block>
   <block id="03c7d4785e3fa93f72c7101bdd0dbdb6" category="summary">Vous pouvez mettre à niveau NetApp HCI et tous ses composants.</block>
   <block id="59a003ce49b82fe00de09fe03510553f" category="doc">Présentation de la séquence de mise à niveau</block>
   <block id="ecaabfdd234216b22da5d6313e48fd94" category="paragraph">Vous pouvez maintenir votre système NetApp HCI à jour après son déploiement en mettant à niveau séquentiellement tous les composants logiciels NetApp HCI.</block>
@@ -6456,6 +6103,13 @@
   <block id="df5820ca7f238b48987ff74db1271e4a" category="paragraph-title">Options de mise à jour</block>
   <block id="d0ce6a73cc0e7aedcf58ba0e0c96c737" category="paragraph-title">Résolution des problèmes courants</block>
   <block id="2de79e7b8c77e4847d6bcd5a8ee879ce" category="section-title">[[sf_nodes]]SF38410, SF19210, SF9605 et SF4805</block>
-  <block id="58eaebf972358f1cf03d386a4ade1a0f" category="section-title">Et la suite ?</block>
   <block id="18526b4be693f8e5ed12fb2721f65eea" category="section-title">[[sys_upgrade_seq]]séquence de mise à niveau du système</block>
+  <block id="434d6ddb975683e537a15ac85b3f571d" category="inline-link-macro">Versions de firmware et de pilote ESXi prises en charge pour les versions de NetApp HCI et de firmware pour les nœuds de stockage NetApp HCI</block>
+  <block id="16b9f71cefad997cad5ec24fbb7a4db1" category="list-text"><block ref="16b9f71cefad997cad5ec24fbb7a4db1" category="inline-link-macro-rx"></block></block>
+  <block id="6563446976572a0b32d68f15a2be569f" category="paragraph">Versions de firmware et de pilote ESXi prises en charge pour les versions de NetApp HCI et de firmware pour les nœuds de stockage NetApp HCI.</block>
+  <block id="99fb5cb075d1550b2052133c142d5726" category="inline-link-macro">Versions de micrologiciel et de pilote ESXi prises en charge</block>
+  <block id="25d337a3a47a3f167e1c18f0472e2f97" category="paragraph">Reportez-vous à la matrice du micrologiciel et du pilote de votre matériel à l'adresse <block ref="913963bf89b539ef788a8e09cb649658" category="inline-link-macro-rx"></block>.</block>
+  <block id="43e34bcd62fca2ef36509ec2613974a0" category="admonition">Pour obtenir une matrice complète de micrologiciel et de micrologiciel de pilote pour votre matériel, reportez-vous à la section <block ref="913963bf89b539ef788a8e09cb649658" category="inline-link-macro-rx"></block>.</block>
+  <block id="12b23b4c09d649df7ce5a85073a16761" category="inline-link-macro">Versions de firmware prises en charge pour les nœuds de stockage NetApp HCI</block>
+  <block id="70e945411317a488defaf4452814955d" category="admonition">Pour obtenir une matrice complète de micrologiciel et de micrologiciel de pilote pour votre matériel, reportez-vous à la section <block ref="5044654178b92d05d74ce63fd089f27a" category="inline-link-macro-rx"></block>.</block>
 </blocks>
