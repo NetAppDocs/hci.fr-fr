@@ -6112,4 +6112,6 @@
   <block id="43e34bcd62fca2ef36509ec2613974a0" category="admonition">Pour obtenir une matrice complète de micrologiciel et de micrologiciel de pilote pour votre matériel, reportez-vous à la section <block ref="913963bf89b539ef788a8e09cb649658" category="inline-link-macro-rx"></block>.</block>
   <block id="12b23b4c09d649df7ce5a85073a16761" category="inline-link-macro">Versions de firmware prises en charge pour les nœuds de stockage NetApp HCI</block>
   <block id="70e945411317a488defaf4452814955d" category="admonition">Pour obtenir une matrice complète de micrologiciel et de micrologiciel de pilote pour votre matériel, reportez-vous à la section <block ref="5044654178b92d05d74ce63fd089f27a" category="inline-link-macro-rx"></block>.</block>
+  <block id="22e88e4089c8681eb3fe26ebca3e4cc5" category="cell">*Pack de microprogramme de calcul 2.150.4 à NetApp HCI 1.10*</block>
+  <block id="a6bbe5a2ef47a653214029cd4a762104" category="cell">*Compute Firmware Bundle 2.146.2*</block>
 </blocks>
