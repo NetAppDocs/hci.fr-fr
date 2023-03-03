@@ -25,7 +25,7 @@ Localisez le tag matériel d'un nœud de calcul dans VMware vSphere Web client 8
 image:../media/hw_tag_70.PNG["Capture d'écran de la table système"]
 
 . Copiez et enregistrez la valeur pour *Tag*.
-. xref:task_mnode_add_assets.adoc[Ajoutez vos ressources de calcul et de contrôleur au nœud de gestion]..
+. xref:task_mnode_add_assets.adoc[Ajoutez vos ressources de calcul et de contrôleur au nœud de gestion].
 
 
 --
