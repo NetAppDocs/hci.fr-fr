@@ -65,5 +65,3 @@ Si vous souhaitez consacrer plus de temps à la mise sous tension des nœuds et 
 == Trouvez plus d'informations
 
 link:firmware_driver_versions.html["Versions de firmware et de pilote ESXi prises en charge pour les versions de NetApp HCI et de firmware pour les nœuds de stockage NetApp HCI"]
-
- // 2023-MAR-3, DOC-4661
