@@ -6102,4 +6102,16 @@
   <block id="631923a687ff82d68973d99b95597b47" category="inline-link">Page Ressources SolidFire et Element</block>
   <block id="238c5b123e3473c57e2925edccb205c2" category="list-text"><block ref="238c5b123e3473c57e2925edccb205c2" category="inline-link-rx"></block></block>
   <block id="3a2bbd221f9a6d667af34b16ef1c1a32" category="list-text">Vous effectuez une mise à niveau vers Element Plug-in pour vCenter Server 5.1 ou 5.0.</block>
+  <block id="8ce84b11df4b07d7aa9bb1fd260b434f" category="inline-link-macro">Notes de version du pack de firmware de calcul 2.174.0</block>
+  <block id="5b0fda3cebcf8a643f1180cab01f12da" category="list-text"><block ref="1a4479b2e3ec8fc20906c13b738e7820" category="inline-link-macro-rx"></block> _NOUVEAU_</block>
+  <block id="69bac05cf2ab747a8ac20a157b6363b6" category="admonition">La solution NetApp de contrôle du cloud hybride exige le dernier pack de services de gestion. Vous devez effectuer une mise à niveau vers le dernier pack de services de gestion avant de mettre à niveau le micrologiciel de vos nœuds de calcul vers la version 2.174.0. Si vous mettez à niveau le micrologiciel de vos nœuds de calcul vers la version 2.174.0, vous devez disposer des services de gestion 2.20 pour continuer.</block>
+  <block id="78810bf1f4f592e0de1616224eda921a" category="paragraph">La version 2.174.0 contient des correctifs généraux.</block>
+  <block id="2dac99af4ba8d6920084f83699b5757d" category="cell">*07.02.00*</block>
+  <block id="0054b05feeebac288bc28bf8d6a9d248" category="admonition">Avant de procéder à la mise à niveau vers la version 2.174.0, vous devez vérifier la version actuelle du pilote ESXi. Si le pilote est obsolète, mettez-le d'abord à niveau. Mettez ensuite à niveau le firmware de calcul vers la version 2.174.0 pour les nœuds de calcul. Visitez <block ref="ba79adf2a648aae596ba5c5e0a50002c" category="inline-link-macro-rx"></block> Pour obtenir des instructions sur la mise à jour de vos pilotes de nœud de calcul, qui incluent le pilote ESXi.</block>
+  <block id="72538e8fdaa12e28f9171c0b783493e7" category="section-title">Télécharger le pack de firmware de calcul 2.174.0</block>
+  <block id="b7f798a9967001ca08ab89776c0966fc" category="list-text">Sélectionnez *Go*.</block>
+  <block id="bb9f34e8741cf096f686b7632f900879" category="list-text">Accédez au<block ref="e26f094ec200dc78420831e36f6f3bb7" category="inline-link-rx"></block> Et sélectionnez *Element Software* dans la liste déroulante :</block>
+  <block id="53edb91d1e6b34073e6e243ed47db12d" category="list-text">Dans le champ de recherche par mot-clé, tapez « Compute Firmware Bundle » et sélectionnez *New Search*:</block>
+  <block id="dfa721c0f57e3559aa22a411a4ad2fb0" category="inline-link-macro">Avis concernant le pack de firmware de calcul 2.174.0</block>
+  <block id="4d34470d64d9d2f569cd7f9c561a9343" category="list-text"><block ref="4d34470d64d9d2f569cd7f9c561a9343" category="inline-link-macro-rx"></block></block>
 </blocks>
