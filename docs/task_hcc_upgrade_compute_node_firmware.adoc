@@ -24,6 +24,9 @@ Une fois la mise à niveau effectuée, le nœud de calcul démarre dans ESXi et 
 | Modèle | Version minimale du contrôleur BMC | Version minimale du BIOS 
 
 
+| H300E/H500E/H700E | 6.84.00 | NA2.1 
+
+
 | H410C​ | Toutes les versions prises en charge (aucune mise à niveau requise)​ | Toutes les versions prises en charge (aucune mise à niveau requise)​ 
 
 
