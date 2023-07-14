@@ -6175,4 +6175,8 @@
   <block id="f096b63658cb95d8f43a07e2d68c70b3" category="paragraph">Pour le plug-in Element pour vCenter 4.10 et les versions antérieures, ajoutez le nœud (hôte) au cluster.</block>
   <block id="fc4dbbaeabdf5700f373a65d12b45108" category="list-text">Cliquez avec le bouton droit de la souris sur le cluster auquel vous souhaitez ajouter le nœud, puis sélectionnez *Ajouter hôte*.</block>
   <block id="a4b367d6a2f57fe52d770b2264b7d2d8" category="paragraph">Avant de remplacer le nœud, vous devez migrer les machines virtuelles hébergées sur le nœud vers un hôte disponible et supprimer le nœud du cluster. Vous devez enregistrer des informations détaillées sur le nœud, telles que le numéro de série et les informations de mise en réseau. La migration des VM et l'enregistrement des détails du nœud s'appliquent également en cas de défaillance de composants lorsque le nœud est toujours en ligne et fonctionne, par exemple en cas de défaillance d'un module DIMM (Dual Inline Memory module).</block>
+  <block id="29e13a3bca7d11d4ebec7e6356a5b466" category="cell">*Pack de microprogramme de stockage 2.175.0*</block>
+  <block id="022beb4c9e2bdbe9e3398445a4fad6b2" category="cell">06/15/2023</block>
+  <block id="804066a6a5042090a2a0b25c55f38e72" category="cell">3.5</block>
+  <block id="489901e715cade6fe0efc7e21e194576" category="cell">2.17</block>
 </blocks>
