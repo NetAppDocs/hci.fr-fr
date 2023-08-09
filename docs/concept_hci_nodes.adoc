@@ -44,18 +44,15 @@ Les nœuds de calcul NetApp HCI sont matériels qui fournissent des ressources d
 
 Les nœuds NetApp HCI Witness sont des machines virtuelles qui s'exécutent sur des nœuds de calcul en parallèle avec un cluster de stockage basé sur le logiciel Element. Les nœuds témoins n'hébergent pas les services de tranche ou de bloc. Un nœud Witness permet la disponibilité du cluster de stockage en cas de défaillance d'un nœud de stockage. Vous pouvez gérer et mettre à niveau les nœuds Witness de la même manière que les autres nœuds de stockage. Un cluster de stockage peut disposer d'un maximum de quatre nœuds témoin. Leur but principal est de s'assurer qu'il existe suffisamment de nœuds de grappe pour former un quorum d'ensemble valide.
 
-|===
+[NOTE]
+====
+*Exigence* : configurez les machines virtuelles du nœud Witness pour utiliser le datastore local (défini par défaut par NDE) pour le nœud de calcul. Vous ne devez pas les configurer sur un stockage partagé, tel que des volumes de stockage SolidFire. Pour empêcher la migration automatique des machines virtuelles, définissez le niveau d'automatisation DRS (Distributed Resource Scheduler) de la machine virtuelle Witness Node sur *Disabled*. Cela empêche les deux nœuds témoin de s'exécuter sur le même nœud de calcul et de créer une configuration de paire haute disponibilité.
 
+Dans un cluster de stockage à deux nœuds, au moins deux nœuds Witness sont déployés pour assurer la redondance en cas de défaillance du nœud témoin. Lorsque le processus d'installation de NetApp HCI installe Witness Nodes, un modèle de machine virtuelle est stocké dans VMware vCenter que vous pouvez utiliser pour redéployer un nœud témoin s'il est accidentellement retiré, perdu ou corrompu. Vous pouvez également utiliser le modèle pour redéployer un nœud témoin si vous devez remplacer un nœud de calcul défaillant qui héberge le nœud Witness. Pour obtenir des instructions, consultez la section *Redeploy Witness Nodes clusters de stockage à deux et trois nœuds* link:task_hci_h410crepl.html["ici"].
 
- a| 
-*Meilleure pratique :* configurer les machines virtuelles du nœud témoin pour utiliser le datastore local du nœud de calcul (défini par défaut par NDE), ne les configurer pas sur du stockage partagé, comme les volumes de stockage SolidFire. Pour empêcher la migration automatique des machines virtuelles, définissez le niveau d'automatisation DRS (Distributed Resource Scheduler) de la machine virtuelle Witness Node sur *Disabled*. Cela empêche les deux nœuds témoin de s'exécuter sur le même nœud de calcul et de créer une configuration de paire haute disponibilité.
-
-|===
+====
 
 TIP: En savoir plus sur link:hci_prereqs_witness_nodes.html["Conditions requises pour les ressources du nœud témoin"] et link:hci_prereqs_ip_address.html["Exigences relatives à l'adresse IP du nœud témoin"].
-
-
-NOTE: Dans un cluster de stockage à deux nœuds, au moins deux nœuds Witness sont déployés pour assurer la redondance en cas de défaillance du nœud témoin. Lorsque le processus d'installation de NetApp HCI installe Witness Nodes, un modèle de machine virtuelle est stocké dans VMware vCenter que vous pouvez utiliser pour redéployer un nœud témoin s'il est accidentellement retiré, perdu ou corrompu. Vous pouvez également utiliser le modèle pour redéployer un nœud témoin si vous devez remplacer un nœud de calcul défaillant qui héberge le nœud Witness. Pour obtenir des instructions, consultez la section *Redeploy Witness Nodes clusters de stockage à deux et trois nœuds* link:task_hci_h410crepl.html["ici"].
 
 
 

@@ -698,7 +698,6 @@
   <block id="36d3df322550ec93e10b1da2e3571f62" category="paragraph">Les nœuds de calcul NetApp HCI sont matériels qui fournissent des ressources de calcul, telles que le processeur, la mémoire et les ressources réseau, nécessaires à la virtualisation lors de l'installation de NetApp HCI. Comme chaque serveur exécute VMware ESXi, la gestion du nœud de calcul NetApp HCI (ajout ou suppression d'hôtes) doit être effectuée en dehors du plug-in dans le menu hôtes et clusters de vSphere. Qu'il s'agisse d'un cluster de stockage à quatre nœuds ou d'un cluster de stockage à deux nœuds, le nombre minimal de nœuds de calcul reste deux pour un déploiement NetApp HCI.</block>
   <block id="3366c96036458b6c9eedbdaccbd3dc34" category="section-title">Nœuds témoins</block>
   <block id="13637fc461c216e2f133872aa68284f3" category="paragraph">Les nœuds NetApp HCI Witness sont des machines virtuelles qui s'exécutent sur des nœuds de calcul en parallèle avec un cluster de stockage basé sur le logiciel Element. Les nœuds témoins n'hébergent pas les services de tranche ou de bloc. Un nœud Witness permet la disponibilité du cluster de stockage en cas de défaillance d'un nœud de stockage. Vous pouvez gérer et mettre à niveau les nœuds Witness de la même manière que les autres nœuds de stockage. Un cluster de stockage peut disposer d'un maximum de quatre nœuds témoin. Leur but principal est de s'assurer qu'il existe suffisamment de nœuds de grappe pour former un quorum d'ensemble valide.</block>
-  <block id="2c9355f24d4fb92e48ff0624b5165e70" category="paragraph">*Meilleure pratique :* configurer les machines virtuelles du nœud témoin pour utiliser le datastore local du nœud de calcul (défini par défaut par NDE), ne les configurer pas sur du stockage partagé, comme les volumes de stockage SolidFire. Pour empêcher la migration automatique des machines virtuelles, définissez le niveau d'automatisation DRS (Distributed Resource Scheduler) de la machine virtuelle Witness Node sur *Disabled*. Cela empêche les deux nœuds témoin de s'exécuter sur le même nœud de calcul et de créer une configuration de paire haute disponibilité.</block>
   <block id="ebd9bcbadb9c9789b855381b4b3c91a1" category="inline-link-macro">Conditions requises pour les ressources du nœud témoin</block>
   <block id="ed227f04b96772f206d5427ed842cdf1" category="inline-link-macro">Exigences relatives à l'adresse IP du nœud témoin</block>
   <block id="2558aa1c4b088a01ebbd23c6a72472a3" category="admonition">En savoir plus sur <block ref="0614c1798bfcf6fa1dd2b630cd83d6d6" category="inline-link-macro-rx"></block> et <block ref="9f9f24cd869308f40f7cad49c3f42972" category="inline-link-macro-rx"></block>.</block>
@@ -709,15 +708,11 @@
   <block id="e9c44bbfd795a5d63d74c6a77afee70d" category="summary">Les mentions légales donnent accès aux déclarations de copyright, aux marques, aux brevets, etc.</block>
   <block id="30d965eef5ba25c6b9998ae38270b43e" category="doc">Mentions légales</block>
   <block id="6016a2b341113bf496b719905398ecd2" category="section-title">Droits d'auteur</block>
-  <block id="09e95b77ffe81fe465a83ba99efad5c8" category="paragraph"><block ref="09e95b77ffe81fe465a83ba99efad5c8" category="inline-link-rx"></block></block>
   <block id="126a02652da6de02962cf1b654fd6376" category="section-title">Marques déposées</block>
   <block id="c4ce4761e466527d26b3e3d5ed1006fd" category="paragraph">NetApp, le logo NETAPP et les marques mentionnées sur la page des marques commerciales NetApp sont des marques commerciales de NetApp, Inc. Les autres noms de sociétés et de produits peuvent être des marques commerciales de leurs propriétaires respectifs.</block>
-  <block id="7aa531e9acfe2b98e34d2c92fe9846ff" category="paragraph"><block ref="7aa531e9acfe2b98e34d2c92fe9846ff" category="inline-link-rx"></block></block>
   <block id="be89498d2f8a22ce47c02ba9795fe2af" category="section-title">Brevets</block>
   <block id="d0b19d36be2c5f16e9aef46c8a452d3d" category="paragraph">Vous trouverez une liste actuelle des brevets appartenant à NetApp à l'adresse suivante :</block>
-  <block id="d7f1fbcf9ce4e42f705add574d262b2c" category="paragraph"><block ref="d7f1fbcf9ce4e42f705add574d262b2c" category="inline-link-rx"></block></block>
   <block id="56c34c6410dd45c5cec44149ad0ce037" category="section-title">Politique de confidentialité</block>
-  <block id="fc248f74f5e36542f7f5627b8610e9a3" category="paragraph"><block ref="fc248f74f5e36542f7f5627b8610e9a3" category="inline-link-rx"></block></block>
   <block id="c0227cef6f07a8cd2ac72f2945b031aa" category="section-title">Source ouverte</block>
   <block id="9b73989307c1975dfa4d5e1581e4afe8" category="paragraph">Les fichiers de notification fournissent des informations sur les droits d'auteur et les licences de tiers utilisés dans le logiciel NetApp.</block>
   <block id="5c77617ea17cd390f132822ac7f42625" category="inline-link-macro">Notification relative à NetApp HCI 1.11</block>
@@ -6180,4 +6175,13 @@
   <block id="60099f97c4a82ba2ee2d4a4d593b844b" category="admonition">Vous ne pouvez pas vous connecter à l'aide des informations d'identification du protocole d'accès au répertoire léger.</block>
   <block id="f4e8c07388940da9080e74e50960909d" category="paragraph"><block ref="f4e8c07388940da9080e74e50960909d" category="inline-link-macro-rx"></block></block>
   <block id="4fe99558e9030b1914f3007a88f2f74d" category="paragraph"><block ref="4fe99558e9030b1914f3007a88f2f74d" category="inline-link-macro-rx"></block></block>
+  <block id="e74b413ef024dbf7c56a0e2cfe306bd8" category="paragraph">*Exigence* : configurez les machines virtuelles du nœud Witness pour utiliser le datastore local (défini par défaut par NDE) pour le nœud de calcul. Vous ne devez pas les configurer sur un stockage partagé, tel que des volumes de stockage SolidFire. Pour empêcher la migration automatique des machines virtuelles, définissez le niveau d'automatisation DRS (Distributed Resource Scheduler) de la machine virtuelle Witness Node sur *Disabled*. Cela empêche les deux nœuds témoin de s'exécuter sur le même nœud de calcul et de créer une configuration de paire haute disponibilité.</block>
+  <block id="52009bb7ee17227f566cd26a02caee56" category="inline-link-macro"><block ref="52009bb7ee17227f566cd26a02caee56" category="inline-link-rx"></block></block>
+  <block id="a1a9afcf552a769c282769271829889a" category="paragraph"><block ref="a1a9afcf552a769c282769271829889a" category="inline-link-macro-rx"></block></block>
+  <block id="f99aa604031e5049799e73b5c3748a98" category="inline-link-macro"><block ref="f99aa604031e5049799e73b5c3748a98" category="inline-link-rx"></block></block>
+  <block id="5d545fe5152641e2ebe654e336e520e5" category="paragraph"><block ref="5d545fe5152641e2ebe654e336e520e5" category="inline-link-macro-rx"></block></block>
+  <block id="88e5eabd3917048b6927c42496b98f86" category="inline-link-macro"><block ref="88e5eabd3917048b6927c42496b98f86" category="inline-link-rx"></block></block>
+  <block id="dd38f906b37d412de7d1c1dcf4cbf31c" category="paragraph"><block ref="dd38f906b37d412de7d1c1dcf4cbf31c" category="inline-link-macro-rx"></block></block>
+  <block id="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-macro"><block ref="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-rx"></block></block>
+  <block id="2352c4e1f4d0024ade0869e00e6243f4" category="paragraph"><block ref="2352c4e1f4d0024ade0869e00e6243f4" category="inline-link-macro-rx"></block></block>
 </blocks>
