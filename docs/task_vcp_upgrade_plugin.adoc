@@ -27,11 +27,11 @@ NOTE: Services de gestion 2.22.7 inclut Element Plug-in pour vCenter Server 5.0 
 --
 Cette procédure de mise à niveau couvre les scénarios de mise à niveau suivants :
 
-* Vous effectuez une mise à niveau vers Element Plug-in pour vCenter Server 5.1 ou 5.0.
+* Vous effectuez une mise à niveau vers Element Plug-in pour vCenter Server 5.2, 5.1 ou 5.0.
 * Vous mettez à niveau vers un client Web HTML5 8.0 ou 7.0.
 +
 
-IMPORTANT: Le plug-in Element pour vCenter 5.0 et les versions ultérieures n'est pas compatible avec vCenter Server 6.7 et 6.5.
+IMPORTANT: Le plug-in Element pour vCenter 5.0 ou version ultérieure n'est pas compatible avec vCenter Server 6.7 et 6.5.
 
 
 
@@ -140,11 +140,11 @@ NOTE: Cette action crée une nouvelle base de données et termine l'installation
 +
 ** Depuis le plug-in Element pour vCenter Server 5.0, le point d'extension du plug-in distant NetApp Element apparaît :
 +
-image::vcp_remote_plugin_icons_home_page.png[Illustre le point d'extension du plug-in après une mise à niveau ou une installation réussie pour le plug-in Element 5.10 ou version ultérieure]
+image::vcp_remote_plugin_icons_home_page.png[Illustre le point d'extension du plug-in après une mise à niveau ou une installation réussie pour Element Plug-in 5.10 ou version ultérieure]
 
 ** Pour le plug-in Element pour vCenter Server 4.10 ou version antérieure, les points d'extension NetApp Element Configuration and Management apparaissent :
 +
-image::vcp_shortcuts_page_accessing_plugin.png[La illustre les points d'extension du plug-in après une mise à niveau ou une installation réussie pour le plug-in Element 4.10 ou version antérieure]
+image::vcp_shortcuts_page_accessing_plugin.png[Décrit les points d'extension du plug-in après une mise à niveau ou une installation réussie pour Element Plug-in 4.10 ou version antérieure]
 
 +
 [NOTE]
@@ -163,7 +163,7 @@ Vous devriez voir les détails de la version suivante ou les détails d'une vers
 +
 [listing]
 ----
-NetApp Element Plug-in Version: 5.1
+NetApp Element Plug-in Version: 5.2
 NetApp Element Plug-in Build Number: 12
 ----
 
