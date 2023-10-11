@@ -30,6 +30,7 @@ Voici les liens vers les exigences et les tâches de prédéploiement :
 * link:hci_prereqs_environmental.html["Exigences environnementales"]
 * link:hci_prereqs_protection_domains.html["Domaines de protection"]
 * link:hci_prereqs_witness_nodes.html["Connaître les besoins en ressources des nœuds pour les clusters de stockage à deux nœuds"]
+* link:hci_prereqs_deployment_configuration_restriction.html["Restrictions de configuration de déploiement"]
 
 
 [discrete]
