@@ -331,7 +331,7 @@ sidebar:
     - title: Supprimez les nœuds témoins après l'extension du cluster
       url: "/docs/task_hci_removewn.html"
   - title: Utiliser Rancher sur NetApp HCI
-    url: "/docs/concept_rancher_concept.html"
+    url: "/docs/concept_rancher_product_overview.html"
   - title: Maintenance du matériel H-series
     entries:
     - title: Présentation de la maintenance matérielle H-series
