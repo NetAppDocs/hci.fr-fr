@@ -58,7 +58,7 @@ Voici quelques tâches supplémentaires que vous devrez peut-être effectuer si 
 
 * link:task_hci_removewn.html["Supprimez des nœuds de témoins pour libérer des ressources de calcul"]
 * <<Modifiez le mot de passe si vous avez reçu un noeud de remplacement avec un mot de passe BMC non standard>>
-* <<Mettez à niveau le micrologiciel BMC de votre nœud>>
+* <<Upgrade the BMC firmware on your node>>
 
 
 
@@ -146,6 +146,8 @@ CAUTION: Si les évents d'aération situés à l'arrière du châssis sont bloqu
 
 TIP: Assurez-vous que le nœud de remplacement est câblé de la même manière que les autres nœuds du châssis.
 
+. Configurez votre contrôleur BMC, voir link:hci_prereqs_final_prep.html["Configurez IPMI pour chaque nœud"] pour plus d'informations.
+. Consultez l'article de la base de connaissance NetApp https://kb.netapp.com/onprem/solidfire/Element_OS/How_to_disable_BMC_web_UI_access_on_HCI_and_SolidFire_H-Series_systems["Comment désactiver l'accès à l'interface utilisateur web du contrôleur BMC sur les systèmes HCI et SolidFire H-Series"^] Pour déterminer si votre accès Web BMC doit être désactivé.
 
 
 
@@ -925,29 +927,9 @@ image::bmc pw sticker.png[Indique l'arrière du nœud avec l'autocollant situé 
 
 
 
-== Mettez à niveau le micrologiciel BMC de votre nœud
+== Mettez à niveau le firmware de votre nœud
 
-Une fois le nœud de calcul remplacé, la version du firmware peut être nécessaire. Vous pouvez télécharger le fichier de micrologiciel le plus récent à partir du menu déroulant du link:https://mysupport.netapp.com/site/products/all/details/netapp-hci/downloads-tab["Site du support NetApp (identifiant requis)"^].
-
-.Étapes
-. Connectez-vous à l'interface utilisateur du contrôleur de gestion de la carte mère (BMC).
-. Sélectionnez *Maintenance > mise à jour du micrologiciel*.
-+
-image::h410c-bmc1.png[La montre la navigation dans l'interface utilisateur du contrôleur BMC pour les mises à jour du micrologiciel.]
-
-. Dans la console BMC, sélectionnez *Maintenance*.
-+
-image::h410c-bmc2.png[Affiche l'écran de maintenance dans l'interface utilisateur du contrôleur BMC.]
-
-. Dans l'onglet Maintenance, sélectionnez *Firmware Update* dans le menu de navigation situé à gauche de l'interface utilisateur, puis sélectionnez *entrer le mode de mise à jour*.
-+
-image::h410c-bmc3.png[Affiche l'écran de mise à jour du micrologiciel dans l'interface utilisateur du contrôleur BMC.]
-
-. Sélectionnez *Oui* dans la boîte de dialogue de confirmation.
-. Sélectionnez *Parcourir* pour sélectionner l'image du micrologiciel à télécharger et sélectionnez *Télécharger le micrologiciel*. Le chargement du firmware depuis un emplacement en dehors des environs directs du nœud peut entraîner des temps de charge prolongés et des retards potentiels.
-. Autoriser les vérifications de la configuration de conservation et sélectionner *Démarrer la mise à niveau*. La mise à niveau devrait prendre environ 5 minutes. Si le temps de chargement dépasse 60 minutes, annulez le téléchargement et transférez le fichier sur une machine locale à proximité du nœud. Si votre session est expirée, vous pouvez voir un certain nombre d'alertes lors de la tentative de vous reconnecter à la zone de mise à jour du micrologiciel de l'interface utilisateur du contrôleur BMC. Si vous annulez la mise à niveau, vous êtes redirigé vers la page de connexion.
-. Une fois la mise à jour terminée, sélectionnez *OK* et attendez que le nœud redémarre. Connectez-vous après la mise à niveau et sélectionnez *système* pour vérifier que la version *révision du micrologiciel* correspond à la version que vous avez téléchargée.
-
+Une fois le nœud de calcul remplacé, la version du firmware peut être nécessaire. Voir link:task_hcc_upgrade_compute_node_firmware.html["Met à niveau le firmware des nœuds de calcul"] pour plus d'informations.
 
 
 

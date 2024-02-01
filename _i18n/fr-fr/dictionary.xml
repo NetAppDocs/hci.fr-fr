@@ -3523,19 +3523,6 @@
   <block id="aaeb8011e825f6e35c3a11da3b06ae8e" category="list-text">Sélectionnez *usine par défaut*, puis sélectionnez *Supprimer les paramètres actuels et définissez les paramètres par défaut de l'utilisateur sur LE bouton d'option ADMIN/ADMIN* :</block>
   <block id="f77361b272ce81d8275727f7b1a756a8" category="list-text">Sélectionnez *Restaurer*.</block>
   <block id="51cb13d5d7f53d14e1177bc7209fd917" category="list-text">Déconnectez-vous puis reconnectez-vous pour confirmer que les informations d'identification sont à présent modifiées.</block>
-  <block id="4365aa4d62fcaed8a61f5851f7c63acc" category="section-title">Mettez à niveau le micrologiciel BMC de votre nœud</block>
-  <block id="e64e1f5e233bff07158f07da3f6f71dc" category="inline-link-macro">Site du support NetApp (identifiant requis)</block>
-  <block id="4cd4d7d72d12ae588ded720ce09eb6be" category="paragraph">Une fois le nœud de calcul remplacé, la version du firmware peut être nécessaire. Vous pouvez télécharger le fichier de micrologiciel le plus récent à partir du menu déroulant du <block ref="abee0fa17807b632b354ed0eee4c1a88" category="inline-link-macro-rx"></block>.</block>
-  <block id="2a0625a35fb4af01157e81573ba8eeda" category="list-text">Sélectionnez *Maintenance &gt; mise à jour du micrologiciel*.</block>
-  <block id="447bf1c51f518d302e2efefb20e4f3e5" category="image-alt">La montre la navigation dans l'interface utilisateur du contrôleur BMC pour les mises à jour du micrologiciel.</block>
-  <block id="5d3ccc6c1013f8038b1f86a92db0c184" category="list-text">Dans la console BMC, sélectionnez *Maintenance*.</block>
-  <block id="051af6c885ceb71e22b881985fe7c46c" category="image-alt">Affiche l'écran de maintenance dans l'interface utilisateur du contrôleur BMC.</block>
-  <block id="5f60cd8039f9c554b92de593bbb6a0a2" category="list-text">Dans l'onglet Maintenance, sélectionnez *Firmware Update* dans le menu de navigation situé à gauche de l'interface utilisateur, puis sélectionnez *entrer le mode de mise à jour*.</block>
-  <block id="67c015407a3660cd7c1736c3cbf43dd0" category="image-alt">Affiche l'écran de mise à jour du micrologiciel dans l'interface utilisateur du contrôleur BMC.</block>
-  <block id="0356ec6b4d587e5f4d2782c817a2e96b" category="list-text">Sélectionnez *Oui* dans la boîte de dialogue de confirmation.</block>
-  <block id="7874642886c22920789477d73255c589" category="list-text">Sélectionnez *Parcourir* pour sélectionner l'image du micrologiciel à télécharger et sélectionnez *Télécharger le micrologiciel*. Le chargement du firmware depuis un emplacement en dehors des environs directs du nœud peut entraîner des temps de charge prolongés et des retards potentiels.</block>
-  <block id="9ca6aab24c6382de412d4fb67990fbb9" category="list-text">Autoriser les vérifications de la configuration de conservation et sélectionner *Démarrer la mise à niveau*. La mise à niveau devrait prendre environ 5 minutes. Si le temps de chargement dépasse 60 minutes, annulez le téléchargement et transférez le fichier sur une machine locale à proximité du nœud. Si votre session est expirée, vous pouvez voir un certain nombre d'alertes lors de la tentative de vous reconnecter à la zone de mise à jour du micrologiciel de l'interface utilisateur du contrôleur BMC. Si vous annulez la mise à niveau, vous êtes redirigé vers la page de connexion.</block>
-  <block id="fe29f01ceefdfc2a26d419451331a7de" category="list-text">Une fois la mise à jour terminée, sélectionnez *OK* et attendez que le nœud redémarre. Connectez-vous après la mise à niveau et sélectionnez *système* pour vérifier que la version *révision du micrologiciel* correspond à la version que vous avez téléchargée.</block>
   <block id="81a98ff8027ae63cb194d5c2051a720c" category="summary">En savoir plus sur l'option de configuration réseau NetApp HCI A.</block>
   <block id="ba94a232ffcb3269296e4704d5ee3514" category="paragraph">Le NetApp HCI peut utiliser plusieurs câbles réseau et configurations VLAN différentes. La première configuration, l'option A, utilise deux câbles réseau pour chaque nœud de calcul.</block>
   <block id="d22f3561a8511117e3224bc405c9381d" category="section-title">Option de configuration A : deux câbles pour les nœuds de calcul</block>
@@ -5912,33 +5899,6 @@
   <block id="9a273d2d550df11ef961cf667f623547" category="sidebar">Étendez les ressources de stockage et de calcul NetApp</block>
   <block id="efaccef33aabd635656b681f92a298ea" category="sidebar">Maintenance du matériel H-series</block>
   <block id="93168a8084b3e838d2932c4734bd234e" category="sidebar">Versions antérieures</block>
-  <block id="be11c74c1dd7f307bb80183a90dc2067" category="sidebar">Commencez</block>
-  <block id="7d0ee6fed10d3d4e5c9ee496729ab519" category="sidebar">Notes de mise à jour</block>
-  <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">Quoi de neuf</block>
-  <block id="01064f33f360eefba819bf9542c0486b" category="sidebar">Installer le matériel de maintenance</block>
-  <block id="147fc8b7d94adc0dceb5978ab928f776" category="sidebar">Installation du matériel de la série H.</block>
-  <block id="09af8dd99d422c917dcb27847056b045" category="sidebar">Maintenance du matériel H-series</block>
-  <block id="bc2592cdeeae26af69f28b4f6a1c8ca0" category="sidebar">Installez NetApp HCI</block>
-  <block id="96e1a5a82d70a24f161f0adb6e19ac8d" category="sidebar">Présentation de l'installation et du déploiement</block>
-  <block id="8a6e336622cf399a6453e4659f2a6147" category="sidebar">Commencez votre déploiement par le moteur de déploiement NetApp</block>
-  <block id="a54d0ac20b8277a267fb90e8c0b05032" category="sidebar">Exécution de tâches post-déploiement</block>
-  <block id="cfe80b2a0cabf734adc7b7c1613cfe4f" category="sidebar">Utiliser NetApp HCI</block>
-  <block id="930dca22f6f735a61fd8f484808fecb3" category="sidebar">Gérez votre infrastructure avec NetApp Hybrid Cloud Control</block>
-  <block id="6cb5dfacb4ee1684b5483221bfcf580c" category="sidebar">Utilisez le plug-in NetApp Element pour vCenter Server</block>
-  <block id="d02b5df8c0bf5a555ea650be898817f7" category="sidebar">Développez NetApp HCI</block>
-  <block id="748ace58318ab9d82392d680b07e89e6" category="sidebar">Mettez à niveau NetApp HCI</block>
-  <block id="f7731734f4507319f744fe2c8158536a" category="sidebar">Dépannage des NetApp HCI et Rancher</block>
-  <block id="eeabaf7c41bcd50a6a02694c070dbfb4" category="sidebar">Réinitialisez BMC sur les nœuds de calcul</block>
-  <block id="166868e0f588717c1c62116a03c9b979" category="sidebar">Plus d'articles sur la base de connaissances</block>
-  <block id="2a9dbfa4b74c53d7304fc8b79a1874d3" category="sidebar">NetApp</block>
-  <block id="fcf140abed196b8eba71c45f21312bce" category="sidebar">Les solutions NetApp</block>
-  <block id="81a123ccab93cd947289b672b0e50348" category="sidebar">Didacticiels de démonstration</block>
-  <block id="45a52e6c046bce2a0f9f5253cc23fbd6" category="sidebar">Vidéothèque NetApp HCI</block>
-  <block id="9135ac6f13de11d3b4b9f2f98ff9bcb8" category="sidebar">Services de formation NetApp</block>
-  <block id="813011e2103649bb71f124adedcc10ea" category="sidebar">Communauté sur les blogs</block>
-  <block id="a310588c148d934b9b30c31802d4a30b" category="sidebar">Communauté NetApp</block>
-  <block id="213686afc3803be7caa09348765467fe" category="sidebar">Où obtenir de l'aide</block>
-  <block id="389672366ff11f72a82c5c495b9b5159" category="sidebar">Documentation sur NetApp HCI 1.8</block>
   <block id="d471727ba1fb423986701d5307906d08" category="list-text">Vérifiez que les points d'extension du plug-in apparaissent dans l'onglet *raccourcis* de vSphere Web client et dans le panneau latéral.</block>
   <block id="14ff77c680c9acb2e3a54c4ea137f642" category="cell">Port RMCP. Requis pour les mises à niveau du firmware des ressources de calcul NetApp Cloud Control.</block>
   <block id="2e4fe9cef5b49ad23180da86877e63cb" category="cell">Nœud de calcul BMC/IPMI séries H410 et H600</block>
@@ -6190,4 +6150,9 @@
   <block id="4b07d1c342b03364f7120990720b53ef" category="section-title">Étape 5 : redéploiement des nœuds Witness pour les clusters de stockage à deux et trois nœuds</block>
   <block id="df0f8acf74958be223bdd3dabcce5038" category="inline-link">Les mises à niveau de SolidFire et de HCI ne peuvent pas démarrer en raison d'une erreur de téléchargement du pack de mise à niveau</block>
   <block id="b9bbae8efe5c0f15ffba3f05d619b861" category="list-text">À partir du 2023 novembre, vous ne pouvez pas démarrer de mise à niveau de composant à l'aide de NetApp Hybrid Cloud Control ou de l'API REST, car les certificats de clé de signature (privé et public) ont expiré le 5 novembre 2023. Vous pouvez résoudre ce problème en suivant la solution de contournement décrite dans l'article de la base de connaissances<block ref="43e83b9864cac922c7475bad0e74a40f" category="inline-link-rx"></block>.</block>
+  <block id="8daa3151587347980e74b151202ea3b6" category="list-text">Configurez votre contrôleur BMC, voir <block ref="785a710f4c6946c37cc4ffd8e78657df" category="inline-link-macro-rx"></block> pour plus d'informations.</block>
+  <block id="a0701e6fb9d20d52e56b635ed36b87f5" category="inline-link">Comment désactiver l'accès à l'interface utilisateur web du contrôleur BMC sur les systèmes HCI et SolidFire H-Series</block>
+  <block id="6eacafa95777fb1e6eb8520265b58990" category="list-text">Consultez l'article de la base de connaissance NetApp<block ref="241ab5b011155d72deeb18c5d431446f" category="inline-link-rx"></block> Pour déterminer si votre accès Web BMC doit être désactivé.</block>
+  <block id="65c8d097794b4f73719e82bebe86d855" category="section-title">Mettez à niveau le firmware de votre nœud</block>
+  <block id="08a91b27b8b81bd9d0b64ba51e61dd98" category="paragraph">Une fois le nœud de calcul remplacé, la version du firmware peut être nécessaire. Voir <block ref="502434424b58174296cfde9ecff2397f" category="inline-link-macro-rx"></block> pour plus d'informations.</block>
 </blocks>
