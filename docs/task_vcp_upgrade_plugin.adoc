@@ -27,7 +27,7 @@ NOTE: Services de gestion 2.22.7 inclut Element Plug-in pour vCenter Server 5.0 
 --
 Cette procédure de mise à niveau couvre les scénarios de mise à niveau suivants :
 
-* Vous effectuez une mise à niveau vers Element Plug-in pour vCenter Server 5.2, 5.1 ou 5.0.
+* Vous effectuez une mise à niveau vers Element Plug-in pour vCenter Server 5.3, 5.2, 5.1 ou 5.0.
 * Vous mettez à niveau vers un client Web HTML5 8.0 ou 7.0.
 +
 
@@ -69,10 +69,19 @@ IMPORTANT: Le plug-in n'est pas compatible avec la version 6.7 U2 build 13007421
 * *Mises à jour des services de gestion*: Vous avez mis à jour votre https://mysupport.netapp.com/site/products/all/details/mgmtservices/downloads-tab["pack de services de gestion"^] à la dernière version. Les mises à jour du plug-in vCenter sont distribuées par le biais de mises à jour de services de gestion publiées en dehors des principales versions des produits pour NetApp HCI.
 * *Mises à niveau des nœuds de gestion* :
 +
-** Depuis le plug-in Element vCenter 5.0, vous exécutez un nœud de gestion qui a été link:task_hcc_upgrade_management_node.html["mise à niveau"] à la version 12.3.x ou ultérieure.
-** Pour le plug-in Element vCenter 4.4 à 4.10, vous exécutez un nœud de gestion link:task_hcc_upgrade_management_node.html["mise à niveau"] à la version 11.3 ou ultérieure. Le plug-in vCenter 4.4 ou version ultérieure requiert un nœud de gestion 11.3 ou version ultérieure doté d'une architecture modulaire fournissant des services individuels. Votre nœud de gestion doit être mis sous tension avec son adresse IP ou son adresse DHCP configurée.
+[role="tabbed-block"]
+====
+.Plug-in Element pour vCenter 5.0 et versions ultérieures
+--
+Vous exécutez un nœud de gestion qui a été link:task_hcc_upgrade_management_node.html["mise à niveau"] à la version 12.3.x ou ultérieure.
 
+--
+.Plug-in Element pour vCenter 4.10 et versions antérieures
+--
+Vous exécutez un nœud de gestion qui a été link:task_hcc_upgrade_management_node.html["mise à niveau"] à la version 11.3 ou ultérieure. Le plug-in vCenter 4.4 ou version ultérieure requiert un nœud de gestion 11.3 ou version ultérieure doté d'une architecture modulaire fournissant des services individuels. Votre nœud de gestion doit être mis sous tension avec son adresse IP ou son adresse DHCP configurée.
 
+--
+====
 * *Mises à niveau du stockage Element* :
 +
 ** Depuis le plug-in Element vCenter 5.0, un cluster exécute le logiciel NetApp Element 12.3.x ou une version ultérieure.
@@ -90,16 +99,23 @@ image::vcp_registration_utility_ui_qossioc.png[La illustre l'interface utilisate
 
 . Sélectionnez *enregistrement du plug-in vCenter*.
 +
-** Page d'enregistrement du plug-in vCenter pour Element Plug-in pour vCenter Server 5.x :
-+
+[role="tabbed-block"]
+====
+.Plug-in Element pour vCenter 5.0 et versions ultérieures
+--
+La page enregistrement du plug-in vCenter s'affiche :
+
 image::vcp_remote_plugin_registration_ui.png[Illustre l'interface utilisateur de l'utilitaire d'enregistrement pour un plug-in distant]
 
-** La page d'inscription du plug-in vCenter pour le plug-in Element pour vCenter Server 4.x :
-+
+--
+.Plug-in Element pour vCenter 4.10 et versions antérieures
+--
+La page enregistrement du plug-in vCenter s'affiche :
+
 image::vcp_registration_utility_ui.png[Illustre l'interface utilisateur de l'utilitaire d'enregistrement pour un plug-in local]
 
-
-
+--
+====
 . Dans *Manage vCenter Plug-in*, sélectionnez *Update Plug-in*.
 . Confirmez ou mettez à jour les informations suivantes :
 +
@@ -110,20 +126,27 @@ image::vcp_registration_utility_ui.png[Illustre l'interface utilisateur de l'uti
 NOTE: Le nom d'utilisateur et les informations d'identification du mot de passe que vous entrez doivent correspondre à un utilisateur disposant des privilèges de rôle d'administrateur vCenter.
 
 .. Mot de passe de l'administrateur vCenter.
-.. (Pour les serveurs internes/sites distants) selon la version du plug-in Element pour vCenter, une URL personnalisée pour le fichier JSON ou le plug-in ZIP :
+.. (Pour les serveurs internes ou les sites invisibles) en fonction de votre version d'Element Plug-in pour vCenter, une URL personnalisée pour le fichier JSON de plug-in ou le fichier ZIP de plug-in :
 +
-... Depuis le plug-in Element pour vCenter Server 5.0, une URL personnalisée pour le fichier JSON du plug-in.
-+
+[role="tabbed-block"]
+====
+.Plug-in Element pour vCenter 5.0 et versions ultérieures
+--
+Une URL personnalisée pour le fichier JSON de plug-in.
+
 
 NOTE: Vous pouvez sélectionner *URL personnalisée* pour personnaliser l'URL si vous utilisez un serveur HTTP ou HTTPS (site sombre) ou si vous avez modifié le nom de fichier JSON ou les paramètres réseau. Pour plus d'informations sur la configuration d'une URL, reportez-vous à la documentation du plug-in Element pour vCenter Server sur la modification des propriétés vCenter d'un serveur HTTP interne (site sombre).
 
-... Pour le plug-in Element pour vCenter Server 4.10 ou version antérieure, une URL personnalisée pour le plug-in ZIP.
-+
+--
+.Plug-in Element pour vCenter 4.10 et versions antérieures
+--
+Une URL personnalisée pour le plug-in ZIP.
+
 
 NOTE: Vous pouvez sélectionner *URL personnalisée* pour personnaliser l'URL si vous utilisez un serveur HTTP ou HTTPS (site sombre) ou si vous avez modifié le nom de fichier ZIP ou les paramètres réseau. Pour plus d'informations sur la configuration d'une URL, reportez-vous à la documentation du plug-in Element pour vCenter Server sur la modification des propriétés vCenter d'un serveur HTTP interne (site sombre).
 
-
-
+--
+====
 
 
 . Sélectionnez *mettre à jour*.
@@ -138,14 +161,23 @@ NOTE: Cette action crée une nouvelle base de données et termine l'installation
 . Dans le client Web vSphere, recherchez les tâches terminées suivantes dans le moniteur des tâches pour vous assurer que l'installation est terminée : `Download plug-in` et `Deploy plug-in`.
 . Vérifiez que les points d'extension du plug-in apparaissent dans l'onglet *raccourcis* de vSphere Web client et dans le panneau latéral.
 +
-** Depuis le plug-in Element pour vCenter Server 5.0, le point d'extension du plug-in distant NetApp Element apparaît :
-+
+[role="tabbed-block"]
+====
+.Plug-in Element pour vCenter 5.0 et versions ultérieures
+--
+Le point d'extension du plug-in distant NetApp Element s'affiche :
+
 image::vcp_remote_plugin_icons_home_page.png[Illustre le point d'extension du plug-in après une mise à niveau ou une installation réussie pour Element Plug-in 5.10 ou version ultérieure]
 
-** Pour le plug-in Element pour vCenter Server 4.10 ou version antérieure, les points d'extension NetApp Element Configuration and Management apparaissent :
-+
+--
+.Plug-in Element pour vCenter 4.10 et versions antérieures
+--
+Les points d'extension Configuration et gestion de NetApp Element apparaissent :
+
 image::vcp_shortcuts_page_accessing_plugin.png[Décrit les points d'extension du plug-in après une mise à niveau ou une installation réussie pour Element Plug-in 4.10 ou version antérieure]
 
+--
+====
 +
 [NOTE]
 ====
@@ -154,8 +186,6 @@ Si les icônes du plug-in vCenter ne sont pas visibles, reportez-vous à la sect
 Après la mise à niveau vers le plug-in NetApp Element pour vCenter Server 4.8 ou version ultérieure avec VMware vCenter Server 6.7U1, si les clusters de stockage ne sont pas répertoriés ou si une erreur de serveur apparaît dans les sections *clusters* et *Paramètres QoSSIOC* de la configuration NetApp Element, voir link:https://docs.netapp.com/us-en/vcp/vcp_reference_troubleshoot_vcp.html#error_vcp48_67u1["Plug-in Element pour vCenter Server"^] documentation sur le dépannage de ces erreurs.
 
 ====
-
-
 . Vérifiez le changement de version dans l'onglet *About* du point d'extension *NetApp Element Configuration* du plug-in.
 +
 Vous devriez voir les détails de la version suivante ou les détails d'une version plus récente :
@@ -163,8 +193,8 @@ Vous devriez voir les détails de la version suivante ou les détails d'une vers
 +
 [listing]
 ----
-NetApp Element Plug-in Version: 5.2
-NetApp Element Plug-in Build Number: 12
+NetApp Element Plug-in Version: 5.3
+NetApp Element Plug-in Build Number: 9
 ----
 
 
