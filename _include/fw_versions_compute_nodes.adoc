@@ -25,11 +25,17 @@ Au cours des 11.x, Element Software était le seul moyen de libérer le microlog
 Le pilote VMware ESXi compatible avec la carte réseau 10/25 GbE N'est PAS inclus dans le module Compute Firmware, il est spécifié pour référence.
 
 
+IMPORTANT: Pour plus d'informations sur VMware ESXi version 8.0, consultez l'article suivant de la base de connaissanceslink:https://kb.netapp.com/on-prem/solidfire/Element_OS_Kbs/What_is_supported_with_NetApp_HCI_and_VMware_ESX_version_8.0_and_beyond["Qu'est-ce qui est pris en charge par NetApp HCI et VMware ESXi version 8.0 et ultérieures ?"^].
+
+
 NOTE: Un tiret (*-*) dans le tableau suivant indique que le composant matériel particulier n'a PAS été pris en charge dans ce véhicule de libération.
 
 [cols="8*"]
 |===
 | Relâchez le véhicule | Date de publication | BIOS | BMC | Carte réseau 10/25 GbE | Version du pilote VMware ESXi 6.5 | Version du pilote VMware ESXi 6.7 | Version du pilote VMware ESXi 7.0 
+
+
+| *Pack de firmware de calcul 2.179.0* | 17 octobre 2024 | 3B14.CO | 4.79.07 | 14.29.1016 | - | - | 4.21.71.1 
 
 
 | *Pack de firmware de calcul 2.174.0* | 04/12/2023 | 3B12.CO | 4.72.07 | 14.29.1016 | 4.16.71.1 | 4.17.71.1 | 4.21.71.1 
@@ -110,11 +116,17 @@ Dans NetApp HCI 1.0 - NetApp HCI 1.7, NetApp HCI était le seul moyen de libére
 Le pilote VMware ESXi compatible avec la carte réseau 10/25 GbE N'est PAS inclus dans le module Compute Firmware, il est spécifié pour référence.
 
 
+IMPORTANT: Pour plus d'informations sur VMware ESXi version 8.0, consultez l'article suivant de la base de connaissanceslink:https://kb.netapp.com/on-prem/solidfire/Element_OS_Kbs/What_is_supported_with_NetApp_HCI_and_VMware_ESX_version_8.0_and_beyond["Qu'est-ce qui est pris en charge par NetApp HCI et VMware ESXi version 8.0 et ultérieures ?"^].
+
+
 NOTE: Un tiret (*-*) dans le tableau suivant indique que le composant matériel particulier n'a PAS été pris en charge dans ce véhicule de libération.
 
 [cols="8*"]
 |===
 | Relâchez le véhicule | Date de publication | BIOS | BMC | Carte réseau 10/25 GbE | Version du pilote VMware ESXi 6.5 | Version du pilote VMware ESXi 6.7 | Version du pilote VMware ESXi 7.0 
+
+
+| *Pack de firmware de calcul 2.179.0* | 17 octobre 2024 | 3B09 | 4.11.07 | 14.29.1016 | - | - | 4.21.71.1 
 
 
 | *Pack de firmware de calcul 2.174.0* | 04/12/2023 | 3B07 | 4.04.07 | 14.29.1016 | 4.16.71.1 | 4.17.71.1 | 4.21.71.1 
@@ -207,11 +219,17 @@ Dans NetApp HCI 1.0 - NetApp HCI 1.7, NetApp HCI était le seul moyen de libére
 Le pilote VMware ESXi compatible avec la carte réseau 10/25 GbE N'est PAS inclus dans le module Compute Firmware, il est spécifié pour référence.
 
 
+IMPORTANT: Pour plus d'informations sur VMware ESXi version 8.0, consultez l'article suivant de la base de connaissanceslink:https://kb.netapp.com/on-prem/solidfire/Element_OS_Kbs/What_is_supported_with_NetApp_HCI_and_VMware_ESX_version_8.0_and_beyond["Qu'est-ce qui est pris en charge par NetApp HCI et VMware ESXi version 8.0 et ultérieures ?"^].
+
+
 NOTE: Un tiret (*-*) dans le tableau suivant indique que le composant matériel particulier n'a PAS été pris en charge dans ce véhicule de libération.
 
 [cols="8*"]
 |===
 | Relâchez le véhicule | Date de publication | BIOS | BMC | Carte réseau 10/25 GbE | Version du pilote VMware ESXi 6.5 | Version du pilote VMware ESXi 6.7 | Version du pilote VMware ESXi 7.0 
+
+
+| *Pack de firmware de calcul 2.179.0* | 17 octobre 2024 | NATP3.12 | 6.71.26 | 14.29.1016 | - | - | 4.21.71.1 
 
 
 | *Pack de firmware de calcul 2.174.0* | 04/12/2023 | NATP3.10 | 6.71.20 | 14.29.1016 | 4.16.71.1 | 4.17.71.1 | 4.21.71.1 
@@ -310,11 +328,17 @@ Dans NetApp HCI 1.0 - NetApp HCI 1.7, NetApp HCI était le seul moyen de libére
 Le pilote VMware ESXi compatible avec la carte réseau 10/25 GbE N'est PAS inclus dans le module Compute Firmware, il est spécifié pour référence.
 
 
+IMPORTANT: Pour plus d'informations sur VMware ESXi version 8.0, consultez l'article suivant de la base de connaissanceslink:https://kb.netapp.com/on-prem/solidfire/Element_OS_Kbs/What_is_supported_with_NetApp_HCI_and_VMware_ESX_version_8.0_and_beyond["Qu'est-ce qui est pris en charge par NetApp HCI et VMware ESXi version 8.0 et ultérieures ?"^].
+
+
 NOTE: Un tiret (*-*) dans le tableau suivant indique que le composant matériel particulier n'a PAS été pris en charge dans ce véhicule de libération.
 
 [cols="8*"]
 |===
 | Relâchez le véhicule | Date de publication | BIOS | BMC | Carte réseau 10/25 GbE | Version du pilote VMware ESXi 6.5 | Version du pilote VMware ESXi 6.7 | Version du pilote VMware ESXi 7.0 
+
+
+| *Pack de firmware de calcul 2.179.0* | 17 octobre 2024 | NAT3.6 | 07.02.00 | 14.29.1016 | - | - | 4.21.71.1 
 
 
 | *Pack de firmware de calcul 2.174.0* | 04/12/2023 | NAT3.4 | 07.02.00 | 14.29.1016 | 4.16.71.1 | 4.17.71.1 | 4.21.71.1 
