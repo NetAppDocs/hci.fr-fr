@@ -18,7 +18,7 @@ Vous pouvez installer manuellement le nœud de gestion de votre cluster exécuta
 
 Ce processus manuel est destiné aux administrateurs NetApp HCI qui n'utilisent pas le moteur de déploiement NetApp pour l'installation du nœud de gestion.
 
-.Ce dont vous avez besoin
+.Avant de commencer
 * Votre version du cluster exécute NetApp Element 11.3 ou une version ultérieure.
 * Votre installation utilise IPv4. Le nœud de gestion 11.3 ne prend pas en charge IPv6.
 +
@@ -55,19 +55,13 @@ Le nœud de gestion Element 12.2 est une mise à niveau optionnelle. Elle n'est 
 
 Avant de suivre cette procédure, vous devez comprendre link:concept_hci_volumes.html#persistent-volumes["volumes persistants"] et si vous voulez ou non les utiliser. Les volumes persistants sont facultatifs mais recommandés pour la restauration des données de configuration du nœud de gestion en cas de perte de machine virtuelle.
 
+
+
+== Étape 1 : télécharger ISO ou OVA et déployer la machine virtuelle
+
+Télécharger la version ISO ou OVA appropriée depuis le site de support NetApp et installer la machine virtuelle.
+
 .Étapes
-. <<Téléchargez ISO ou OVA et déployez la VM>>
-. <<Créez le noeud de gestion admin et configurez le réseau>>
-. <<Configurer la synchronisation de l'heure>>
-. <<Configurez le nœud de gestion>>
-. <<Configurer les actifs du contrôleur>>
-. <<Configure compute node assets,(NetApp HCI uniquement) configurer les ressources du nœud de calcul>>
-
-
-
-
-== Téléchargez ISO ou OVA et déployez la VM
-
 . Téléchargez le fichier OVA ou ISO pour votre installation sur le https://mysupport.netapp.com/site/products/all/details/netapp-hci/downloads-tab["NetApp HCI"^] Sur le site de support NetApp :
 +
 .. Sélectionnez *Télécharger la dernière version* et acceptez le CLUF.
@@ -112,8 +106,11 @@ NOTE: L'installation d'un nœud de gestion à l'aide de l'image peut entraîner 
 
 
 
-== Créez le noeud de gestion admin et configurez le réseau
+== Étape 2 : création du noeud de gestion admin et configuration du réseau
 
+Une fois l'installation de la machine virtuelle terminée, créez l'utilisateur admin du nœud de gestion et configurez le réseau du nœud de gestion.
+
+.Étapes
 . À l'aide de l'interface utilisateur du terminal (TUI), créez un utilisateur d'administrateur de nœud de gestion.
 +
 
@@ -140,8 +137,11 @@ NOTE: Si vous avez besoin d'une carte réseau supplémentaire pour isoler le tra
 
 
 
-== Configurer la synchronisation de l'heure
+== Étape 3 : configurer la synchronisation de l'heure
 
+Avant de configurer le nœud de gestion, synchronisez l'heure entre le nœud de gestion et le cluster de stockage.
+
+.Étapes
 . Assurez-vous que le temps est synchronisé entre le nœud de gestion et le cluster de stockage à l'aide de NTP :
 +
 
@@ -219,8 +219,11 @@ NOTE: Ne modifiez pas le NTP après avoir terminé la configuration de synchroni
 
 
 
-== Configurez le nœud de gestion
+== Étape 4 : configuration du nœud de gestion
 
+Configurez le nœud de gestion à l'aide de la `setup-mnode` commande.
+
+.Étapes
 . Configurez et exécutez la commande de configuration du nœud de gestion :
 +
 
@@ -282,8 +285,11 @@ NOTE: Utilisez un nom de compte unique pour les volumes persistants différent d
 
 
 
-== Configurer les actifs du contrôleur
+== Étape 5 : configuration des ressources du contrôleur
 
+Recherchez l'ID d'installation et ajoutez une ressource de contrôleur vCenter.
+
+.Étapes
 . Identifiez l'ID d'installation :
 +
 .. Dans un navigateur, connectez-vous à l'interface de l'API REST du nœud de gestion :
@@ -348,20 +354,20 @@ NOTE: Vous devez créer un nouveau rôle NetApp HCC dans vCenter pour ajouter un
 
 
 
-== (NetApp HCI uniquement) configurer les ressources du nœud de calcul
+== Étape 6 : (NetApp HCI uniquement) configurez les ressources du nœud de calcul
 
-. (Pour NetApp HCI uniquement) Ajouter une ressource de nœud de calcul au nœud de gestion des ressources connues :
-+
-.. Sélectionnez *POST /Assets/{ASSET_ID}/Compute-nodes* pour ajouter un sous-actif de nœud de calcul avec les informations d'identification pour l'actif de nœud de calcul.
-.. Sélectionnez *essayez-le*.
-.. Saisissez l'ID d'actif de base parent que vous avez copié dans le presse-papiers dans le champ *Asset_ID*.
-.. Dans la charge utile, saisissez les valeurs de charge utile requises telles que définies dans l'onglet modèle. Entrez `ESXi Host` comme `type` et entrez le numéro de matériel que vous avez enregistré lors d'une étape précédente pour `hardware_tag`.
-.. Sélectionnez *Exécuter*.
+Ajoutez une ressource de nœud de calcul aux ressources connues du nœud de gestion
+
+.Étapes
+. Sélectionnez *POST /Assets/{ASSET_ID}/Compute-nodes* pour ajouter un sous-actif de nœud de calcul avec les informations d'identification pour l'actif de nœud de calcul.
+. Sélectionnez *essayez-le*.
+. Saisissez l'ID d'actif de base parent que vous avez copié dans le presse-papiers dans le champ *Asset_ID*.
+. Dans la charge utile, saisissez les valeurs de charge utile requises telles que définies dans l'onglet modèle. Entrez `ESXi Host` comme `type` et entrez le numéro de matériel que vous avez enregistré lors d'une étape précédente pour `hardware_tag`.
+. Sélectionnez *Exécuter*.
 
 
 
 
-[discrete]
 == En savoir plus
 
 * link:concept_hci_volumes.html#persistent-volumes["Volumes persistants"]

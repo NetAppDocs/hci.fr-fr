@@ -1275,8 +1275,6 @@
   <block id="0a5712c2113fc4db522b6907519135e6" category="summary">Découvrez les nouveautés de cette version d'NetApp HCI.</block>
   <block id="9cea15d48c9b5a9632827b358396e207" category="doc">Nouveautés NetApp HCI</block>
   <block id="9919e22324d983d998afd33f187a0a61" category="paragraph">NetApp met régulièrement à jour NetApp HCI afin de vous proposer de nouvelles fonctionnalités, améliorations et correctifs. NetApp HCI 1.10 inclut le logiciel Element 12.5 pour les clusters de stockage.</block>
-  <block id="6f0ce5bfc09a3a4d8737b564d5879f31" category="inline-link">Découvrez les nouveautés d'Element 12.7</block>
-  <block id="f10aa2cb8c994fef24ceca1ee43e4208" category="admonition">La dernière version du logiciel Element 12.7 comprend des mises à jour des composants de sécurité et de système, des améliorations opérationnelles et des problèmes résolus.<block ref="d071d61ca9198e87abb60c485f07eada" category="inline-link-rx"></block>.</block>
   <block id="53f59c169b2bb48ac0b8253252a06467" category="list-text">Le <block ref="72c4f5351976259ad654b85496cb20be" category="inline-xref-macro-rx"></block> Cette section décrit les nouvelles fonctionnalités et mises à jour de NetApp HCI version 1.10.</block>
   <block id="2a0ce9a56c6130320cccb8a7f34ec593" category="list-text">Le <block ref="18a6515b1da0f2a2d89c5832cee91752" category="inline-xref-macro-rx"></block> Cette section décrit les nouvelles fonctionnalités et les mises à jour d'Element 12.5.</block>
   <block id="3f1ab5f7c40b8fa8fd0a42ff36510c23" category="section-title">NetApp HCI 1.10</block>
@@ -5370,7 +5368,6 @@
   <block id="f308e6ca453d47a2876df6eae740d8f8" category="cell">Taille du disque</block>
   <block id="a8eb35236338fefbad16baa7af1c75ba" category="cell">67 GO/S</block>
   <block id="845f62e2611daf20a77cdbef343a155b" category="paragraph">NetApp HCI ne prend en charge que certains modèles de nœuds de stockage dans des clusters de stockage à deux ou trois nœuds. Pour plus d'informations, consultez les notes de version de votre version NetApp HCI.</block>
-  <block id="edc66b1482b45fd0e89fdbe4ba094191" category="admonition">Lorsque le processus d'installation de NetApp HCI installe Witness Nodes, un modèle de machine virtuelle est stocké dans VMware vCenter que vous pouvez utiliser pour redéployer un nœud témoin s'il est accidentellement retiré, perdu ou corrompu. Vous pouvez également utiliser le modèle pour redéployer un nœud témoin si vous devez remplacer un nœud de calcul défaillant qui héberge le nœud Witness. Pour obtenir des instructions, consultez la section *Redeploy Witness Nodes clusters de stockage à deux et trois nœuds* <block ref="0deb95019659c8847f806617fd301765" category="inline-link-macro-rx"></block>.</block>
   <block id="6a06383dae58d38fc5f43108b245ada6" category="summary">Si vous utilisez une carte réseau supplémentaire pour le stockage, vous devez configurer une interface réseau non balisée ou balisée.</block>
   <block id="e951f2b3b1d1d0ed40dad7986c81696d" category="paragraph">Si vous utilisez une carte réseau supplémentaire pour le stockage, vous pouvez vous connecter SSH au nœud de gestion ou utiliser la console vCenter et exécuter une commande curl pour configurer une interface réseau marquée ou non balisée.</block>
   <block id="58d53e9386d0e42b92c37f497007f65f" category="list-text">Vous connaissez votre adresse IP eth0.</block>
@@ -5756,11 +5753,6 @@
   <block id="9385b032418674e92472a8b4a2ae5cdf" category="list-text">(Nœud de gestion 12.0 et versions ultérieures avec serveur proxy) vous avez mis à jour le contrôle du cloud hybride NetApp vers la version 2.16 des services de gestion avant de configurer un serveur proxy.</block>
   <block id="0406c3e25004e3d1dddbc367d2c4010f" category="paragraph">Le nœud de gestion Element 12.2 est une mise à niveau optionnelle. Elle n'est pas requise pour les déploiements existants.</block>
   <block id="7f10e6e99f08f394e823f7104513126a" category="paragraph">Avant de suivre cette procédure, vous devez comprendre <block ref="6f73bacaba2e470844b654fcbffb809f" category="inline-link-macro-rx"></block> et si vous voulez ou non les utiliser. Les volumes persistants sont facultatifs mais recommandés pour la restauration des données de configuration du nœud de gestion en cas de perte de machine virtuelle.</block>
-  <block id="d65a2ab43bcac7efebde7effc9d142f8" category="list-text"><block ref="4e8e62755aa10b5d2420c05d87c0085a" category="inline-xref-macro-rx"></block></block>
-  <block id="c92609be7302c756d6d918553df475c1" category="list-text"><block ref="d9e86326331a25418b718094ae602c19" category="inline-xref-macro-rx"></block></block>
-  <block id="0267f7e06220d0fa6fb42578b5746da3" category="list-text"><block ref="b41cb2f7bd156a4035cdf9347b89cebe" category="inline-xref-macro-rx"></block></block>
-  <block id="067315cbc6353502fa36a4f8722badbd" category="inline-xref">(NetApp HCI uniquement) configurer les ressources du nœud de calcul</block>
-  <block id="cc41647231a76da233743c53a496e137" category="list-text"><block ref="fab01553c96541ce7ac54638294897d8" category="inline-xref-macro-rx"></block></block>
   <block id="7b4b2bec7b806d58982537647a92deef" category="list-text">Sélectionnez *Télécharger la dernière version* et acceptez le CLUF.</block>
   <block id="bb79fe0e6bf117510635c505cc16e74d" category="list-text">Créez une nouvelle machine virtuelle 64 bits depuis votre hyperviseur avec la configuration suivante :</block>
   <block id="4cb04e22051dcc88da6d140ef391aab8" category="list-text">Type d'adaptateur de stockage défini sur LSI Logic Parallel</block>
@@ -5768,7 +5760,6 @@
   <block id="4aec8fb7a6a9c5631ebb25a7b86d9ac5" category="admonition">Ne mettez pas la machine virtuelle sous tension avant l'étape indiquant de le faire plus tard dans cette procédure.</block>
   <block id="1632315c8463eb1e9d1b980297d68c37" category="list-text">Reliez l'ISO à la machine virtuelle et démarrez-le sur l'image d'installation .iso.</block>
   <block id="faa024991ac61fa39b20d61ed2e88ada" category="list-text">Mettez le VM sous tension pour le nœud de gestion une fois l'installation terminée.</block>
-  <block id="f894cbc944582e1f10fec4bf2a0639f0" category="section-title">Créez le noeud de gestion admin et configurez le réseau</block>
   <block id="c19f63a05ffe39159954c2b2fd892582" category="list-text">Si un serveur DHCP (Dynamic Host Configuration Protocol) sur le réseau attribue des adresses IP avec une unité de transmission maximale (MTU) inférieure à 1500 octets, vous devez effectuer les opérations suivantes :</block>
   <block id="b44234e2a29812de715ddf5ea19c15fc" category="list-text">Placez temporairement le nœud de gestion sur un réseau vSphere sans DHCP, comme iSCSI.</block>
   <block id="f35b648abbd5fe5949ea297ee6cef3b9" category="list-text">Redémarrez la machine virtuelle ou le réseau de la machine virtuelle.</block>
@@ -5780,7 +5771,6 @@
   <block id="e7538fbaab3148e24ff8ae41d09df5ce" category="list-text">[[subSTEP_f_install_config_time_sync]]Désactiver la synchronisation de l'heure avec l'hôte via l'hyperviseur (l'exemple suivant est VMware) :</block>
   <block id="2d80cb22364fea2daaca797ae1d938cb" category="inline-link-macro">commande setup</block>
   <block id="a482c646f7f8199c69090c0d13cac33b" category="admonition">Ne modifiez pas le NTP après avoir terminé la configuration de synchronisation de l'heure car elle affecte le NTP lorsque vous exécutez le <block ref="418ec8b5cff4068b256dfd7e9fc5ded7" category="inline-link-macro-rx"></block> sur le nœud de gestion.</block>
-  <block id="627bbdc5a7179606b85a5d6ccb6f65e1" category="section-title">Configurez le nœud de gestion</block>
   <block id="5a808c62f4f9557c4df556d6a230ba7c" category="list-text">Configurez et exécutez la commande de configuration du nœud de gestion :</block>
   <block id="fea104dd45bc0e75d821ddd5af2b02d0" category="admonition">La forme abrégée du nom de commande est entre parenthèses ( ) et peut être remplacée par le nom complet.</block>
   <block id="3f124867257c579e7ba689baed3d4f45" category="list-text">*--mNode_admin_user (-mu) [username]* : nom d'utilisateur du compte administrateur du nœud de gestion. Il s'agit probablement du nom d'utilisateur du compte utilisateur que vous avez utilisé pour vous connecter au nœud de gestion.</block>
@@ -5804,7 +5794,6 @@
   <block id="aabee241823de4ff993b60d0a196a387" category="list-text">(Facultatif) utilisez l'aide relative aux paramètres si vous avez besoin d'informations supplémentaires sur chaque paramètre :</block>
   <block id="f89c180fd45cb0275c5ee18e59d2b43d" category="list-text">*--help (-h)* : renvoie des informations sur chaque paramètre. Ces paramètres sont définis comme requis ou facultatifs en fonction du déploiement initial. Les paramètres requis pour la mise à niveau et le redéploiement peuvent varier.</block>
   <block id="79032d0c879c3afbbb570dd870eb09e1" category="list-text">Exécutez le<block ref="73028873f2b0a018096b6a3d871634b5" prefix=" " category="inline-code"></block> commande.</block>
-  <block id="7ea2768c656768f853cd68b9066eba0f" category="section-title">Configurer les actifs du contrôleur</block>
   <block id="4240350efa82cb4b2d0dcd00f64f496b" category="list-text">Identifiez l'ID d'installation :</block>
   <block id="81b4d8ce3b6d3d31bcc065c5589192ab" category="list-text">Dans un navigateur, connectez-vous à l'interface de l'API REST du nœud de gestion :</block>
   <block id="ed4faf2b135a0f2d74eef06f6fd8899e" category="list-text">Accédez au MVIP de stockage et connectez-vous. Cette action entraîne l'acceptation du certificat pour l'étape suivante.</block>
@@ -5815,7 +5804,6 @@
   <block id="8cfb9a9c7c3001a95af6d09549cdabaa" category="list-text">Sélectionnez *POST /Assets/{ASSET_ID}/contrôleurs* pour ajouter un sous-actif de contrôleur.</block>
   <block id="9db4acd10c15ec173e6516c347342e25" category="admonition">Vous devez créer un nouveau rôle NetApp HCC dans vCenter pour ajouter une sous-ressource de contrôleur. Ce nouveau rôle NetApp HCC limite l'affichage des services de nœud de gestion aux ressources NetApp uniquement. Voir <block ref="8fe5279440ee3c239e840ed9b8e10ddd" category="inline-link-macro-rx"></block>.</block>
   <block id="e2e193a380a16845739e1445cfe23fde" category="list-text">Saisissez les valeurs de charge utile requises avec le type<block ref="e10ca1adb349a5228f7573a244805247" prefix=" " category="inline-code"></block> Et vCenter.</block>
-  <block id="421226b233bd18f9c1f8d179419a2f39" category="list-text">(Pour NetApp HCI uniquement) Ajouter une ressource de nœud de calcul au nœud de gestion des ressources connues :</block>
   <block id="59cb038ca0d26b60e9eda25d59ec865b" category="list-text">Sélectionnez *POST /Assets/{ASSET_ID}/Compute-nodes* pour ajouter un sous-actif de nœud de calcul avec les informations d'identification pour l'actif de nœud de calcul.</block>
   <block id="ea32544c4914661e6b948f2891dd6a83" category="list-text">Dans la charge utile, saisissez les valeurs de charge utile requises telles que définies dans l'onglet modèle. Entrez<block ref="b0429e6f6291e7688c57a970fe0a03bc" prefix=" " category="inline-code"></block> comme<block ref="599dcce2998a6b40b1e38e8c6006cb0a" prefix=" " category="inline-code"></block> et entrez le numéro de matériel que vous avez enregistré lors d'une étape précédente pour<block ref="881962cb2470d984f65313a8e4ceec64" prefix=" " category="inline-code"></block>.</block>
   <block id="891d7cb5314c1395a5f98467dc959053" category="inline-link-macro">Configurez une carte réseau de stockage</block>
@@ -6233,4 +6221,36 @@
   <block id="f0fe2934aa8d8cec985fef2e0c464532" category="list-text"><block ref="f0fe2934aa8d8cec985fef2e0c464532" category="inline-link-macro-rx"></block></block>
   <block id="08c1b18f2bce38d2bceb61af5b8c4c6e" category="list-text"><block ref="08c1b18f2bce38d2bceb61af5b8c4c6e" category="inline-link-macro-rx"></block></block>
   <block id="c1f2aa244c34463b7aea4f2b566f9420" category="list-text"><block ref="c1f2aa244c34463b7aea4f2b566f9420" category="inline-link-macro-rx"></block></block>
+  <block id="9c9a41bc801502e6500c79ea7586ba95" category="inline-link-macro">Redéployez des nœuds Witness pour les clusters de stockage à deux et trois nœuds</block>
+  <block id="d0f20378e2595fa7956c455387d1bc5a" category="paragraph">Lorsque le processus d'installation de NetApp HCI installe Witness Nodes, un modèle de machine virtuelle est stocké dans VMware vCenter que vous pouvez utiliser pour redéployer un nœud témoin s'il est accidentellement retiré, perdu ou corrompu. Vous pouvez également utiliser le modèle pour redéployer un nœud témoin si vous devez remplacer un nœud de calcul défaillant qui héberge le nœud Witness. Pour obtenir des instructions, reportez-vous à la section <block ref="6fa44f1a6cd8ce6de51cb02b7ae12cc5" category="inline-link-macro-rx"></block>.</block>
+  <block id="3c72afcfca67f187b816a55135a243dd" category="inline-link-macro">Mise à niveau de la version matérielle de la machine virtuelle</block>
+  <block id="4fff07540e1d83ac9775ec8030cce786" category="paragraph">Si vous effectuez une mise à niveau sans déplacement d'un nœud Witness existant vers Element 12.8, vous devez vous assurer que la version matérielle de la machine virtuelle sur le nœud Witness est compatible avec ESXi 6.7 (matériel de la machine virtuelle version 14) ou ultérieure, selon votre environnement. Voir <block ref="d1fe5954ed8bd3e53eba83ab0658a6e0" category="inline-link-macro-rx"></block>.</block>
+  <block id="6db7dd4182be7a1979ad403111fa8618" category="inline-link">Notes de version du logiciel NetApp Element 12.8</block>
+  <block id="7d776811219f8ebb17adecaa976bd578" category="list-text"><block ref="53e04163346326834efd61306c0800b5" category="inline-link-rx"></block> _NOUVEAU_</block>
+  <block id="a175ee087381806b642bbcfee91690d5" category="inline-link">Découvrez les nouveautés d'Element 12.8</block>
+  <block id="669c1fb7e11e3bb5ca277eb16b4a55f4" category="admonition">La dernière version du logiciel Element 12.8 inclut des mises à jour de sécurité et de composants système, des améliorations opérationnelles et des problèmes résolus.<block ref="4f11681fa65d50fd10f6fc370da0cbe3" category="inline-link-rx"></block>.</block>
+  <block id="b036ebb7aa6b63db449d4df71f28c3cd" category="section-title">Étape 1 : mise à niveau de la version matérielle d'une machine virtuelle sur un nœud de gestion</block>
+  <block id="6bdecd9b5d3ab973ac36df911f986fc3" category="paragraph">Si vous effectuez une mise à niveau sans déplacement d'un nœud de gestion existant vers Element 12.8, vous devez vous assurer que la version matérielle de la machine virtuelle sur le nœud de gestion est compatible avec ESXi 6.7 (matériel de la machine virtuelle version 14) ou ultérieure, selon votre environnement.</block>
+  <block id="d334c1e547b1e27eae5f50bf46f786cd" category="admonition">Vous pouvez également suivre ces étapes pour mettre à niveau la version matérielle de la machine virtuelle sur les nœuds Witness.</block>
+  <block id="da356a9209429c8cb4f06565d719d2b8" category="list-text">Connectez-vous au client Web vSphere en tant qu'administrateur vCenter.</block>
+  <block id="1a331e443f5aee428076dfc1341e09b5" category="list-text">Dans le menu client vSphere, sélectionnez *VM* et *modèles*.</block>
+  <block id="f42849b7cb77e25b9a5601553a509100" category="list-text">Cliquez avec le bouton droit de la souris sur la machine virtuelle et sélectionnez *compatibilité* &gt; *mise à niveau de la compatibilité VM*.</block>
+  <block id="cf8716d5690805e881fbd8fa22fb282a" category="list-text">Sélectionnez ESXi 6.7 ou une version ultérieure, selon la version de votre environnement vSphere.</block>
+  <block id="7473f663a4bbad1085e61ed9c976a50a" category="list-text">Une fois la mise à niveau terminée, sélectionnez *vSphere client refresh* et vérifiez que VM Compatibility est à la version souhaitée.</block>
+  <block id="6b17900bf8b7a52b1be75bbe68b2d77e" category="section-title">Étape 2 : mise à niveau d'un nœud de gestion vers Element 12.5 ou version ultérieure</block>
+  <block id="d5bdcd035d3751961b201dd1c2261aa3" category="paragraph">Choisissez l'une des options de mise à niveau suivantes :</block>
+  <block id="6d8cd87a85946daeae42cb54aade3baa" category="section-title">Étape 1 : télécharger ISO ou OVA et déployer la machine virtuelle</block>
+  <block id="90c4d8ddd76d9f5f86c144316cec5657" category="paragraph">Télécharger la version ISO ou OVA appropriée depuis le site de support NetApp et installer la machine virtuelle.</block>
+  <block id="c6913d34fefabb7329dba971ad99632d" category="section-title">Étape 2 : création du noeud de gestion admin et configuration du réseau</block>
+  <block id="8e1cc7b20e9f183452b777f8a4fb586d" category="paragraph">Une fois l'installation de la machine virtuelle terminée, créez l'utilisateur admin du nœud de gestion et configurez le réseau du nœud de gestion.</block>
+  <block id="5e0472334bca93d0d28d3eeaaf723518" category="section-title">Étape 3 : configurer la synchronisation de l'heure</block>
+  <block id="6646ab3d83d88b5b34e61e3a58b244e8" category="paragraph">Avant de configurer le nœud de gestion, synchronisez l'heure entre le nœud de gestion et le cluster de stockage.</block>
+  <block id="ef246c91c687e7d720eb49c5e2a4cd47" category="section-title">Étape 4 : configuration du nœud de gestion</block>
+  <block id="9f150d20e38589485a1bb878b18c51e2" category="paragraph">Configurez le nœud de gestion à l'aide de la<block ref="73028873f2b0a018096b6a3d871634b5" prefix=" " category="inline-code"></block> commande.</block>
+  <block id="2cec258fd66ace0725a9af6922c80f3e" category="section-title">Étape 5 : configuration des ressources du contrôleur</block>
+  <block id="b5d27a207b01cd3ca9fef9594d50836f" category="paragraph">Recherchez l'ID d'installation et ajoutez une ressource de contrôleur vCenter.</block>
+  <block id="bd6447e80251856484a25ace239c3873" category="section-title">Étape 6 : (NetApp HCI uniquement) configurez les ressources du nœud de calcul</block>
+  <block id="64391abac346294811422637c6d0a865" category="paragraph">Ajoutez une ressource de nœud de calcul aux ressources connues du nœud de gestion</block>
+  <block id="975648a39ca92865d807bc35f02b5984" category="inline-link-macro">Remarque concernant le logiciel Element 12.8</block>
+  <block id="d70cd205dfc4339579c798a35dc44462" category="list-text"><block ref="d70cd205dfc4339579c798a35dc44462" category="inline-link-macro-rx"></block></block>
 </blocks>

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: docs/task_hcc_upgrade_management_node.html 
 summary: La mise à niveau du système NetApp HCI permet de mettre à niveau le nœud de gestion. 
-keywords: netapp, hci, on premise, cluster, management node, mNode, upgrade, 10, 11.0, 11.1, 11.3, 11.5, 11.7, 12.0, 12.2, 12.3, 12.3.1, 12.3.2, 12.3.x, 12.5, 12.7 
+keywords: netapp, hci, on premise, cluster, management node, mNode, upgrade, 10, 11.0, 11.1, 11.3, 11.5, 11.7, 12.0, 12.2, 12.3, 12.3.1, 12.3.2, 12.3.x, 12.5, 12.7, 12.8 
 ---
 = Mettre à niveau un nœud de gestion
 :allow-uri-read: 
@@ -16,8 +16,30 @@ La mise à niveau du système d'exploitation du nœud de gestion n'est plus néc
 
 NOTE: Pour plus d'informations sur la mise à niveau de nœuds de gestion 12.2 ou version antérieure, consultez le https://docs.netapp.com/us-en/hci19/docs/task_hcc_upgrade_management_node.html["Documentation sur la mise à niveau des nœuds de gestion NetApp HCI 1.9"^].
 
-.Options de mise à niveau
-Choisissez l'une des options suivantes :
+
+
+== Étape 1 : mise à niveau de la version matérielle d'une machine virtuelle sur un nœud de gestion
+
+Si vous effectuez une mise à niveau sans déplacement d'un nœud de gestion existant vers Element 12.8, vous devez vous assurer que la version matérielle de la machine virtuelle sur le nœud de gestion est compatible avec ESXi 6.7 (matériel de la machine virtuelle version 14) ou ultérieure, selon votre environnement.
+
+
+NOTE: Vous pouvez également suivre ces étapes pour mettre à niveau la version matérielle de la machine virtuelle sur les nœuds Witness.
+
+.Étapes
+. Connectez-vous au client Web vSphere en tant qu'administrateur vCenter.
+. Dans le menu client vSphere, sélectionnez *VM* et *modèles*.
+. Cliquez avec le bouton droit de la souris sur la machine virtuelle et sélectionnez *compatibilité* > *mise à niveau de la compatibilité VM*.
+. Sélectionnez *Oui*.
+. Sélectionnez ESXi 6.7 ou une version ultérieure, selon la version de votre environnement vSphere.
+. Sélectionnez *OK*.
+. Une fois la mise à niveau terminée, sélectionnez *vSphere client refresh* et vérifiez que VM Compatibility est à la version souhaitée.
+
+
+
+
+== Étape 2 : mise à niveau d'un nœud de gestion vers Element 12.5 ou version ultérieure
+
+Choisissez l'une des options de mise à niveau suivantes :
 
 * <<Mettez à niveau un nœud de gestion vers la version 12.5 ou ultérieure à partir de la version 12.3.x ou ultérieure>>
 * <<Reconfigurez l'authentification à l'aide de l'API REST de nœud de gestion>>
@@ -31,14 +53,14 @@ NOTE: Si vous ne mettez pas à jour les services de gestion suivis par le stocka
 
 
 
-== Mettez à niveau un nœud de gestion vers la version 12.5 ou ultérieure à partir de la version 12.3.x ou ultérieure
+=== Mettez à niveau un nœud de gestion vers la version 12.5 ou ultérieure à partir de la version 12.3.x ou ultérieure
 
 Vous pouvez effectuer une mise à niveau sans déplacement du nœud de gestion depuis la version 12.3.x ou ultérieure vers la version 12.5 ou ultérieure, sans avoir à provisionner une nouvelle machine virtuelle de nœud de gestion.
 
 
 NOTE: Le nœud de gestion Element 12.5 ou version ultérieure est une mise à niveau facultative. Elle n'est pas requise pour les déploiements existants.
 
-.Ce dont vous avez besoin
+.Avant de commencer
 * La mémoire RAM de la machine virtuelle du nœud de gestion est de 24 Go.
 * Le nœud de gestion que vous souhaitez mettre à niveau est la version 12.0 et utilise la mise en réseau IPv4. La version 12.5 ou ultérieure du nœud de gestion ne prend pas en charge IPv6.
 +
@@ -124,7 +146,7 @@ IMPORTANT: Si vous aviez précédemment désactivé la fonctionnalité SSH sur l
 
 
 
-== Reconfigurez l'authentification à l'aide de l'API REST de nœud de gestion
+=== Reconfigurez l'authentification à l'aide de l'API REST de nœud de gestion
 
 Vous pouvez conserver votre nœud de gestion existant si vous disposez de services de gestion mis à niveau séquentiellement (1) votre système de stockage Element. Si vous avez suivi un ordre de mise à niveau différent, reportez-vous aux procédures de mise à niveau des nœuds de gestion sur place.
 
@@ -157,7 +179,8 @@ Le corps de réponse indique que la reconfiguration a réussi.
 
 
 
-[discrete]
+
+
 == Trouvez plus d'informations
 
 * https://docs.netapp.com/us-en/vcp/index.html["Plug-in NetApp Element pour vCenter Server"^]
