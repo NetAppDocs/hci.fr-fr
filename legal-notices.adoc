@@ -47,7 +47,7 @@ link:https://www.netapp.com/company/legal/privacy-policy/["https://www.netapp.co
 Les fichiers de notification fournissent des informations sur les droits d'auteur et les licences de tiers utilisés dans le logiciel NetApp.
 
 * link:./media/NetApp_HCI_1.11_notice.pdf["Notification relative à NetApp HCI 1.11"^]
-* link:../media/Element_Software_12.8.pdf["Remarque concernant le logiciel Element 12.8"^]
+* link:./media/Element_Software_12.8.pdf["Remarque concernant le logiciel Element 12.8"^]
 * link:./media/Element_Software_12.7.pdf["Remarque concernant le logiciel Element 12.7"^]
 * link:./media/Ember_OS_12.7.pdf["Avis d'Ember OS 12.7"^]
 * link:./media/mNode_12.7.pdf["Avis pour le nœud de gestion 12.7"^]
