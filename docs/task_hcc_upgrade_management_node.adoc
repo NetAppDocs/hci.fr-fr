@@ -27,12 +27,17 @@ NOTE: Vous pouvez également suivre ces étapes pour mettre à niveau la version
 
 .Étapes
 . Connectez-vous au client Web vSphere en tant qu'administrateur vCenter.
-. Dans le menu client vSphere, sélectionnez *VM* et *modèles*.
+. Dans le menu du client vSphere, sélectionnez *VM et modèles*.
+. Cliquez avec le bouton droit de la souris sur la machine virtuelle (VM) et sélectionnez *alimentation* > *Arrêter le système d'exploitation invité*.
++
+Attendez que la machine virtuelle soit mise hors tension.
+
 . Cliquez avec le bouton droit de la souris sur la machine virtuelle et sélectionnez *compatibilité* > *mise à niveau de la compatibilité VM*.
 . Sélectionnez *Oui*.
 . Sélectionnez ESXi 6.7 ou une version ultérieure, selon la version de votre environnement vSphere.
 . Sélectionnez *OK*.
-. Une fois la mise à niveau terminée, sélectionnez *vSphere client refresh* et vérifiez que VM Compatibility est à la version souhaitée.
+. Une fois la mise à niveau terminée, cliquez avec le bouton droit de la souris sur la machine virtuelle et sélectionnez *Marche* > *Marche*.
+. Sélectionnez *vSphere client refresh* et vérifiez que la version de VM Compatibility est la version souhaitée.
 
 
 
@@ -183,6 +188,4 @@ Le corps de réponse indique que la reconfiguration a réussi.
 
 == Trouvez plus d'informations
 
-* https://docs.netapp.com/us-en/vcp/index.html["Plug-in NetApp Element pour vCenter Server"^]
-* https://www.netapp.com/hybrid-cloud/hci-documentation/["Page Ressources NetApp HCI"^]
-
+https://docs.netapp.com/us-en/vcp/index.html["Plug-in NetApp Element pour vCenter Server"^]

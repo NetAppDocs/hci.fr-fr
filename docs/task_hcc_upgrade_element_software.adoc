@@ -422,9 +422,8 @@ Le contrôle du cloud hybride NetApp offre une période d'attente prédéfinie d
 
 CAUTION: L'abandon de la mise à niveau du cluster pendant la mise à jour d'un nœud peut entraîner le retrait non normal des disques du nœud. Si la suppression des disques n'est pas normale, le support NetApp implique une intervention manuelle de chaque fois que vous ajoutez des disques lors d'une mise à niveau. Il est possible que le nœud mette plus de temps à effectuer des mises à jour de firmware ou à effectuer des activités de synchronisation post-mise à jour. Si la progression de la mise à niveau semble bloquée, contactez le support NetApp pour obtenir de l'aide.
 
-[discrete]
+
+
 == Trouvez plus d'informations
 
-* https://docs.netapp.com/us-en/vcp/index.html["Plug-in NetApp Element pour vCenter Server"^]
-* https://www.netapp.com/hybrid-cloud/hci-documentation/["Page Ressources NetApp HCI"^]
-
+https://docs.netapp.com/us-en/vcp/index.html["Plug-in NetApp Element pour vCenter Server"^]

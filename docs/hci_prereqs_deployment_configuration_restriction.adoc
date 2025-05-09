@@ -18,9 +18,8 @@ Certaines configurations sont restreintes dans le moteur de déploiement NetApp,
 
 Si vous link:task_nde_select_inventory.html["Sélectionnez une configuration restreinte à partir de la page *Inventory*"] pendant le déploiement, un message d'erreur apparaît avec d'autres options de configuration valides.
 
-[discrete]
+
+
 == Trouvez plus d'informations
 
-* https://www.netapp.com/hybrid-cloud/hci-documentation/["Page Ressources NetApp HCI"^]
-* https://docs.netapp.com/us-en/vcp/index.html["Plug-in NetApp Element pour vCenter Server"^]
-
+https://docs.netapp.com/us-en/vcp/index.html["Plug-in NetApp Element pour vCenter Server"^]
