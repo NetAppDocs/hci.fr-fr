@@ -72,9 +72,6 @@ Les abréviations suivantes sont utilisées dans le tableau :
 | Nœud de gestion | Nœud de stockage MVIP | 442 | Accès à l'interface et à l'API pour les mises à niveau du nœud de stockage et du logiciel Element 
 
 
-| Nœud de gestion | `23.32.54.122`, `216.240.21.15` | 443 | Mises à niveau du logiciel Element 
-
-
 | Nœud de gestion | Contrôleur BMC (Baseboard Management Controller) | 443 | Surveillance du matériel et connexion à l'inventaire (commandes Redfish et IPMI) 
 
 
