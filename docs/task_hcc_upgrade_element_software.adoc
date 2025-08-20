@@ -11,21 +11,24 @@ keywords: netapp, hci, cluster, element, H610S upgrade, hcc
 [role="lead"]
 Pour mettre à niveau le logiciel NetApp Element, vous pouvez utiliser l'interface utilisateur de contrôle du cloud hybride NetApp ou l'API REST. Certaines opérations sont supprimées lors de la mise à niveau du logiciel Element, telles que l'ajout et la suppression de nœuds, l'ajout et la suppression de disques, ainsi que les commandes associées aux initiateurs, aux groupes d'accès aux volumes et aux réseaux virtuels, entre autres.
 
+PRUDENCE:
 
-NOTE: Depuis Element 12.5, NetApp HealthTools n'est plus pris en charge pour les mises à niveau du logiciel Element. Si vous exécutez Element 11.0 ou 11.1, vous devez d'abord link:https://docs.netapp.com/us-en/hci19/docs/task_hcc_upgrade_element_software.html#upgrade-element-software-at-connected-sites-using-healthtools["Effectuez la mise à niveau vers Element 12.3 à l'aide de HealthTools"^] Puis mettez à niveau vers Element 12.5 ou version ultérieure avec NetApp Hybrid Cloud Control.
+[]
+====
+Le pack de services de gestion 2.27 inclut le plug-in Element pour vCenter Server 5.5, qui est uniquement compatible avec le nœud de gestion 12.8.  Lorsque vous effectuez une mise à jour vers les services de gestion 2.27, vous devez modifier la séquence de mise à niveau et mettre à jour le bundle de services de gestion après la mise à niveau vers Element 12.8 pour garantir la compatibilité entre le nœud de gestion et les services de gestion.
 
-.Ce dont vous avez besoin
+Si vous effectuez une mise à jour vers les services de gestion 2.21.61 à 2.26.40, vous devez mettre à jour le bundle de services de gestion avant de procéder à la mise à niveau vers Element 12.8.
+
+====
+.Avant de commencer
 * *Privilèges d'administrateur* : vous disposez des autorisations d'administrateur du cluster de stockage pour effectuer la mise à niveau.
 * *Chemin de mise à niveau valide* : vous avez vérifié les informations de chemin de mise à niveau pour la version d'élément vers laquelle vous effectuez la mise à niveau et vérifié que le chemin de mise à niveau est valide. Voir https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Element_Software/What_is_the_upgrade_matrix_for_storage_clusters_running_NetApp_Element_software%3F["Base de connaissances NetApp : matrice de mise à niveau pour les clusters de stockage exécutant le logiciel NetApp Element"^]
++
+Depuis Element 12.5, NetApp HealthTools n'est plus pris en charge pour les mises à niveau du logiciel Element. Si vous exécutez Element 11.0 ou 11.1, vous devez d'abord link:https://docs.netapp.com/us-en/hci19/docs/task_hcc_upgrade_element_software.html#upgrade-element-software-at-connected-sites-using-healthtools["Effectuez la mise à niveau vers Element 12.3 à l'aide de HealthTools"^] Puis mettez à niveau vers Element 12.5 ou version ultérieure avec NetApp Hybrid Cloud Control.
+
 * *Synchronisation de l'heure du système* : vous avez vérifié que l'heure du système sur tous les nœuds est synchronisée et que NTP est correctement configuré pour le cluster de stockage et les nœuds. Chaque nœud doit être configuré avec un serveur de noms DNS dans l'interface utilisateur Web par nœud (`https://[IP address]:442`) sans erreurs de cluster non résolues liées à l'inclinaison temporelle.
 * *Ports système* : si vous utilisez le contrôle du cloud hybride NetApp pour les mises à niveau, vous avez vérifié que les ports nécessaires sont ouverts. Voir link:hci_prereqs_required_network_ports.html["Ports réseau"] pour en savoir plus.
 * *Nœud de gestion* : pour l'interface utilisateur et l'API de contrôle de cloud hybride NetApp, le nœud de gestion de votre environnement exécute la version 11.3.
-* *Services de gestion*: Vous avez mis à jour votre bundle de services de gestion à la dernière version.
-
-
-
-IMPORTANT: Vous devez effectuer la mise à niveau vers le dernier pack de services de gestion avant de mettre à niveau votre logiciel Element vers la version 12.5 ou ultérieure. Si vous mettez à jour votre logiciel Element vers la version 12.5 ou ultérieure, vous avez besoin des services de gestion 2.21.61 ou version ultérieure pour continuer.
-
 * *Cluster Health*: Vous avez vérifié que le cluster est prêt à être mis à niveau. Voir link:task_hcc_upgrade_element_prechecks.html["Exécutez des vérifications de l'état du stockage Element avant la mise à niveau du stockage"].
 * *Contrôleur de gestion de la carte mère (BMC) mis à jour pour les nœuds H610S*: Vous avez mis à niveau la version BMC pour vos nœuds H610S. Voir la link:rn_H610S_BMC_3.84.07.html["notes de version et instructions de mise à niveau"].
 * *Temps de mise à niveau* : vous avez prévu suffisamment de temps pour effectuer votre mise à niveau. Lorsque vous effectuez une mise à niveau vers Element 12.5 ou une version ultérieure, le processus de mise à niveau varie en fonction de la version actuelle du logiciel Element et des mises à jour du firmware.
