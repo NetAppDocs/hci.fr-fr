@@ -20,7 +20,7 @@ NOTE: Pour plus d'informations sur la mise à niveau de nœuds de gestion 12.2 o
 
 == Étape 1 : mise à niveau de la version matérielle d'une machine virtuelle sur un nœud de gestion
 
-Si vous effectuez une mise à niveau sans déplacement d'un nœud de gestion existant vers Element 12.8, vous devez vous assurer que la version matérielle de la machine virtuelle sur le nœud de gestion est compatible avec ESXi 6.7 (matériel de la machine virtuelle version 14) ou ultérieure, selon votre environnement.
+Si vous effectuez une mise à niveau sur place d'un nœud de gestion existant vers Element 12.8 ou une version ultérieure, avant de procéder à la mise à niveau, vous devez vous assurer que la version matérielle de la machine virtuelle sur le nœud de gestion est compatible avec ESXi 6.7 (version matérielle de la machine virtuelle 14) ou une version ultérieure en fonction de votre environnement.
 
 
 NOTE: Vous pouvez également suivre ces étapes pour mettre à niveau la version matérielle de la machine virtuelle sur les nœuds Witness.
