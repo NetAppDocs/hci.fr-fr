@@ -565,4 +565,6 @@ CAUTION: Pendant le processus de mise sous tension, pendant environ cinq minutes
 
 == Trouvez plus d'informations
 
-https://docs.netapp.com/us-en/vcp/index.html["Plug-in NetApp Element pour vCenter Server"^]
+* link:https://kb.netapp.com/on-prem/solidfire/Element_OS_Kbs/vmnic1_and_vmnic4_is_swapped_by_compute_node_firmware_upgrade["La mise à niveau du firmware du nœud de calcul échange vmnic1 et vmnic4"^]
+* link:https://docs.netapp.com/us-en/vcp/index.html["Plug-in NetApp Element pour vCenter Server"^]
+
